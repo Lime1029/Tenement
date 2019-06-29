@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.HouseFacility" table="house_facility" schema="tenement">
+        <composite-id>
+            <key-property name="houseId" column="house_id"/>
+            <key-property name="facilityId" column="facility_id"/>
+        </composite-id>
+        <property name="isExist" column="is_exist"/>
+    </class>
+</hibernate-mapping>

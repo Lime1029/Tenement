@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.HousePicture" table="house_picture" schema="tenement">
+        <id name="pictureId" column="picture_id"/>
+        <property name="houseId" column="house_id"/>
+        <property name="picture" column="picture"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Chat" table="chat" schema="tenement">
+        <id name="chatId" column="chat_id"/>
+        <property name="senderId" column="sender_id"/>
+        <property name="chatMessage" column="chat_message"/>
+        <property name="sendTime" column="send_time"/>
+        <property name="agentId" column="agent_id"/>
+        <property name="userId" column="user_id"/>
+    </class>
+</hibernate-mapping>

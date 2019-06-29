@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd"
+        default-lazy-init ="true">
+    <!--spring容器负责对象创建-->
+
+    <!-- dataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
+        <property name="username" value="root" />
+        <property name="password" value="nbuser" />
+        <!--<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
+        <property name="username" value="root" />
+        <property name="password" value="nbuser" />-->
+    </bean>
+
+    <bean id="sessionFactory"
+      class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+    </bean>
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!-- 启用事务注解扫描 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- User -->
+    <bean id="user" class="model.User"/><!-- lazy-init="false"-->
+    <bean id="agent" class="model.Agent" />
+    <bean id="admin" class="model.Administrator" />
+    <!--UserDaoImpl-->
+    <bean id="userDao" class="dao.impl.UserDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+            <!--<ref bean="sessionFactory" />-->
+        </property>
+    </bean>
+    <!--UserServiceImpl-->
+    <bean id="userService" class="service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <!--registerAction-->
+    <bean id="register" class="action.Register" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="user" ref="user"/>
+        <property name="telephone" value="18810339310" />
+        <property name="password1" value="1" />
+        <property name="password2" value="1" />
+    </bean>
+    <!-- loginAction -->
+    <bean id="login" class="action.Login" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="user" ref="user" />
+        <property name="agent" ref="agent" />
+        <property name="administrator" ref="admin" />
+    </bean>
+</beans>

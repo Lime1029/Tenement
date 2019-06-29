@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="House:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/House_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="House/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="House" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.16" />
+          <element id="library" level="project" name="Hibernate5.4.3" />
+          <element id="library" level="project" name="spring5.1.8" />
+          <element id="library" level="project" name="struts2-2.5.20" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

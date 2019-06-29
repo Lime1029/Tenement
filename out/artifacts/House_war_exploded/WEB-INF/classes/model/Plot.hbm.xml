@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Plot" table="plot" schema="tenement">
+        <id name="plotId" column="plot_id"/>
+        <property name="plotName" column="plot_name"/>
+        <property name="districtId" column="district_id"/>
+        <property name="agentId" column="agent_id"/>
+    </class>
+</hibernate-mapping>

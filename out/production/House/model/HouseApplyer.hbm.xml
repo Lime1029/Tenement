@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.HouseApplyer" table="house_applyer" schema="tenement">
+        <!--<composite-id mapped="true" class="model.HouseApplyerPK">-->
+        <composite-id>
+            <key-property name="houseId" column="house_id"/>
+            <key-property name="houseApplyerId" column="house_applyer_id"/>
+        </composite-id>
+    </class>
+</hibernate-mapping>

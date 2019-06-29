@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.LandlordApplyRelease" table="landlord_apply_release" schema="tenement">
+        <id name="applyId" column="apply_id"/>
+        <property name="applyerId" column="applyer_id"/>
+        <property name="address" column="address"/>
+        <property name="expectPrice" column="expect_price"/>
+        <property name="applyerPhone" column="applyer_phone"/>
+        <property name="applyerAppellation" column="applyer_appellation"/>
+        <property name="applyTime" column="apply_time"/>
+        <property name="plotId" column="plot_id"/>
+    </class>
+</hibernate-mapping>

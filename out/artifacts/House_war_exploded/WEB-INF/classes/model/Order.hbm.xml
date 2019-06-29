@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Order" table="order" schema="tenement">
+        <id name="orderId" column="order_id"/>
+        <property name="orderStime" column="order_stime"/>
+        <property name="landlordId" column="landlord_id"/>
+        <property name="orderRent" column="order_rent"/>
+        <property name="orderStatus" column="order_status"/>
+        <property name="agentId" column="agent_id"/>
+        <property name="orderEtime" column="order_etime"/>
+        <property name="applyerId" column="applyer_id"/>
+        <property name="houseId" column="house_id"/>
+    </class>
+</hibernate-mapping>
