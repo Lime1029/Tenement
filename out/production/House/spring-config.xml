@@ -58,9 +58,9 @@
     <bean id="register" class="action.Register" scope="prototype">
         <property name="userService" ref="userService"/>
         <property name="user" ref="user"/>
-        <property name="telephone" value="18810339310" />
+        <!--<property name="telephone" value="18810339310" />
         <property name="password1" value="1" />
-        <property name="password2" value="1" />
+        <property name="password2" value="1" />-->
     </bean>
     <!-- loginAction -->
     <bean id="login" class="action.Login" scope="prototype">

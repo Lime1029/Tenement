@@ -31,6 +31,9 @@ public class UserDaoImpl implements UserDao {
         }catch(HibernateException e){
             return false;
         }
+        finally {
+            session.close();//关闭连接
+        }
         return true;
     }
     @Override
@@ -40,22 +43,28 @@ public class UserDaoImpl implements UserDao {
         user=(User)session.get(User.class,userId);//这里userId这个位置期盼的是int值
         return user;*/
         List<User> users=findByProperty("telephone",telphone, "user");
-        if(users!=null&&users.size()==1)
+        if(users!=null&&users.size()==1) {
+
             return users.get(0);
+        }
         return null;
     }
     @Override
     public Agent getAgentByTel(String telphone) {
         List<Agent> agents = findByProperty("telephone", telphone, "agent");
-        if(agents!=null&&agents.size()==1)
+        if(agents!=null&&agents.size()==1) {
+
             return agents.get(0);
+        }
         return null;
     }
     @Override
     public Administrator getAdminByTel(String telphone) {
         List<Administrator> administrators = findByProperty("telephone", telphone, "admin");
-        if(administrators!=null&&administrators.size()==1)
+        if(administrators!=null&&administrators.size()==1){
             return administrators.get(0);
+        }
+
         return null;
     }
     @Override
@@ -76,18 +85,21 @@ public class UserDaoImpl implements UserDao {
             cr = session.createCriteria(User.class);
             cr.add(Restrictions.eq(PropertyName,value));
             users=cr.list();
+            session.close();
             return users;
         }
         else if (role.equals("agent")) {
             cr = session.createCriteria(Agent.class);
             cr.add(Restrictions.eq(PropertyName,value));
             agents=cr.list();
+            session.close();
             return agents;
         }
         else {
             cr = session.createCriteria(Administrator.class);
             cr.add(Restrictions.eq(PropertyName,value));
             administrators=cr.list();
+            session.close();
             return administrators;
         }
 

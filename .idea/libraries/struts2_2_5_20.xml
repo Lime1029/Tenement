@@ -13,6 +13,7 @@
       <root url="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/struts2-spring-plugin-2.5.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/validation-api-1.1.0.Final.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

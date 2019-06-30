@@ -7,17 +7,20 @@
 <struts>
     <!--<constant name="struts.objectFactory" value="spring"/>
     -->
+    <constant name="struts.devMode" value="true" /><!--develop mode-->
 
     <package name="default" namespace="/" extends="struts-default">
         <action name="register" class="action.Register">
             <result name="success">/registerLogin/login.jsp</result>
-            <result name="error">/registerLogin/register.jsp</result>
+            <result name="error">/registerLogin/regFail.jsp</result>
+            <result name="input">/registerLogin/register.jsp</result>
         </action>
         <action name="login" class="action.Login">
             <result name="user">/home/user.jsp</result>
             <result name="agent">/home/agent.jsp</result>
             <result name="admin">/home/admin.jsp</result>
-            <result name="error">/registerLogin/login.jsp</result>
+            <result name="error">/registerLogin/loginFail.jsp</result>
+            <result name="input">/registerLogin/login.jsp</result>
         </action>
     </package>
 </struts>

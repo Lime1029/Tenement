@@ -21,35 +21,37 @@ form{
     background: url("http://demo.demohuo.top/modals/57/5731/demo/images/b.png") no-repeat;
     border-radius:25px;
     color:#fff;
-    text-align:center;
+    /*text-align:center;*/
     padding:65px;
     /*box-shadow: 0px 0px 15px #0005;*/
 }
-.input_1{
+form .input_1{
     outline:none;
-    margin-top:10px;
-    border:0;
+    margin-top:15px;
+    border-left:0;
     width:300px;
     height:50px;
     border-radius:15px;
     padding-left:15px;
+
     font-size:18px;
     color:#999;
 }
-.input_2{
-    margin:20px 0px;
-    border:0;
-    background:#fff;
-}
-h1{
+
+
+form h1{
     color:#fff;
+    margin-bottom: 10px;
+    text-align: center;
 }
+
 /*role select*/
-.radio_box{ display:inline-block; position:relative;margin:20px 5px;}
-.radio_box label{ width:15px; height:15px; position:absolute; top:0; left:0; border:2px solid #3A5367; border-radius:50%; background:#fff; cursor:pointer;}
-.radio_box input:checked + label:after{ content:''; width:9px; height:9px; position:absolute; top:3px; left:3px; background:#3A5367; border-radius:50%;}
-.check_box em{ margin:0 0 0 5px;}
-.input_3{
+.radio_box{ display:inline-block; position:relative;margin:20px 5px 20px 50px; text-align: center}
+.radio_box label{ width:15px;  height:15px; position:absolute; top:0; left:-30px; border:2px solid #3A5367; border-radius:50%; background:#fff; cursor:pointer;}
+.radio_box input:checked + label:after{ content:''; width:9px; height:9px; position:absolute; top:3px; left:3px; background:#3A5367; border-radius:50%; }
+.check_box em{ margin:0 0 0 5px; color: #1b1b1b;}
+
+form .input_3{
     outline: none;
     width:100px;
     height:40px;
@@ -57,11 +59,40 @@ h1{
     padding:5px 7px;
     background:#fff;
     border-radius:20px;
-    margin:0px 10px;
+    margin:0px auto auto 100px;
     font-size: 18px;
+    color: rgb(35, 39, 31);
+    cursor: pointer;
+    text-align: center;
+    vertical-align: center;
 }
 
-a{
+form a {
     float: right;
     margin-right: 80px;
+}
+
+form label {
+    color: #1b1b1b;
+    margin-left: 30px;
+    text-align: right;
+}
+
+.fielderror {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #FF3300;
+    vertical-align: bottom;
+}
+
+.fielderror ul {
+    /*list-style-type: none*/
+    margin: 0px;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.fielderror ul li{
+    list-style-type: none
+
 }
