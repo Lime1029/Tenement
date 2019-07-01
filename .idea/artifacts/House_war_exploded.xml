@@ -12,6 +12,8 @@
           <element id="library" level="project" name="Hibernate5.4.3" />
           <element id="library" level="project" name="spring5.1.8" />
           <element id="library" level="project" name="struts2-2.5.20" />
+          <element id="library" level="project" name="aspectjweaver-1.6.2" />
+          <element id="library" level="project" name="junit4" />
         </element>
       </element>
     </root>

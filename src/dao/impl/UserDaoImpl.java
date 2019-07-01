@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
             return false;
         }
         finally {
-            session.close();//关闭连接
+            //session.close();//关闭连接
         }
         return true;
     }
@@ -85,21 +85,18 @@ public class UserDaoImpl implements UserDao {
             cr = session.createCriteria(User.class);
             cr.add(Restrictions.eq(PropertyName,value));
             users=cr.list();
-            session.close();
             return users;
         }
         else if (role.equals("agent")) {
             cr = session.createCriteria(Agent.class);
             cr.add(Restrictions.eq(PropertyName,value));
             agents=cr.list();
-            session.close();
             return agents;
         }
         else {
             cr = session.createCriteria(Administrator.class);
             cr.add(Restrictions.eq(PropertyName,value));
             administrators=cr.list();
-            session.close();
             return administrators;
         }
 

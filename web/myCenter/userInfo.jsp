@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: Lime
-  Date: 2019/6/29
-  Time: 13:08
+  Date: 2019/6/30
+  Time: 16:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>user home</title>
+    <title>personal information</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -25,10 +25,9 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-
+    <div class="container" >
         <div class="row clearfix">
-            <div class="col-md-16 column">
+            <div class="col-md-20 column">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -43,21 +42,38 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active">
-                                <a href="#">首页</a>
+                                <a href="../home/user.jsp">首页</a>
                             </li>
 
                         </ul>
                     </div>
-                </nav>
+
 
             </div>
         </div>
 
         <div class="row clearfix">
+            <div class="col-md-2 column">
+                <ul class="nav nav-pills nav-stacked" style="background:#eee;border-radius: 10px">
+                    <li class="active"><a href="#">个人信息</a></li>
+                    <li><a href="#">&nbsp;&nbsp;</a></li>
+                    <li><a href="#">&nbsp;&nbsp;</a></li>
 
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-md-offset-2  column">
+
+                <div class="list-group">
+                    <li class="list-group-item">用户名：&nbsp;&nbsp;${sessionScope.user.telephone}</li>
+                    <li class="list-group-item">密码：&nbsp;&nbsp;${sessionScope.user.password}</li>
+                    <li class="list-group-item">id：&nbsp;&nbsp;${sessionScope.user.userId}</li>
+                    <br/>
+                    <!--<a class="btn btn-primary" style="" href="modify_info.jsp">修改信息</a>-->
+                </div>
+            </div>
         </div>
 
     </div>
-
 </body>
 </html>

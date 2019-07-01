@@ -22,7 +22,7 @@
         <br><br>
 
         <label>输入密码：</label>
-        <input name="password" class="input_1" id="password" type="text" minlength="6" maxlength="15" placeholder="6-15位数字、字母或_组成">
+        <input name="password" class="input_1" id="password" type="password" minlength="6" maxlength="15" placeholder="6-15位数字、字母或_组成">
         <span class="password_hint"></span>
         <br><br>
 

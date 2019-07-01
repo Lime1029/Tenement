@@ -12,6 +12,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd"
         default-lazy-init ="true">
+
     <!--spring容器负责对象创建-->
 
     <!-- dataSource -->
@@ -20,10 +21,6 @@
         <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
         <property name="username" value="root" />
         <property name="password" value="nbuser" />
-        <!--<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
-        <property name="username" value="root" />
-        <property name="password" value="nbuser" />-->
     </bean>
 
     <bean id="sessionFactory"
@@ -31,36 +28,119 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </bean>
-    <!-- 配置事务管理器 -->
+
+    <!-- 不要自己去关闭session，session在事务结束后都会自动关闭。 -->
+    <!-- 配置hibernate事务管理器 封装了所有commit,rollback等事务操作. -->
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
         <property name="dataSource" ref="dataSource" />
+
     </bean>
-    <!-- 启用事务注解扫描 -->
+
+    <!-- 启用事务注解扫描 开启使用注解管理aop事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!-- User -->
+    <!-- 配置事务通知 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!-- 以方法为单位,指定方法应用什么事务属性 isolation:隔离级别 propagation:传播行为 read-only:对数据库是否只读 -->
+            <tx:method name="save*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="persist*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="update*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="modify*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="delete*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="remove*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="get*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="true" />
+            <tx:method name="find*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="true" />
+            <tx:method name="transfer" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置织入 -->
+    <aop:config>
+        <!-- 配置切点表达式 -->
+        <aop:pointcut id="txPc" expression="execution(* service.impl.*ServiceImpl.*(..))" />
+        <!-- 配置切面 : 通知+切点 advice-ref:通知的名称 pointcut-ref:切点的名称 -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPc" />
+    </aop:config>
+
+    <!-- 配置事务拦截器 -->
+    <bean id="transactionInterceptor"
+          class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager" ref="transactionManager">
+            <!--<ref bean="transactionManger" />-->
+        </property>
+        <!--   下面定义事务传播属性-->
+        <property name="transactionAttributes">
+            <props>
+                <prop key="find*">PROPAGATION_REQUIRED</prop>
+                <prop key="delete*">PROPAGATION_REQUIRED</prop>
+                <prop key="save*">PROPAGATION_REQUIRED</prop>
+                <prop key="merge*">PROPAGATION_REQUIRED</prop>
+                <prop key="attach*">PROPAGATION_REQUIRED</prop>
+                <prop key="gotoPage">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 自动代理 -->
+    <bean id="autoBeanNameProxyCreator"
+          class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*Dao</value>
+                <value>gotoPage</value>
+                <value>find</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <!--<idref local="transactionInterceptor" />-->
+                <idref bean="transactionInterceptor" />
+            </list>
+        </property>
+
+        <!--
+        这里的配置是必须的，否则无法完成代理的类型转化
+        这是使用CGLIB来生成代理
+        -->
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+
+    <!-- Model -->
     <bean id="user" class="model.User"/><!-- lazy-init="false"-->
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
-    <!--UserDaoImpl-->
+
+    <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory">
             <!--<ref bean="sessionFactory" />-->
         </property>
     </bean>
-    <!--UserServiceImpl-->
+
+    <!-- ServiceImpl -->
     <bean id="userService" class="service.impl.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
     </bean>
-    <!--registerAction-->
+
+    <!-- registerAction -->
     <bean id="register" class="action.Register" scope="prototype">
         <property name="userService" ref="userService"/>
         <property name="user" ref="user"/>
-        <!--<property name="telephone" value="18810339310" />
+        <property name="telephone" value="18810339310" /><!-- 简单属性赋value -->
         <property name="password1" value="1" />
-        <property name="password2" value="1" />-->
+        <property name="password2" value="1" />
     </bean>
     <!-- loginAction -->
     <bean id="login" class="action.Login" scope="prototype">
@@ -68,5 +148,8 @@
         <property name="user" ref="user" />
         <property name="agent" ref="agent" />
         <property name="administrator" ref="admin" />
+        <property name="telephone" value="18810339310" />
+        <property name="password" value="1" />
+        <property name="role" value="user" />
     </bean>
 </beans>

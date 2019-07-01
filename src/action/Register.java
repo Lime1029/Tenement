@@ -76,7 +76,7 @@ public class Register extends ActionSupport {
         String mobileExp =
                 "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(166)|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\\d{8}$";
         Pattern p1 = Pattern.compile(mobileExp);
-        Matcher m1 = p1.matcher(telephone);  //registrant_phone  ====  电话号码字段
+        Matcher m1 = p1.matcher(telephone);
         boolean isMobileMatch = m1.matches();
 
         String passwordExp = "^[a-z0-9_-]{6,15}$";
@@ -87,15 +87,15 @@ public class Register extends ActionSupport {
         if (!(isMobileMatch && isPassword1Match && isPassword2Match)) {
             regMessage = "手机号或密码格式错误";
         }
-        else if (password1 != password2) {
+        else if (!password1.equals(password2)) {
             regMessage = "确认密码与密码不一致";
         }
         else {
             user.setTelephone(this.getTelephone());
             user.setPassword(this.getPassword1());
-            ApplicationContext applicationContext = new
+            /*ApplicationContext applicationContext = new
                     ClassPathXmlApplicationContext("spring-config.xml");
-            userService = (UserService)applicationContext.getBean("userService");
+            userService = (UserService)applicationContext.getBean("userService");*/
             if (userService.getUserByTel(this.getTelephone()) != null) {
                 regMessage = "用户已注册";
             }
@@ -107,8 +107,10 @@ public class Register extends ActionSupport {
         }
 
 
+        if (regMessage != null) {
+            ActionContext.getContext().put("regMessage", regMessage);
+        }
 
-        ActionContext.getContext().put("regMessage", regMessage);
         return resultMess;
     }
 }
