@@ -4,51 +4,55 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <!-- hibernate.cfg.xml中不用配置数据库连接参数，因为spring管理数据源。 -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/tenement</property>
+        <!--<property name="connection.url">jdbc:mysql://localhost:3306/tenement</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">nbuser</property>
+        <property name="connection.password">nbuser</property>-->
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/tenement</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
-        <!--映射类-->
-        <mapping resource="model/Administrator.hbm.xml"/>
+
+        <!-- 映射类 -->
         <mapping class="model.Administrator"/>
-        <mapping resource="model/Agent.hbm.xml"/>
+        <mapping resource="model/Administrator.hbm.xml"/>
         <mapping class="model.Agent"/>
-        <mapping resource="model/Chat.hbm.xml"/>
+        <mapping resource="model/Agent.hbm.xml"/>
         <mapping class="model.Chat"/>
-        <mapping resource="model/City.hbm.xml"/>
+        <mapping resource="model/Chat.hbm.xml"/>
         <mapping class="model.City"/>
-        <mapping resource="model/DiscussionSection.hbm.xml"/>
+        <mapping resource="model/City.hbm.xml"/>
+        <mapping class="model.Contract"/>
+        <mapping resource="model/Contract.hbm.xml"/>
         <mapping class="model.DiscussionSection"/>
+        <mapping resource="model/DiscussionSection.hbm.xml"/>
         <mapping class="model.District"/>
         <mapping resource="model/District.hbm.xml"/>
         <mapping resource="model/Facility.hbm.xml"/>
         <mapping class="model.Facility"/>
         <mapping resource="model/Feedback.hbm.xml"/>
         <mapping class="model.Feedback"/>
-        <mapping resource="model/House.hbm.xml"/>
         <mapping class="model.House"/>
+        <mapping resource="model/House.hbm.xml"/>
         <mapping resource="model/HouseApplyer.hbm.xml"/>
         <mapping class="model.HouseApplyer"/>
         <mapping resource="model/HouseFacility.hbm.xml"/>
         <mapping class="model.HouseFacility"/>
-        <mapping resource="model/HousePicture.hbm.xml"/>
         <mapping class="model.HousePicture"/>
-        <mapping class="model.LandlordApplyRelease"/>
+        <mapping resource="model/HousePicture.hbm.xml"/>
         <mapping resource="model/LandlordApplyRelease.hbm.xml"/>
-        <mapping resource="model/Log.hbm.xml"/>
+        <mapping class="model.LandlordApplyRelease"/>
         <mapping class="model.Log"/>
+        <mapping resource="model/Log.hbm.xml"/>
         <mapping class="model.Order"/>
         <mapping resource="model/Order.hbm.xml"/>
-        <mapping resource="model/Plot.hbm.xml"/>
         <mapping class="model.Plot"/>
-        <mapping resource="model/User.hbm.xml"/>
+        <mapping resource="model/Plot.hbm.xml"/>
         <mapping class="model.User"/>
-
-
+        <mapping resource="model/User.hbm.xml"/>
 
 
     </session-factory>

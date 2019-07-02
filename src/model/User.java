@@ -1,7 +1,5 @@
 package model;
 
-import org.hibernate.annotations.ColumnDefault;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,21 +11,11 @@ public class User {
     private int userId;
     private String password;
     private String telephone;
-    private String email;
     private String name;
     private String username;
-
-    @Column(columnDefinition = "varchar(10) default 'user'")
+    private int balance;
+    private String email;
     private String role;
-
-    public User() {
-
-    }
-
-    public User(String telephone, String password) {
-        this.telephone = telephone;
-        this.password = password;
-    }
 
     @Id
     @Column(name = "user_id")
@@ -60,16 +48,6 @@ public class User {
     }
 
     @Basic
-    @Column(name = "email")
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Basic
     @Column(name = "name")
     public String getName() {
         return name;
@@ -90,6 +68,26 @@ public class User {
     }
 
     @Basic
+    @Column(name = "balance")
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    @Basic
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Basic
     @Column(name = "role")
     public String getRole() {
         return role;
@@ -105,16 +103,17 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return userId == user.userId &&
+                balance == user.balance &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(telephone, user.telephone) &&
-                Objects.equals(email, user.email) &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(username, user.username) &&
+                Objects.equals(email, user.email) &&
                 Objects.equals(role, user.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, password, telephone, email, name, username, role);
+        return Objects.hash(userId, password, telephone, name, username, balance, email, role);
     }
 }

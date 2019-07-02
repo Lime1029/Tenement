@@ -47,6 +47,14 @@
                             </li>
 
                         </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
+                            </li>
+                            <li>
+                                <a href="">&nbsp;&nbsp;退出</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
 

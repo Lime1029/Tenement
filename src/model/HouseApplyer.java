@@ -2,14 +2,14 @@ package model;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "house_applyer", schema = "tenement", catalog = "")
 @IdClass(HouseApplyerPK.class)
-public class HouseApplyer implements Serializable {
+public class HouseApplyer {
     private int houseId;
     private int houseApplyerId;
+    private byte isSellOn;
 
     @Id
     @Column(name = "house_id")
@@ -31,17 +31,28 @@ public class HouseApplyer implements Serializable {
         this.houseApplyerId = houseApplyerId;
     }
 
+    @Basic
+    @Column(name = "isSellOn")
+    public byte getIsSellOn() {
+        return isSellOn;
+    }
+
+    public void setIsSellOn(byte isSellOn) {
+        this.isSellOn = isSellOn;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HouseApplyer that = (HouseApplyer) o;
         return houseId == that.houseId &&
-                houseApplyerId == that.houseApplyerId;
+                houseApplyerId == that.houseApplyerId &&
+                isSellOn == that.isSellOn;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(houseId, houseApplyerId);
+        return Objects.hash(houseId, houseApplyerId, isSellOn);
     }
 }

@@ -11,13 +11,13 @@
         <property name="address" column="address"/>
         <property name="rent" column="rent"/>
         <property name="state" column="state"/>
-        <property name="rentalType" column="rentalType"/>
-        <property name="orientation" column="orientation"/>
         <property name="houseType" column="house_type"/>
         <property name="floor" column="floor"/>
         <property name="area" column="area"/>
-        <property name="rentTerm" column="rent_term"/>
         <property name="houseDescription" column="house_description"/>
         <property name="releaseTime" column="release_time"/>
+        <property name="rentalType" column="rentalType"/>
+        <property name="orientation" column="orientation"/>
+        <property name="rentTerm" column="rent_term"/>
     </class>
 </hibernate-mapping>

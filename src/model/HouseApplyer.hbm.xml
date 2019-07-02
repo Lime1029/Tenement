@@ -5,10 +5,10 @@
 <hibernate-mapping>
 
     <class name="model.HouseApplyer" table="house_applyer" schema="tenement">
-        <!--<composite-id mapped="true" class="model.HouseApplyerPK">-->
-        <composite-id>
+        <composite-id mapped="true" class="model.HouseApplyerPK">
             <key-property name="houseId" column="house_id"/>
             <key-property name="houseApplyerId" column="house_applyer_id"/>
         </composite-id>
+        <property name="isSellOn" column="isSellOn"/>
     </class>
 </hibernate-mapping>

@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
     <class name="model.HouseFacility" table="house_facility" schema="tenement">
-        <composite-id>
+        <composite-id mapped="true" class="model.HouseFacilityPK">
             <key-property name="houseId" column="house_id"/>
             <key-property name="facilityId" column="facility_id"/>
         </composite-id>

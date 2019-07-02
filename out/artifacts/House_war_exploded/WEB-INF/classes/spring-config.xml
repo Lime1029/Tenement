@@ -21,6 +21,7 @@
         <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
         <property name="username" value="root" />
         <property name="password" value="nbuser" />
+
     </bean>
 
     <bean id="sessionFactory"
@@ -29,11 +30,17 @@
         <property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </bean>
 
+    <bean id="hibernateTemplate"
+          class="org.springframework.orm.hibernate5.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
     <!-- 不要自己去关闭session，session在事务结束后都会自动关闭。 -->
     <!-- 配置hibernate事务管理器 封装了所有commit,rollback等事务操作. -->
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
+
         <property name="dataSource" ref="dataSource" />
 
     </bean>
@@ -128,10 +135,17 @@
             <!--<ref bean="sessionFactory" />-->
         </property>
     </bean>
+    <bean id="adminDao" class="dao.impl.AdminDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+        <property name="hibernateTemplate" ref="hibernateTemplate" />
+    </bean>
 
     <!-- ServiceImpl -->
     <bean id="userService" class="service.impl.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="adminService" class="service.impl.AdminServiceImpl">
+        <property name="adminDao" ref="adminDao" />
     </bean>
 
     <!-- registerAction -->
@@ -151,5 +165,9 @@
         <property name="telephone" value="18810339310" />
         <property name="password" value="1" />
         <property name="role" value="user" />
+    </bean>
+    <!-- userDisplayAction -->
+    <bean id="userDisplay" class="action.UserDisplay" scope="prototype">
+        <property name="adminService" ref="adminService" />
     </bean>
 </beans>

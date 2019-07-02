@@ -6,7 +6,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "discussion_section", schema = "tenement", catalog = "")
-
 public class DiscussionSection {
     private int messageId;
     private Timestamp releaseTime;

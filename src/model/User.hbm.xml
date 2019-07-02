@@ -8,9 +8,10 @@
         <id name="userId" column="user_id"/>
         <property name="password" column="password"/>
         <property name="telephone" column="telephone"/>
-        <property name="email" column="email"/>
         <property name="name" column="name"/>
         <property name="username" column="username"/>
-        <property name="role" column="role" />
+        <property name="balance" column="balance"/>
+        <property name="email" column="email"/>
+        <property name="role" column="role"/>
     </class>
 </hibernate-mapping>

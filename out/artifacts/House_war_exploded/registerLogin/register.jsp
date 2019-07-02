@@ -43,9 +43,11 @@
 <script src="../js/jquery-1.8.2.min.js"></script>
 <script src="../js/register.js"></script>
 </body>
+<!--
 <s:fielderror>
     <s:param>telephone</s:param>
     <s:param>password1</s:param>
     <s:param>password2</s:param>
 </s:fielderror>
+-->
 </html>
