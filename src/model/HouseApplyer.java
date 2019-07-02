@@ -1,12 +1,13 @@
 package model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "house_applyer", schema = "tenement", catalog = "")
-@IdClass(HouseApplyerPK.class)
-public class HouseApplyer {
+
+public class HouseApplyer implements Serializable {
     private int houseId;
     private int houseApplyerId;
     private byte isSellOn;
