@@ -128,6 +128,7 @@
     <bean id="user" class="model.User"/><!-- lazy-init="false"-->
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
+    <bean id="house" class="model.House" />
 
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
@@ -137,7 +138,9 @@
     </bean>
     <bean id="adminDao" class="dao.impl.AdminDaoImpl">
         <property name="sessionFactory" ref="sessionFactory" />
-        <property name="hibernateTemplate" ref="hibernateTemplate" />
+    </bean>
+    <bean id="searchDao" class="dao.impl.SearchDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <!-- ServiceImpl -->
@@ -146,6 +149,9 @@
     </bean>
     <bean id="adminService" class="service.impl.AdminServiceImpl">
         <property name="adminDao" ref="adminDao" />
+    </bean>
+    <bean id="searchService" class="service.impl.SearchServiceImpl">
+        <property name="searchDao" ref="searchDao" />
     </bean>
 
     <!-- registerAction -->
@@ -169,5 +175,14 @@
     <!-- userDisplayAction -->
     <bean id="userDisplay" class="action.UserDisplay" scope="prototype">
         <property name="adminService" ref="adminService" />
+    </bean>
+    <!-- 关键字搜索action -->
+    <bean id="keywordSearch" class="action.KeywordSearch" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="condition" value="天通苑" />
+    </bean>
+    <bean id="houseInfo" class="action.GetHouseInfo" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="houseId" value="1" />
     </bean>
 </beans>

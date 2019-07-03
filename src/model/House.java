@@ -20,9 +20,7 @@ public class House {
     private double area;
     private String houseDescription;
     private Timestamp releaseTime;
-    private Integer rentalType;
-    private Integer orientation;
-    private String rentTerm;
+
 
     @Id
     @Column(name = "house_id")
@@ -134,35 +132,6 @@ public class House {
         this.releaseTime = releaseTime;
     }
 
-    @Basic
-    @Column(name = "rentalType")
-    public Integer getRentalType() {
-        return rentalType;
-    }
-
-    public void setRentalType(Integer rentalType) {
-        this.rentalType = rentalType;
-    }
-
-    @Basic
-    @Column(name = "orientation")
-    public Integer getOrientation() {
-        return orientation;
-    }
-
-    public void setOrientation(Integer orientation) {
-        this.orientation = orientation;
-    }
-
-    @Basic
-    @Column(name = "rent_term")
-    public String getRentTerm() {
-        return rentTerm;
-    }
-
-    public void setRentTerm(String rentTerm) {
-        this.rentTerm = rentTerm;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -179,14 +148,11 @@ public class House {
                 Objects.equals(houseType, house.houseType) &&
                 Objects.equals(floor, house.floor) &&
                 Objects.equals(houseDescription, house.houseDescription) &&
-                Objects.equals(releaseTime, house.releaseTime) &&
-                Objects.equals(rentalType, house.rentalType) &&
-                Objects.equals(orientation, house.orientation) &&
-                Objects.equals(rentTerm, house.rentTerm);
+                Objects.equals(releaseTime, house.releaseTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(houseId, landlordId, plotId, address, rent, state, houseType, floor, area, houseDescription, releaseTime, rentalType, orientation, rentTerm);
+        return Objects.hash(houseId, landlordId, plotId, address, rent, state, houseType, floor, area, houseDescription, releaseTime);
     }
 }

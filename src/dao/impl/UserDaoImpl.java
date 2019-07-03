@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
     public boolean save(User user) {
         Session session= sessionFactory.getCurrentSession();
         try{
-            user.setRole("user"); // 这里设默认值，不然插入的就是null
+            //user.setRole("user"); // 这里设默认值，不然插入的就是null
             session.save(user);
         }catch(HibernateException e){
             return false;

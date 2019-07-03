@@ -12,7 +12,6 @@ public class Agent {
     private String telephone;
     private String password;
     private String name;
-    private String role;
 
     @Id
     @Column(name = "agent_id")
@@ -54,16 +53,6 @@ public class Agent {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "role")
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,12 +61,11 @@ public class Agent {
         return agentId == agent.agentId &&
                 Objects.equals(telephone, agent.telephone) &&
                 Objects.equals(password, agent.password) &&
-                Objects.equals(name, agent.name) &&
-                Objects.equals(role, agent.role);
+                Objects.equals(name, agent.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agentId, telephone, password, name, role);
+        return Objects.hash(agentId, telephone, password, name);
     }
 }

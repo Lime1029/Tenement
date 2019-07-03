@@ -8,7 +8,7 @@
     <!--<constant name="struts.objectFactory" value="spring"/>
     -->
     <!--develop mode，如有bug会显示之类，不过也消耗性能-->
-    <constant name="struts.devMode" value="true" />
+    <!--<constant name="struts.devMode" value="true" />-->
 
     <package name="default" namespace="/" extends="struts-default">
         <action name="register" class="action.Register">
@@ -26,6 +26,14 @@
         <action name="userDisplay" class="action.UserDisplay">
             <result name="success">/admin/userDisplay.jsp</result>
             <result name="error">/admin/userDisplayFail.jsp</result>
+        </action>
+        <action name="keywordSearch" class="action.KeywordSearch">
+            <result name="success">/search/searchResult.jsp</result>
+            <result name="error">/search/fail.jsp</result>
+        </action>
+        <action name="houseInfo" class="action.GetHouseInfo">
+            <result name="success">/search/houseInfo.jsp</result>
+            <result name="error">/search/fail.jsp</result>
         </action>
     </package>
 </struts>

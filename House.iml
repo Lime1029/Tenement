@@ -51,5 +51,6 @@
     <orderEntry type="library" name="struts2-2.5.20" level="project" />
     <orderEntry type="library" name="aspectjweaver-1.6.2" level="project" />
     <orderEntry type="library" name="junit4" level="project" />
+    <orderEntry type="library" name="jstl" level="project" />
   </component>
 </module>

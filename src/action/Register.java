@@ -108,7 +108,7 @@ public class Register extends ActionSupport {
 
 
         if (regMessage != null) {
-            ActionContext.getContext().put("regMessage", regMessage);
+            ActionContext.getContext().getSession().put("regMessage", regMessage);
         }
 
         return resultMess;

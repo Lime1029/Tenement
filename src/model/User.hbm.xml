@@ -11,7 +11,5 @@
         <property name="name" column="name"/>
         <property name="username" column="username"/>
         <property name="balance" column="balance"/>
-        <property name="email" column="email"/>
-        <property name="role" column="role"/>
     </class>
 </hibernate-mapping>

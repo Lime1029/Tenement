@@ -16,8 +16,5 @@
         <property name="area" column="area"/>
         <property name="houseDescription" column="house_description"/>
         <property name="releaseTime" column="release_time"/>
-        <property name="rentalType" column="rentalType"/>
-        <property name="orientation" column="orientation"/>
-        <property name="rentTerm" column="rent_term"/>
     </class>
 </hibernate-mapping>

@@ -23,6 +23,28 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        #search {
+            margin-left: 200px;
+            /*width: 300px;*/
+            margin-top: 200px;
+        }
+
+        #search input {
+            display: inline;
+            width: 500px;
+            height: 50px;
+            font-size: 18px;
+        }
+
+        #search button {
+            height: 50px;
+            width: 150px;
+            font-size: 20px;
+        }
+    </style>
+
 </head>
 <body>
     <div class="container">
@@ -45,6 +67,12 @@
                             <li class="active">
                                 <a href="#">首页</a>
                             </li>
+                            <li>
+                                <a href="">租房</a>
+                            </li>
+                            <li>
+                                <a href="">发布房源</a>
+                            </li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -63,9 +91,14 @@
 
         <div class="row clearfix">
 
+                <form role="form" id="search" action="keywordSearch.action">
+                    <input type="search" placeholder="请输入区域或小区名搜索" class="form-control" name="condition">
+                    <span><button class="btn btn-primary" type="submit">开始找房</button></span>
+                </form>
+
         </div>
 
-    </div>
+        </div>
 
 </body>
 </html>

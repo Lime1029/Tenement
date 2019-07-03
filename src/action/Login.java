@@ -149,7 +149,7 @@ public class Login extends ActionSupport {
 
 
 
-        ActionContext.getContext().put("loginMessage", loginMessage); //将登录失败信息存到session里
+        ActionContext.getContext().getSession().put("loginMessage", loginMessage); //将登录失败信息存到session里
         return resultMess;
     }
 

@@ -12,7 +12,6 @@ public class Administrator {
     private String password;
     private String telephone;
     private String username;
-    private String role;
 
     @Id
     @Column(name = "administrator_id")
@@ -54,15 +53,6 @@ public class Administrator {
         this.username = username;
     }
 
-    @Basic
-    @Column(name = "role")
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -72,12 +62,11 @@ public class Administrator {
         return administratorId == that.administratorId &&
                 Objects.equals(password, that.password) &&
                 Objects.equals(telephone, that.telephone) &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(role, that.role);
+                Objects.equals(username, that.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(administratorId, password, telephone, username, role);
+        return Objects.hash(administratorId, password, telephone, username);
     }
 }

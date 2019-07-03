@@ -9,6 +9,5 @@
         <property name="telephone" column="telephone"/>
         <property name="password" column="password"/>
         <property name="name" column="name"/>
-        <property name="role" column="role"/>
     </class>
 </hibernate-mapping>

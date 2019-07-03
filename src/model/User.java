@@ -14,8 +14,6 @@ public class User {
     private String name;
     private String username;
     private int balance;
-    private String email;
-    private String role;
 
     @Id
     @Column(name = "user_id")
@@ -77,25 +75,6 @@ public class User {
         this.balance = balance;
     }
 
-    @Basic
-    @Column(name = "email")
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Basic
-    @Column(name = "role")
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -107,13 +86,11 @@ public class User {
                 Objects.equals(password, user.password) &&
                 Objects.equals(telephone, user.telephone) &&
                 Objects.equals(name, user.name) &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(role, user.role);
+                Objects.equals(username, user.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, password, telephone, name, username, balance, email, role);
+        return Objects.hash(userId, password, telephone, name, username, balance);
     }
 }

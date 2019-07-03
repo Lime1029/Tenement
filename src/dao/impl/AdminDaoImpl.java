@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional//声明式事务管理，使用 HibernateTemplate 实现 CRUD 操作，一定要加上事务管理，否则将报错
 public class AdminDaoImpl implements AdminDao {
     private SessionFactory sessionFactory;
-    private HibernateTemplate hibernateTemplate;
+    //private HibernateTemplate hibernateTemplate;
 
 
     public SessionFactory getSessionFactory() {
@@ -24,12 +24,12 @@ public class AdminDaoImpl implements AdminDao {
         this.sessionFactory = sessionFactory;
     }
 
-    public HibernateTemplate getHibernateTemplate() {
+    /*public HibernateTemplate getHibernateTemplate() {
         return hibernateTemplate;
     }
     public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
         this.hibernateTemplate = hibernateTemplate;
-    }
+    }*/
 
     @Override
     public List<User> getAllUsers() {
