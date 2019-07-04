@@ -1,13 +1,12 @@
-package service;
+package dao;
 
 import model.House;
-import model.HouseInfo;
+import model.PageBean;
 
 import java.util.List;
 
-public interface SearchService {
-
+public interface AgentShowDao {
     public List<House> keywordSearch(String condition);
-    public HouseInfo getHouseInfo(int houseId);
+    public PageBean getHouseInfo(int houseId);
     public List<House> conditionSearch(House housing);
 }

@@ -28,6 +28,15 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
+    public List<House> conditionSearch(House housing) {
+
+        List<House> houses = searchDao.conditionSearch(housing);
+
+        return houses;
+
+    }
+
+    @Override
     public HouseInfo getHouseInfo(int houseId) {
         HouseInfo houseInfo = searchDao.getHouseInfo(houseId);
         ActionContext.getContext().getSession().put("houseInfo", houseInfo);

@@ -9,7 +9,7 @@
         <!--<property name="connection.url">jdbc:mysql://localhost:3306/tenement</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">nbuser</property>-->
+        <property name="connection.password">0221</property>-->
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/tenement</property>

@@ -20,7 +20,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
         <property name="username" value="root" />
-        <property name="password" value="nbuser" />
+        <property name="password" value="0221" />
 
     </bean>
 
@@ -129,7 +129,7 @@
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
     <bean id="house" class="model.House" />
-
+    <bean id="PageBean" class="model.PageBean"/>
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory">
@@ -180,6 +180,10 @@
     <bean id="keywordSearch" class="action.KeywordSearch" scope="prototype">
         <property name="searchService" ref="searchService" />
         <property name="condition" value="天通苑" />
+    </bean>
+    <bean id="conditionSearch" class="action.ConditionSearch" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="housing" value="House" />
     </bean>
     <bean id="houseInfo" class="action.GetHouseInfo" scope="prototype">
         <property name="searchService" ref="searchService" />

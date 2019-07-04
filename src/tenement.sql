@@ -21,7 +21,7 @@ USE `tenement` ;
 DROP TABLE IF EXISTS `user` ;
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `user_id` INT NOT NULL AUTO_INCREMENT,
   `password` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NULL COMMENT '真实姓名',
@@ -38,7 +38,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `city` ;
 
 CREATE TABLE IF NOT EXISTS `city` (
-  `id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
@@ -52,7 +52,7 @@ COMMENT = '一级地址';
 DROP TABLE IF EXISTS `district` ;
 
 CREATE TABLE IF NOT EXISTS `district` (
-  `district_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `district_id` INT NOT NULL AUTO_INCREMENT,
   `district_name` VARCHAR(20) NOT NULL,
   `city_id` INT NOT NULL,
   PRIMARY KEY (`district_id`),
@@ -72,7 +72,7 @@ COMMENT = '二级地址';
 DROP TABLE IF EXISTS `agent` ;
 
 CREATE TABLE IF NOT EXISTS `agent` (
-  `agent_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `agent_id` INT NOT NULL AUTO_INCREMENT,
   `telephone` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `plot` ;
 
 CREATE TABLE IF NOT EXISTS `plot` (
-  `plot_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `plot_id` INT NOT NULL AUTO_INCREMENT,
   `plot_name` VARCHAR(30) NOT NULL,
   `district_id` INT NOT NULL,
   `agent_id` INT NOT NULL,
@@ -114,7 +114,7 @@ COMMENT = '小区';
 DROP TABLE IF EXISTS `house` ;
 
 CREATE TABLE IF NOT EXISTS `house` (
-  `house_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `house_id` INT NOT NULL AUTO_INCREMENT,
   `landlord_id` INT NOT NULL,
   `plot_id` INT NOT NULL,
   `address` VARCHAR(45) NOT NULL,
@@ -147,7 +147,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `order` ;
 
 CREATE TABLE IF NOT EXISTS `order` (
-  `order_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `order_id` INT NOT NULL AUTO_INCREMENT,
   `order_stime` DATE NOT NULL,
   `landlord_id` INT NULL,
   `order_rent` INT UNSIGNED NOT NULL,
@@ -190,7 +190,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `administrator` ;
 
 CREATE TABLE IF NOT EXISTS `administrator` (
-  `administrator_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `administrator_id` INT NOT NULL AUTO_INCREMENT,
   `password` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(45) NOT NULL,
   `username` VARCHAR(45) NULL,
@@ -205,7 +205,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `discussion_section` ;
 
 CREATE TABLE IF NOT EXISTS `discussion_section` (
-  `message_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `message_id` INT NOT NULL AUTO_INCREMENT,
   `release_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `message` TEXT(200) NOT NULL,
   `author_id` INT NULL,
@@ -225,7 +225,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `log` ;
 
 CREATE TABLE IF NOT EXISTS `log` (
-  `log_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `log_id` INT NOT NULL AUTO_INCREMENT,
   `log` TEXT(200) NOT NULL,
   `record_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `author_id` INT NULL,
@@ -245,7 +245,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `feedback` ;
 
 CREATE TABLE IF NOT EXISTS `feedback` (
-  `feedback_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `feedback_id` INT NOT NULL AUTO_INCREMENT,
   `feedback` TEXT(200) NOT NULL,
   `feedback_iime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `author_id` INT NULL,
@@ -265,7 +265,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `landlord_apply_release` ;
 
 CREATE TABLE IF NOT EXISTS `landlord_apply_release` (
-  `apply_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `apply_id` INT NOT NULL AUTO_INCREMENT,
   `applyer_id` INT NOT NULL,
   `address` VARCHAR(45) NOT NULL,
   `expect_price` DOUBLE NOT NULL,
@@ -295,7 +295,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `house_picture` ;
 
 CREATE TABLE IF NOT EXISTS `house_picture` (
-  `picture_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `picture_id` INT NOT NULL AUTO_INCREMENT,
   `house_id` INT NOT NULL,
   `picture` BLOB NOT NULL,
   PRIMARY KEY (`picture_id`),
@@ -314,7 +314,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `facility` ;
 
 CREATE TABLE IF NOT EXISTS `facility` (
-  `facility_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `facility_id` INT NOT NULL AUTO_INCREMENT ,
   `facility` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`facility_id`))
 ENGINE = InnoDB
@@ -353,7 +353,7 @@ COMMENT = '租客租房关系表';
 DROP TABLE IF EXISTS `chat` ;
 
 CREATE TABLE IF NOT EXISTS `chat` (
-  `chat_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `chat_id` INT NOT NULL AUTO_INCREMENT,
   `sender_id` INT NOT NULL,
   `chat_message` TEXT(500) NOT NULL,
   `send_time` DATETIME NOT NULL,
@@ -406,7 +406,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `contract` ;
 
 CREATE TABLE IF NOT EXISTS `contract` (
-  `contract_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `contract_id` INT NOT NULL AUTO_INCREMENT ,
   `stime` DATE NOT NULL,
   `etime` DATE NOT NULL,
   `agent_id` INT NOT NULL,
