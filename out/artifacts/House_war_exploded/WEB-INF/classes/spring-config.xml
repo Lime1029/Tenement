@@ -142,6 +142,9 @@
     <bean id="searchDao" class="dao.impl.SearchDaoImpl">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+    <bean id = "agentShowDao" class="dao.impl.AgentShowDaoImpl">
+        <property  name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
     <!-- ServiceImpl -->
     <bean id="userService" class="service.impl.UserServiceImpl">
@@ -153,7 +156,9 @@
     <bean id="searchService" class="service.impl.SearchServiceImpl">
         <property name="searchDao" ref="searchDao" />
     </bean>
-
+    <bean id = "agentShowService" class="service.impl.AgentShowImpl">
+        <property name="agentShowDao" ref="agentShowDao"/>
+    </bean>
     <!-- registerAction -->
     <bean id="register" class="action.Register" scope="prototype">
         <property name="userService" ref="userService"/>
@@ -184,5 +189,8 @@
     <bean id="houseInfo" class="action.GetHouseInfo" scope="prototype">
         <property name="searchService" ref="searchService" />
         <property name="houseId" value="1" />
+    </bean>
+    <bean id ="getMyHouse" class="action.getMyHouse" scope="prototype">
+        <property name="agentShowService" ref="agentShowService"/>
     </bean>
 </beans>

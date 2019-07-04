@@ -21,6 +21,7 @@
         <mapping resource="model/Administrator.hbm.xml"/>
         <mapping class="model.Agent"/>
         <mapping resource="model/Agent.hbm.xml"/>
+
         <mapping class="model.Chat"/>
         <mapping resource="model/Chat.hbm.xml"/>
         <mapping class="model.City"/>

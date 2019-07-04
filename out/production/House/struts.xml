@@ -35,5 +35,13 @@
             <result name="success">/search/houseInfo.jsp</result>
             <result name="error">/search/fail.jsp</result>
         </action>
+<<<<<<< Updated upstream
+=======
+        <action name="conditionSearch" class="action.ConditionSearch">
+            <result name="success">/search/searchResult.jsp</result>
+            <result name="error">/search/fail.jsp</result>
+        </action>
+        
+>>>>>>> Stashed changes
     </package>
 </struts>
