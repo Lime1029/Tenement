@@ -66,6 +66,32 @@
         </div>
 
     </div>
-
+    <form id="form1" action="loadAgentChatRecord.action" method="post">
+        <input type="hidden" name="agentID" value="1000">
+        <input type="hidden" name="userID" value="1">
+    </form>
+    <button onclick="send()">我想订房</button>
+    <%--suppress JSUnresolvedLibraryURL --%>
+    <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
+    <script type="text/javascript">
+        var goeasy = new GoEasy({
+            appkey:'BC-a996257032c5470597d8213b461e44f3'
+        })
+        function send() {
+            goeasy.publish({
+                channel: 'agent_alert',
+                message: "用户1想看1号房",
+                onFailed: function (error) {
+                    alert(error.code+" : "+error.content);
+                },
+                onSuccess: function(){
+                   var reply = window.confirm("预约成功\n点击确认进入交流页面")
+                    if(reply){
+                        document.getElementById("form1").submit();
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

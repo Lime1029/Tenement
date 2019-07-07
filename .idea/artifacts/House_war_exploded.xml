@@ -9,11 +9,13 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="mysql-connector-java-8.0.16" />
-          <element id="library" level="project" name="Hibernate5.4.3" />
+          <element id="library" level="project" name="hibernate" />
           <element id="library" level="project" name="spring5.1.8" />
           <element id="library" level="project" name="struts2-2.5.20" />
           <element id="library" level="project" name="aspectjweaver-1.6.2" />
           <element id="library" level="project" name="junit4" />
+          <element id="library" level="project" name="c3p0-0.9.5.2" />
+          <element id="library" level="project" name="c3p0-0.9.5.3" />
         </element>
       </element>
     </root>

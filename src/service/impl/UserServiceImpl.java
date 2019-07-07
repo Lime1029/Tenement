@@ -7,6 +7,8 @@ import service.UserService;
 import model.User;
 import dao.UserDao;
 
+import java.util.List;
+
 @Service("UserService")// so that spring context can autodetect it and we can get its instance from the context
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
@@ -42,13 +44,14 @@ public class UserServiceImpl implements UserService {
         }
         else return null;
     }
-    public User getUserByLoginName(String username){
-        User user= userDao.findByLoginName(username);
-        if(user!=null){
-            return user;
-        }
-        else
-            return null;
+    public List<User> getUserByLoginName(String username){
+        List<User> users= userDao.findByName(username);
+        return users;
+    }
+    @Override
+    public User findUserByUserID(int userID){
+        User user = userDao.findUserByUserID(userID);
+        return user;
     }
     @Override
     public boolean save(User user){

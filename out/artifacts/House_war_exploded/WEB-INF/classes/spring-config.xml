@@ -20,7 +20,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
         <property name="username" value="root" />
-        <property name="password" value="nbuser" />
+        <property name="password" value="blair0706" />
 
     </bean>
 
@@ -128,6 +128,9 @@
     <bean id="user" class="model.User"/><!-- lazy-init="false"-->
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
+    <bean id="chat" class="model.Chat"/>
+    <bean id="order" class="model.Order"/>
+    <bean id="house" class="model.House"/>
 
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
@@ -139,6 +142,26 @@
         <property name="sessionFactory" ref="sessionFactory" />
         <property name="hibernateTemplate" ref="hibernateTemplate" />
     </bean>
+    <bean id="chatDao" class="dao.impl.ChatDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id="orderDao" class="dao.impl.OrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id="houseDao" class="dao.impl.HouseDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id="agentDao" class="dao.impl.AgentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
 
     <!-- ServiceImpl -->
     <bean id="userService" class="service.impl.UserServiceImpl">
@@ -146,6 +169,18 @@
     </bean>
     <bean id="adminService" class="service.impl.AdminServiceImpl">
         <property name="adminDao" ref="adminDao" />
+    </bean>
+    <bean id="chatService" class="service.impl.ChatServiceImpl">
+        <property name="chatDao" ref="chatDao" />
+    </bean>
+    <bean id="orderService" class="service.impl.OrderServiceImpl">
+        <property name="orderDao" ref="orderDao" />
+    </bean>
+    <bean id="houseService" class="service.impl.HouseServiceImpl">
+        <property name="houseDao" ref="houseDao"/>
+    </bean>
+    <bean id="agentService" class="service.impl.AgentServiceImpl">
+        <property name="agentDao" ref="agentDao"/>
     </bean>
 
     <!-- registerAction -->
@@ -169,5 +204,33 @@
     <!-- userDisplayAction -->
     <bean id="userDisplay" class="action.UserDisplay" scope="prototype">
         <property name="adminService" ref="adminService" />
+    </bean>
+    <bean id="saveChatRecord" class="action.SaveChatRecord" scope="prototype">
+        <property name="chatService" ref="chatService" />
+    </bean>
+    <bean id="getAllOrder" class="action.GetAllOrder" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="deleteOrder" class="action.DeleteOrder" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="getOrderDetail" class="action.GetOrderDetail" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+        <property name="houseService" ref="houseService"/>
+        <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="getOrderByOrderID" class="action.GetOrderByOrderID" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="searchAgent" class="action.SearchAgent" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+        <property name="agentService" ref="agentService"/>
+    </bean>
+    <bean id="getDateByDateRange" class="action.GetOrderByDateRange" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="searchOrderByUserInfo" class="action.SearchOrderByUserInfo" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+        <property name="userService" ref="userService"/>
     </bean>
 </beans>

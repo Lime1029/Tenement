@@ -27,5 +27,45 @@
             <result name="success">/admin/userDisplay.jsp</result>
             <result name="error">/admin/userDisplayFail.jsp</result>
         </action>
+        <action name="agentChat" class="action.AgentChat">
+            <result name="success">/agent/agent_chat.jsp</result>
+        </action>
+        <action name="saveChatRecord" class="action.SaveChatRecord">
+            <result name="success" type="stream">
+                <param name="contentType">text/html; charset=utf-8</param>
+                <param name="inputName">inputStream</param>
+            </result>
+        </action>
+        <action name="loadAgentChatRecord" class="action.LoadAgentChatRecord">
+            <result name="success">/user/user_chat.jsp</result>
+        </action>
+        <action name="getAllOrder" class="action.GetAllOrder">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="deleteOrder" class="action.DeleteOrder">
+            <result name="success" type="redirect">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="getOrderDetail" class="action.GetOrderDetail">
+            <result name="success">/admin/orderDetail.jsp</result>
+            <result name="error">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="getOrderByOrderID" class="action.GetOrderByOrderID">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="searchAgent" class="action.SearchAgent">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="error">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="getOrderByDateRange" class="action.GetOrderByDateRange">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="searchOrderByUserInfo" class="action.SearchOrderByUserInfo">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="error">/admin/orderDisplayFail.jsp</result>
+        </action>
     </package>
 </struts>

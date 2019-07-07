@@ -68,11 +68,19 @@ public class UserDaoImpl implements UserDao {
         return null;
     }
     @Override
-    public User findByLoginName(String username) {
-        List<User> users=findByProperty("loginName",username, "user");
-        if(users!=null&&users.size()==1)
-            return users.get(0);
-        return null;
+    public List<User> findByName(String username) {
+        List<User> users=findByProperty("name",username, "user");
+        return users;
+    }
+    @Override
+    public User findUserByUserID(int userID){
+        Session session =sessionFactory.getCurrentSession();
+        SQLQuery query= session.createSQLQuery("select * from user where user_id = "+userID);
+        query.addEntity(User.class);
+        List<User> users = query.list();
+        if (users == null)
+            return null;
+        return users.get(0);
     }
     public List findByProperty(String PropertyName,Object value, String role){
         Session session =sessionFactory.getCurrentSession();
