@@ -20,7 +20,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
         <property name="username" value="root" />
-        <property name="password" value="nbuser" />
+        <property name="password" value="0000" />
 
     </bean>
 
@@ -129,6 +129,7 @@
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
     <bean id="house" class="model.House" />
+    <bean id="order" class="model.Order"/>
 
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
@@ -142,8 +143,8 @@
     <bean id="searchDao" class="dao.impl.SearchDaoImpl">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-    <bean id = "agentShowDao" class="dao.impl.AgentShowDaoImpl">
-        <property  name="sessionFactory" ref="sessionFactory" />
+    <bean id="orderDao" class="dao.impl.OrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
     <!-- ServiceImpl -->
@@ -156,9 +157,10 @@
     <bean id="searchService" class="service.impl.SearchServiceImpl">
         <property name="searchDao" ref="searchDao" />
     </bean>
-    <bean id = "agentShowService" class="service.impl.AgentShowImpl">
-        <property name="agentShowDao" ref="agentShowDao"/>
+    <bean id="orderService" class="service.impl.OrderServiceImpl">
+        <property name="orderDao" ref="orderDao"/>
     </bean>
+
     <!-- registerAction -->
     <bean id="register" class="action.Register" scope="prototype">
         <property name="userService" ref="userService"/>
@@ -190,7 +192,12 @@
         <property name="searchService" ref="searchService" />
         <property name="houseId" value="1" />
     </bean>
-    <bean id ="getMyHouse" class="action.getMyHouse" scope="prototype">
-        <property name="agentShowService" ref="agentShowService"/>
+
+    <!--agent相关的action-->
+    <bean id="addOrder" class="action.AddOrder" scope="prototype">
+        <property name="orderService" ref="orderService" />
+    </bean>
+    <bean id="getMyOrder" class="action.GetMyOrder" scope="prototype">
+        <property name="orderService" ref="orderService"/>
     </bean>
 </beans>

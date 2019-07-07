@@ -35,13 +35,16 @@
             <result name="success">/search/houseInfo.jsp</result>
             <result name="error">/search/fail.jsp</result>
         </action>
-<<<<<<< Updated upstream
-=======
-        <action name="conditionSearch" class="action.ConditionSearch">
-            <result name="success">/search/searchResult.jsp</result>
-            <result name="error">/search/fail.jsp</result>
+
+        <!--添加订单action-->
+        <action name="addOrder" class="action.AddOrder">
+            <result name="success">/agent/agent_AddOrder.jsp</result>
+            <result name="error">/agent/agent_fail.jsp</result>
         </action>
-        
->>>>>>> Stashed changes
+        <!--查看我名下的订单action-->
+        <action name="getMyOrder" class="action.GetMyOrder">
+            <result name="success">/agent/agent_ManageOrder.jsp</result>
+            <result name="error">/agent/agent_fail.jsp</result>
+        </action>
     </package>
 </struts>

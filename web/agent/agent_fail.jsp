@@ -1,15 +1,14 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
-  User: sky
-  Date: 2019/7/4
-  Time: 14:56
+  User: KeepGoing
+  Date: 2019/7/7
+  Time: 14:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>经纪人端</title>
+    <title>ERROR</title>
     <!--经纪人端的登陆成功欢迎页面，没有什么功能所以也没有什么功能性代码，提供跳转-->
     <!--bootstrap及bootstrap-table的引用-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -27,9 +26,7 @@
 <!--假装有的装饰性TOP部分-->
 <div class="top">
     <div class="row">
-        <div class="col-md-2">
-            <!--h1 style="color: white">Hello,Agent!</h1-->
-        </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
@@ -42,45 +39,19 @@
             <nav class="navbar" style="background-color: aliceblue">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="agent_information.jsp" style="color: black">个人中心</a>
-                        <a class="nav-link" href="#" style="color: black">我的消息</a>
-                        <a class="nav-link" href="agent_upload_order.jsp" style="color: black">添加订单</a>
-                        <a class="nav-link" href="agent_manage_order.jsp" style="color: black">我管理的订单</a>
-                        <a class="nav-link" href="agent_houseinfo.jsp" style="color: black">我管理的房源</a>
+                        <a class="nav-link" href="#" style="color: black">个人资料</a>
+                        <a class="nav-link" href="../agent/" style="color: black">添加订单</a>
+                        <a class="nav-link" href="../agent/" style="color: black">我管理的订单</a>
                     </li>
                 </ul>
             </nav>
         </div>
         <!--导航栏End-->
 
-        <!--页面主体：欢迎页pic-->
+
+        <!--页面主体：操作错误页-->
         <div class="col-md-9">
-            <!--可替换部分-->
-            <s:iterator value="pageBean.list">
-            <s:property value="title"/>
-            <a href="getArticle.action?id=<s:property value="id"/>">modify</a>
-            <a href="deleteArticle.action?id=<s:property value="id"/>" onclick="return askDel()"/>delete</a><br/>
-            </s:iterator>
-            共<s:property value="pageBean.allRow"/> 条记录
-            共<s:property value="pageBean.totalPage"/> 页
-            当前第<s:property value="pageBean.currentPage"/>页<br/>
-
-            <s:if test="%{pageBean.currentPage == 1}">
-                第一页 上一页
-            </s:if>
-            <s:else>
-                <a href="listMyArticle.action?page=1">第一页</a>
-                <a href="listMyArticle.action?page=<s:property value="%{pageBean.currentPage-1}"/>">上一页</a>
-            </s:else>
-            <s:if test="%{pageBean.currentPage != pageBean.totalPage}">
-                <a href="listMyArticle.action?page=<s:property value="%{pageBean.currentPage+1}"/>">下一页</a>
-                <a href="listMyArticle.action?page=<s:property value="pageBean.totalPage"/>">最后一页</a>
-            </s:if>
-            <s:else>
-                下一页 最后一页
-            </s:else>
-
-
+            <a href="#" onClick="javascript :history.back(-1);">操作错误，点此链接返回上一页面</a>
         </div>
     </div>
 
