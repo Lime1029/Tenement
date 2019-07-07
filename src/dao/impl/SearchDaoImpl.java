@@ -66,16 +66,12 @@ public class SearchDaoImpl implements SearchDao {
               //String housing_description = housing.getHouseDescription();
             Session session = sessionFactory.getCurrentSession();
         //在这里多表查询时，记得属性要写清是哪个表的属性，否则判断不出就会出现空指针异常
-        String hql = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, Plot as p, " +
-                "District as d where h.plotId = p.plotId and p.districtId = d.districtId and h.state = 1" +
-                "and h.rent Between "+housing_leastrent +" AND "+housing_maxrent+
-                "and h,house_type  ="+housing_type+
-                " and (h.address like '%"+ housing_district+"%' or d.districtName like '%" + housing_district +"%')";
-        /**
-"select h.address, h.rent, h.house_description, h.house_Id  from House as h, "+
-        "Plot as p, District as d where h.plot_Id = p.plot_Id and p.district_id = d.district_id and "+
-        "h.plot_Id = "+housing_plot+" and p.district_id = "+housing.ge0 and h.state = 1 and h.rent Between 10.0  AND 1000.0 and h.house_type  = null  and (h.address like '% 天通苑 %' or d.district_Name like '% 天通苑 %');"
-     **/   Query<House> query = session.createQuery(hql);
+        String hql = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, "+
+        "Plot as p, District as d where h.plotId = p.plotId and p.districtId = d.districtId and "+
+        "h.plotId = "+housing_plot+" and p.districtId = "+housing_district+ " and  h.state = 1 and h.rent Between "+ housing_leastrent+"  AND "+housing_maxrent
+        +" and h.houseType  = "+ housing_type;
+            //    +" and (h.address like '% "+ condition+"%' or d.districtName like '%" + condition +"%')";
+        Query<House> query = session.createQuery(hql);
         List<House> houses = query.list();
 
 

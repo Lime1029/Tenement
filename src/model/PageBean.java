@@ -93,8 +93,13 @@ public class PageBean {
      * @return 当前页开始记录号
      */
     public static int countOffset(final int pageSize,final int currentPage){
-        final int offset = pageSize*(currentPage-1);
-        return offset;
+        if(currentPage!=0) {
+            final int offset = pageSize * (currentPage - 1);
+            return offset;
+        }
+        else {
+            return 0;
+        }
     }
 
     /** *//**

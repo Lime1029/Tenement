@@ -39,5 +39,14 @@
             <result name="success">/search/searchResult.jsp</result>
             <result name="error">/search/fail.jsp</result>
         </action>
+        <action name="getMyHouse" class="action.getMyHouse">
+            <result name="success">/agent/agentinfo.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
+        <action name="contractShow" class="action.contractShow">
+            <result name="success">/agent/agentContract.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
+
     </package>
 </struts>

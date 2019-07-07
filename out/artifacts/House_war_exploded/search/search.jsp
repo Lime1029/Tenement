@@ -104,16 +104,16 @@
                 <div >
                     <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">地区</a></li>
                     <div class="col-sm-4 radios">
-                        <input type="radio" name="housing.housing_district" value="东城"/>东城
+                        <input type="radio" name="housing_district" value="东城"/>东城
                     </div>
                     <div class="col-sm-4 radios">
-                        <input type="radio" name="housing.housing_district" value="西城"/>西城
+                        <input type="radio" name="housing_district" value="西城"/>西城
                     </div>
                     <div class="col-sm-4 radios">
-                        <input type="radio" name="housing.housing_district" value="朝阳"/>朝阳
+                        <input type="radio" name="housing_district" value="朝阳"/>朝阳
                     </div>
                     <div class="col-sm-4 radios">
-                        <input type="radio" name="housing.housing_district" value="海淀"/>海淀
+                        <input type="radio" name="housing_district" value="海淀"/>海淀
                     </div>
                 </div>
 
@@ -122,34 +122,34 @@
             <ul class="filter__ul" data-el="rentType">
                 <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">热门小区</a></li>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_plot" value="0"/>天通苑
+                    <input type="radio" name="housing_plot" value="0"/>天通苑
                 </div>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_plot" value="1"/>北邮
+                    <input type="radio" name="housing_plot" value="1"/>北邮
                 </div>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_plot" value="2"/>北师
+                    <input type="radio" name="housing_plot" value="2"/>北师
                 </div>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_plot" value="3"/>北大
+                    <input type="radio" name="housing_plot" value="3"/>北大
                 </div>
             </ul>
         <hr/>
-            <input type="search" placeholder="最高承受租金" class="form-control" name="housing.housing_maxrent">
+            <input type="search" placeholder="最高承受租金" class="form-control" name="housing_maxrent">
             <br>
-            <input type="search" placeholder="最低承受租金" class="form-control" name="housing.housing_leastrent">
+            <input type="search" placeholder="最低承受租金" class="form-control" name="housing_leastrent">
             <br>
         <hr/>
-            <ul class="filter__ul" data-el="housing.housing_type">
+            <ul class="filter__ul" data-el="housing_type">
                 <li class="filter__item--level5 filter__item--aside"><a href="javascript:;">户型</a></li>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_type" value="三室两厅一卫"/>三室两厅一卫
+                    <input type="radio" name="housing_type" value="三室两厅一卫"/>三室两厅一卫
                 </div>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_type" value="三室一厅一卫"/>三室一厅一卫
+                    <input type="radio" name="housing_type" value="三室一厅一卫"/>三室一厅一卫
                 </div>
                 <div class="col-sm-4 radios">
-                    <input type="radio" name="housing.housing_type" value=null/>无要求
+                    <input type="radio" name="housing_type" value=null/>无要求
                 </div>
             </ul>
 
