@@ -20,7 +20,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/tenement" />
         <property name="username" value="root" />
-        <property name="password" value="nbuser" />
+        <property name="password" value="bbcand117" />
 
     </bean>
 
@@ -129,6 +129,11 @@
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
     <bean id="house" class="model.House" />
+    <bean id="discussion" class="model.DiscussionSection" />
+    <bean id="landlordApplyRelease" class="model.LandlordApplyRelease"/>
+    <bean id="House" class="model.House" />
+
+
 
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
@@ -185,4 +190,27 @@
         <property name="searchService" ref="searchService" />
         <property name="houseId" value="1" />
     </bean>
+<<<<<<< Updated upstream
+=======
+
+    <bean id="messageSubmit" class="action.messageSubmit" scope="prototype">
+        <property name="discussionSection" ref="discussion" />
+        <property name="userService" ref="userService"/>
+        <property name="user" ref="user"/>
+
+    </bean>
+    <bean id="messageShow" class="action.messageShow" scope="prototype">
+        <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="houseSubmit" class="action.HouseSubmit" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="landlordApplyRelease" ref="landlordApplyRelease"/>
+    </bean>
+    <bean id="houseConfirm" class="action.HouseConfirm" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="house" ref="House"/>
+    </bean>
+
+
+>>>>>>> Stashed changes
 </beans>

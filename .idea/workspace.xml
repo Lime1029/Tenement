@@ -10,60 +10,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab2c191f-e31b-4e9b-aa49-218947924243" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jstl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/House_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/House_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/action/HouseConfirm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/action/HouseSubmit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/action/messageShow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/action/messageSubmit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/house submit/housing submit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/talk/talkAbord.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f18acc09-31fd-4dd5-86c4-5ba9ffd45269.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f18acc09-31fd-4dd5-86c4-5ba9ffd45269.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/House.iml" beforeDir="false" afterPath="$PROJECT_DIR$/House.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/AdminDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/AdminDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Administrator.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Administrator.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Agent.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/Agent.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/House.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/House.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/User.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/model/User.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/spring-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/tenement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/tenement.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/admin/userDisplay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/admin/userDisplay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/home/agent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/home/agent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/home/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/home/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/action/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/action/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/action/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/action/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/impl/AdminDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/impl/AdminDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/House/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/House/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/Administrator.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/Administrator.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/Agent.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/Agent.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/House.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/House.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/model/User.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/model/User.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/House/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/House/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/House/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/House/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/spring-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/House/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/tenement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/tenement.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/AdminDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/AdminDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/getMyHouse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Administrator.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Administrator.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Agent.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Agent.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/House.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/House.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/AgentShowImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tenement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/tenement.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/userDisplay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/userDisplay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/agent/agent_index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/agent/agentinfo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/home/agent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home/agent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/home/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home/user.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -104,7 +92,25 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="tenement@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="tenement: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="discussion_section: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tenement@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="tenement: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="house: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tenement@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="tenement: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="landlord_apply_release: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tenement@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="tenement: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="plot: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -115,32 +121,57 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3384">
               <caret line="188" selection-start-line="188" selection-end-line="188" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/action/plotShow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/action/GetHouseInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
               <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+=======
+        <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/OgnlRuntime.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="472" selection-start-line="472" selection-end-line="472" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/web/search/searchResult.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1638">
               <caret line="91" column="99" selection-start-line="91" selection-start-column="99" selection-end-line="91" selection-end-column="99" />
+=======
+        <entry file="file://$PROJECT_DIR$/web/house submit/housing submit.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4047">
+              <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dao/impl/SearchDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -151,11 +182,19 @@
                 <element signature="e#0#250#1" expanded="true" />
                 <element signature="e#0#298#1" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="193" selection-start-line="193" selection-end-line="193" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/model/HouseInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -171,11 +210,18 @@
                 <element signature="e#2722#2723#0" expanded="true" />
                 <element signature="e#2760#2761#0" expanded="true" />
               </folding>
+=======
+        <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/service/SearchService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -183,11 +229,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/service/impl/SearchServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
@@ -195,24 +248,55 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/interceptor/ExposeInvocationInterceptor.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/SearchDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
               <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/spring-tx-5.1.8.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="183" selection-start-line="183" selection-end-line="183" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/spring-tx-5.1.8.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionInterceptor.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/home/user.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1710">
               <caret line="95" column="92" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="92" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/house submit/agentSubmit.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -240,6 +324,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/web/registerLogin/loginFail.jsp" />
         <option value="$PROJECT_DIR$/web/registerLogin/regFail.jsp" />
         <option value="$PROJECT_DIR$/web/js/register.js" />
@@ -252,6 +337,8 @@
         <option value="$PROJECT_DIR$/web/registerLogin/register.jsp" />
         <option value="$PROJECT_DIR$/web/admin/userAdmin.jsp" />
         <option value="$PROJECT_DIR$/src/dao/AdminDao.java" />
+=======
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/service/AdminService.java" />
         <option value="$PROJECT_DIR$/web/home/admin.jsp" />
         <option value="$PROJECT_DIR$/web/admin/userDisplayFail.jsp" />
@@ -262,7 +349,6 @@
         <option value="$PROJECT_DIR$/src/model/HouseFacility.hbm.xml" />
         <option value="$PROJECT_DIR$/src/model/HouseApplyer.java" />
         <option value="$PROJECT_DIR$/src/model/HouseFacility.java" />
-        <option value="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f18acc09-31fd-4dd5-86c4-5ba9ffd45269/console_1.sql" />
         <option value="$PROJECT_DIR$/src/model/User.java" />
         <option value="$PROJECT_DIR$/src/model/Administrator.hbm.xml" />
@@ -271,7 +357,6 @@
         <option value="$PROJECT_DIR$/src/model/Agent.hbm.xml" />
         <option value="$PROJECT_DIR$/src/model/House.hbm.xml" />
         <option value="$PROJECT_DIR$/web/search/searchFail.jsp" />
-        <option value="$PROJECT_DIR$/web/home/user.jsp" />
         <option value="$PROJECT_DIR$/src/action/Register.java" />
         <option value="$PROJECT_DIR$/src/action/Login.java" />
         <option value="$PROJECT_DIR$/src/action/KeywordSearch.java" />
@@ -279,9 +364,7 @@
         <option value="$PROJECT_DIR$/web/search/houseInfo.jsp" />
         <option value="$PROJECT_DIR$/web/search/search.jsp" />
         <option value="$PROJECT_DIR$/src/dao/impl/AdminDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/model/House.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/spring-config.xml" />
         <option value="$PROJECT_DIR$/web/search/searchResult.jsp" />
         <option value="$PROJECT_DIR$/src/dao/SearchDao.java" />
@@ -291,6 +374,25 @@
         <option value="$PROJECT_DIR$/src/action/GetHouseInfo.java" />
         <option value="$PROJECT_DIR$/src/dao/impl/SearchDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/model/HouseInfo.java" />
+<<<<<<< Updated upstream
+=======
+        <option value="$PROJECT_DIR$/web/agent/agent_index.jsp" />
+        <option value="$PROJECT_DIR$/web/talk/talkAbord.jsp" />
+        <option value="$PROJECT_DIR$/web/home/agent.jsp" />
+        <option value="$PROJECT_DIR$/src/action/houseShow.java" />
+        <option value="$PROJECT_DIR$/src/action/HouseConfirm.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/action/HouseSubmit.java" />
+        <option value="$PROJECT_DIR$/src/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/action/plotShow.java" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/web/home/user.jsp" />
+        <option value="$PROJECT_DIR$/web/house submit/housing submit.jsp" />
+        <option value="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -348,15 +450,17 @@
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
+<<<<<<< Updated upstream
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
@@ -377,6 +481,15 @@
             <path>
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="Tenement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tenement" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tenement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tenement" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -384,23 +497,53 @@
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="myCenter" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="house submit" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="registerLogin" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="House" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="search" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="House" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+=======
+              <item name="myCenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tenement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tenement" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="registerLogin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tenement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tenement" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tenement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tenement" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="talk" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
           </expand>
           <select />
@@ -434,14 +577,27 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="model" />
     </key>
+<<<<<<< Updated upstream
+=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lime\Desktop\House\web\registerLogin" />
+      <recent name="C:\Users\Lime\Desktop\House\web" />
+    </key>
+>>>>>>> Stashed changes
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="model" />
       <recent name="" />
       <recent name="entity" />
     </key>
+<<<<<<< Updated upstream
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lime\Desktop\House\web\registerLogin" />
       <recent name="C:\Users\Lime\Desktop\House\web" />
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KeepGoing\Desktop\Tenement\Tenement\web\images" />
+      <recent name="C:\Users\KeepGoing\Desktop\Tenement\Tenement\web\agent" />
+>>>>>>> Stashed changes
     </key>
   </component>
   <component name="RunDashboard">
@@ -472,7 +628,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.20" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.20" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.20" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.19" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -639,6 +795,8 @@
       <workItem from="1561939179908" duration="36262000" />
       <workItem from="1562030890884" duration="34249000" />
       <workItem from="1562111625723" duration="388000" />
+      <workItem from="1562544738955" duration="13120000" />
+      <workItem from="1562568195604" duration="5980000" />
     </task>
     <servers />
   </component>
@@ -651,7 +809,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="171404000" />
+=======
+    <option name="totallyTimeSpent" value="207176000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,10 +825,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4925926" visible="true" weight="0.16923077" />
+=======
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4925926" visible="true" weight="0.17590618" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -677,19 +846,23 @@
       <window_info id="Persistence" order="8" sideWeight="0.5074074" side_tool="true" weight="0.2672065" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" weight="0.56666666" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49635628" weight="0.4425926" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.87366736" visible="true" weight="0.29826465" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48987207" weight="0.44251627" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32962963" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.502834" side_tool="true" weight="0.31851852" />
+=======
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12633263" side_tool="true" visible="true" weight="0.29826465" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32962963" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32962963" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49716598" weight="0.31851852" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.478145" weight="0.3177874" />
       <window_info anchor="bottom" id="Spring" order="15" weight="0.32962963" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.32962963" />
       <window_info anchor="bottom" id="SQL Generator" order="17" weight="0.32962963" />
@@ -700,7 +873,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.2340081" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.23347548" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32955465" />
@@ -709,7 +882,182 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>185</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseSubmit.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/house submit/agentSubmit.jsp</url>
+          <line>162</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>142</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>144</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>132</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>134</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>135</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/HouseConfirm.java</url>
+          <line>137</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>226</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>225</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/plotShow.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/plotShow.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/action/plotShow.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/service/impl/UserServiceImpl.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/service/impl/UserServiceImpl.java</url>
+          <line>91</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>200</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>201</line>
+          <properties />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>202</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>203</line>
+          <properties />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="house.rent" />
+        <watch expression="house.rent" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/model/HouseApplyerPK.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -806,12 +1154,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Administrator.java">
+=======
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/factory/StrutsActionProxy.class">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
+        <state relative-caret-position="164">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/model/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -820,19 +1172,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Agent.hbm.xml">
+=======
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/dispatcher/Dispatcher.class">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="145">
+          <caret line="460" selection-start-line="460" selection-end-line="460" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/House.hbm.xml">
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/dispatcher/ExecuteOperations.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        <state relative-caret-position="336">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-882">
@@ -854,39 +1210,41 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/search/fail.jsp">
+=======
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/dispatcher/filter/StrutsPrepareAndExecuteFilter.class">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="145">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/spring-tx-5.1.8.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="54" column="283" selection-start-line="54" selection-start-column="283" selection-end-line="54" selection-end-column="283" />
+        <state relative-caret-position="227">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/Register.java">
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/ognl/OgnlUtil.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="106" column="9" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+        <state relative-caret-position="145">
+          <caret line="327" selection-start-line="327" selection-end-line="327" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#12788#12974#0" expanded="true" />
+            <element signature="e#12973#12974#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/Login.java">
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/interceptor/debugging/DebuggingInterceptor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="jar://D:/asoftware/java/jdk1.8.0_191/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -895,22 +1253,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/admin/userDisplay.jsp">
+=======
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/interceptor/DefaultWorkflowInterceptor.class">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/search/houseInfo.jsp">
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/validator/ValidationInterceptor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="279">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/service/impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -922,18 +1281,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/impl/AdminDaoImpl.java">
+=======
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/interceptor/validation/AnnotationValidationInterceptor.class">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#44#1" expanded="true" />
-            <element signature="e#1338#1339#0" expanded="true" />
-            <element signature="e#1365#1366#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="399">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/web/home/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -942,124 +1299,132 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/action/KeywordSearch.java">
+=======
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/interceptor/ConversionErrorInterceptor.class">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="279">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/interceptor/ParametersInterceptor.class">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="430">
           <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+=======
+        <state relative-caret-position="162">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/House.java">
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/interceptor/MethodFilterInterceptor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/administrator">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/interceptor/StaticParametersInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/district">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/interceptor/MultiselectInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/city">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/DefaultActionInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/agent">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/org/apache/struts2/interceptor/DateTextFieldInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.3.Final.jar!/org/hibernate/SQLQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/plot">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="file://$PROJECT_DIR$/web/home/agent.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="208" column="44" selection-start-line="208" selection-start-column="44" selection-end-line="208" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/messageSubmit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/house">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="08a6faca-ebef-4316-bcf5-57e0e80a641d">
+        <state projectRestartId="4de07086-013a-430c-b04b-5451ba1508ec">
           <filtering>
             <filter text="" />
           </filtering>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/OgnlRuntime.class">
+    <entry file="file://$PROJECT_DIR$/src/action/HouseConfirm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="157" column="277" selection-start-line="157" selection-start-column="277" selection-end-line="157" selection-end-column="277" />
+        <state relative-caret-position="526">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.3.Final.jar!/org/hibernate/query/Query.class">
+    <entry file="file://$PROJECT_DIR$/src/action/houseShow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state>
+          <caret selection-end-line="37" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+    <entry file="file://$PROJECT_DIR$/src/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="40" column="212" selection-start-line="40" selection-start-column="212" selection-end-line="40" selection-end-column="212" />
+        <state relative-caret-position="323">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
+    <entry file="file://$PROJECT_DIR$/src/service/AdminService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="3384">
           <caret line="188" selection-start-line="188" selection-end-line="188" />
         </state>
@@ -1076,29 +1441,118 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1638">
           <caret line="91" column="99" selection-start-line="91" selection-start-column="99" selection-end-line="91" selection-end-column="99" />
+=======
+        <state relative-caret-position="76">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/SearchService.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/messageShow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/ObjectMethodAccessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/ognl/accessor/XWorkMethodAccessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/ASTMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/SimpleNode.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/Ognl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/HouseSubmit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/talk/talkAbord.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="73" column="55" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="55" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="126">
           <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="153">
+          <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/SearchServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="432">
           <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+=======
+        <state relative-caret-position="371">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/dao/SearchDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1128,11 +1582,35 @@
             <element signature="e#2722#2723#0" expanded="true" />
             <element signature="e#2760#2761#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/SearchDaoImpl.java">
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-tx-5.1.8.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-tx-5.1.8.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="226">
           <caret line="42" column="48" lean-forward="true" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
           <folding>
@@ -1143,6 +1621,65 @@
         </state>
       </provider>
     </entry>
+=======
+        <state relative-caret-position="162">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/interceptor/ExposeInvocationInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/plotShow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/OgnlRuntime.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="472" selection-start-line="472" selection-end-line="472" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house submit/housing submit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4047">
+          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house submit/agentSubmit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Stashed changes
   </component>
   <component name="masterDetails">
     <states>

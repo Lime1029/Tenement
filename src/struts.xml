@@ -35,5 +35,38 @@
             <result name="success">/search/houseInfo.jsp</result>
             <result name="error">/search/fail.jsp</result>
         </action>
+<<<<<<< Updated upstream
+=======
+        <action name="houseSubmit" class="action.HouseSubmit">
+            <result name="success">/home/user.jsp</result>
+            <result name="error">/house submit/housing submit.jsp</result>
+            <result name="none">/house submit/housing submit.jsp</result>
+        </action>
+        <action name="houseConfirm" class="action.HouseConfirm" >
+            <result name="success" type="redirect">/home/agent.jsp</result>
+            <result name="error">/house submit/agentSubmit.jsp</result>
+            <result name="none">/house submit/agentSubmit.jsp</result>
+        </action>
+        <action name="messageSubmit" class="action.messageSubmit">
+            <result name="success" type="redirect">messageShow.action</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="messageShow" class="action.messageShow">
+            <result name="success">/talk/talkAbord.jsp</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="houseShow" class="action.houseShow" method="getPlot_id">
+            <result name="success">/house submit/agentSubmit.jsp</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="plotGet" class="action.plotShow" method="getPlot">
+            <result name="success">/house submit/housing submit.jsp</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+>>>>>>> Stashed changes
     </package>
 </struts>

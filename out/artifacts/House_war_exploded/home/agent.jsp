@@ -11,6 +11,9 @@
     <title>agent home</title>
 </head>
 <body>
+<li>
+    <a href="houseShow.action">确认房源</a>
+</li>
 
 </body>
 </html>

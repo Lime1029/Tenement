@@ -1,11 +1,13 @@
 package service.impl;
 
-import model.Administrator;
-import model.Agent;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import model.*;
 import org.springframework.stereotype.Service;
 import service.UserService;
-import model.User;
 import dao.UserDao;
+
+import java.util.List;
 
 @Service("UserService")// so that spring context can autodetect it and we can get its instance from the context
 public class UserServiceImpl implements UserService {
@@ -55,6 +57,12 @@ public class UserServiceImpl implements UserService {
         return  userDao.save(user);
     }
     @Override
+    public boolean savehouse(LandlordApplyRelease landlordApplyRelease){
+            return  userDao.savehouse(landlordApplyRelease);
+    }
+    @Override
+    public boolean messageSubmit(DiscussionSection discussionSection){return userDao.messageSubmit(discussionSection);}
+    @Override
     public boolean modifyUser(User newuser) {
         // TODO Auto-generated method stub
         return false;
@@ -64,4 +72,47 @@ public class UserServiceImpl implements UserService {
         // TODO Auto-generated method stub
         return false;
     }
+    @Override
+    public List messageSave()
+    {
+        List list = userDao.getNotice();
+        ActionContext.getContext().getSession().put("message",list);
+        return  list;
+    }
+
+    @Override
+    public void plotSave() {
+        List list = userDao.getPlot();
+        ActionContext.getContext().getSession().put("plot",list);
+
+    }
+    @Override
+    public void plotGet() {
+        List list = userDao.plotGet();
+        ActionContext.getContext().getSession().put("userplot",list);
+
+    }
+
+    public void houseSave(String phone)
+    {
+        Integer user_id = userDao.getHouse_userid(phone);
+
+        ActionContext.getContext().getSession().put("house_userid",user_id);
+
+        Integer landlord_id = userDao.getHouse_userid(phone);
+
+
+    }
+    @Override
+    public boolean confirmHouse(House house,String phone)
+    {
+        return  userDao.confirmHouse(house,phone);
+
+
+
+    }
+
+
+
+
 }

@@ -71,8 +71,12 @@
                                 <a href="">租房</a>
                             </li>
                             <li>
-                                <a href="">发布房源</a>
+                                <a href="plotGet.action">发布房源</a>
                             </li>
+                            <li>
+                                <a href="messageShow.action">讨论版</a>
+                            </li>
+
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
