@@ -84,6 +84,7 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     <c:forEach items="${sessionScope.aaaa}" var="contract">
                         <tr class="text-center">
                             <td>${contract[0]}</td>
@@ -94,7 +95,7 @@
                             <td>${contract[5]}</td>
                             <td>${contract[6]}</td>
                             <td>
-                                <a href="#" onclick="return edit(${contract[0]})" style="text-decoration: none;">
+                                <a href="Endcontract.action?contractID=${contract[0]}"  style="text-decoration: none;">
                                     <span class="fa fa-edit fa-fw"></span>
                                 </a>
                             </td>
@@ -102,6 +103,7 @@
 
 
                     </c:forEach>
+
                     </tbody>
                 </table>
             </div>

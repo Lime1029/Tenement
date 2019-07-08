@@ -51,5 +51,9 @@
             <result name="success">/agent/agentContract.jsp</result>
             <result name="error">/agent/agentfail.jsp</result>
         </action>
+        <action name="updateHouse" class="action.UpdateHouse">
+            <result name="success">/agent/agentinfo.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
     </package>
 </struts>

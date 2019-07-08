@@ -68,8 +68,8 @@ public class SearchDaoImpl implements SearchDao {
         //在这里多表查询时，记得属性要写清是哪个表的属性，否则判断不出就会出现空指针异常
         String hql = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, "+
         "Plot as p, District as d where h.plotId = p.plotId and p.districtId = d.districtId and "+
-        "h.plotId = "+housing_plot+" and p.districtId = "+housing_district+ " and  h.state = 1 and h.rent Between "+ housing_leastrent+"  AND "+housing_maxrent
-        +" and h.houseType  = "+ housing_type;
+        "h.plotId = "+housing_plot+" and p.districtId = ' "+housing_district+ " ' and  h.state = 1 and h.rent Between "+ housing_leastrent+"  AND "+housing_maxrent
+        +" and h.houseType  = ' "+ housing_type +" ' ";
             //    +" and (h.address like '% "+ condition+"%' or d.districtName like '%" + condition +"%')";
         Query<House> query = session.createQuery(hql);
         List<House> houses = query.list();

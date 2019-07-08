@@ -131,7 +131,23 @@ public class House {
     public void setReleaseTime(Timestamp releaseTime) {
         this.releaseTime = releaseTime;
     }
+    public House(){
 
+    }
+    public House(int houseId,int landlordId,int plotId,String address,double rent,int state,String houseType,String floor,Double area,String houseDescription){
+        super();
+        this.houseId = houseId;
+        this.landlordId = landlordId;
+        this.plotId = plotId;
+        this.address = address;
+        this.rent =rent;
+        this.state = state;
+        this.houseDescription = houseDescription;
+        this.houseType = houseType;
+        this.floor = floor;
+        this.area = area;
+
+    }
 
     @Override
     public boolean equals(Object o) {

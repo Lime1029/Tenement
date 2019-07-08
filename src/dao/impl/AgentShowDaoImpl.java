@@ -22,7 +22,7 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
          * @param offset 开始记录
          * @param length 一次查询几条记录
          * @return
-         */
+         **/
 
     @Transactional
         public List queryForPage(final int offset,final int length){
@@ -88,9 +88,10 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
     }
 
     @Override
+    @Transactional
     public int endContract(int contractID) {
         Session session = getSessionFactory().getCurrentSession();
-        String hql = "update House h,Contract c set h.state = 1 where c.houseId = h.houseId and c.id = " + contractID;
+        String hql = "update house h , house_applyer ha , contract c set h.state = 1 , ha.isSellOn = 1 where c.house_id = h.house_id and c.house_id = ha.house_id and ha.isSellOn = 0 and c.contract_id = "+contractID;
         Query query = session.createQuery(hql);
         query.executeUpdate();
         return 1;

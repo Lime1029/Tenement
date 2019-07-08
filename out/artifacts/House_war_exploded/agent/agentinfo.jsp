@@ -71,6 +71,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                     <tr>
+                        <th style="text-align: center;">房源ID</th>
                         <th style="text-align: center;">所在小区</th>
                         <th style="text-align: center;">所在地区</th>
                         <th style="text-align: center;">房东姓名</th>
@@ -80,27 +81,56 @@
                         <th style="text-align: center;">楼层</th>
                         <th style="text-align: center;">面积</th>
                         <th style="text-align: center;">额外描述</th>
-                        <th style="text-align: center;">所属经纪人</th>
-                        <th style="text-align: center;">房源ID</th>
+                        <th style="text-align: center;">经纪人ID</th>
+                        <th style="text-align: center;">提交修改</th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${sessionScope.aaaa}" var="houses">
                         <tr class="text-center">
-                            <td>${houses[0]}</td>
-                            <td>${houses[1]}</td>
-                            <td>${houses[2]}</td>
-                            <td>${houses[3]}</td>
-                            <td>${houses[4]}</td>
-                            <td>${houses[5]}</td>
-                            <td>${houses[6]}</td>
-                            <td>${houses[7]}</td>
-                            <td>${houses[8]}</td>
-                            <td>${houses[9]}</td>
-                            <td>${houses[10]}</td>
-                            <td>
+                            <script>
+                                $(function() {
+                                    $(":text").focus(function() {
+                                        $(this).css('border-color', '#0f0');
+                                    }).blur(function() {
+                                        $(this).css('border-color', '');
+                                    })
+                                });
+                            </script>
+                            <s:form role="form" id="updateHouseInfo" action="updateHouse">
+                                <!--
+                            <td> <div name = "plotname" value=${houses[0]}  style="width:130px;" /></td>
+                            <td><input name = "districtname" value=${houses[1]} style="width:130px;"/></td>
+                            <td><input name = "landlordName" value=${houses[2]}  style="width:130px;"/></td>
+                            <td><input name = "address" value=${houses[3]}  style="width:130px;"/></td>
+                            <td><input name = "rent" value=${houses[4]}  style="width:80px;"/></td>
+                            <td><input name = "housetype" value=${houses[5]}  style="width:80px;"/></td>
+                            <td><input name = "floor" value=${houses[6]} style="width:80px;"/></td>
+                            <td><input name = "area" value=${houses[7]}  style="width:80px;"/></td>
+                            <td><input name = "housedescription" value=${houses[8]}  style="width:130px;"/></td>
+                            <td><input name = "agentId" value=${houses[9]}  style="width:130px;"/></td>
+                            <td><input name = "houseID" value=${houses[10]}  style="width:130px;"/></td>
+                            !-->
+                                <td  style="width:130px;" >${houses[10]}</td>
+                                <td  style="width:130px;" >${houses[0]}</td>
+                                <td style="width:130px;">${houses[1]}</td>
+                                <td style="width:130px;">${houses[2]}</td>
+                                <td style="width:130px;">${houses[3]}</td>
+                                <td style="width:80px;">${houses[4]}</td>
+                                <td style="width:80px;">${houses[5]}</td>
+                                <td style="width:80px;">${houses[6]}</td>
+                                <td style="width:130px;">${houses[7]}</td>
+                                <td style="width:130px;">${houses[8]}</td>
+                                <td style="width:130px;">${houses[9]}</td>
+                                <td>
+                                    <input type="button" value="修改" data-target="#modifyHouse" onclick="edit(this)" data-toggle="modal"
+                                       style="color: #fff;width: 70px;height: 30px;
+                                       background: rgb(86,132,190);border-radius: 3px;border:none;">
+
                             </td>
+                            </s:form>
                         </tr>
+
                     </c:forEach>
                     </tbody>
                 </table>
@@ -131,5 +161,90 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-table@1.15.2/dist/bootstrap-table.min.js"></script>
+
+
+
+<div id="modifyHouse" class="modal hide fade in" style="display: none; >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-title">
+                <h1 class="text-center">修改房源信息</h1>
+            </div>
+            <div class="modal-body">
+                <form class="form-group" action="updateHouse.action" method="post">
+                    <div class="form-group">
+                        <label>房源ID</label>
+                        <input class="form-control" type="text" placeholder="" name="houseId" id="houseId" readonly>
+                        <input hidden name="houseId" id="houseId1">
+                    </div>
+                    <div class="form-group">
+                        <label>小区名字</label>
+                        <input class="form-control" type="text" placeholder="" name="plotName" id="plotName">
+                    </div>
+                    <div class="form-group">
+                        <label>房东姓名</label>
+                        <input class="form-control" type="text" placeholder="" name="landlordName" id="landlordName">
+                    </div>
+                    <div class="form-group">
+                        <label>详细地址</label>
+                        <input class="form-control" type="text" placeholder="" name="address" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label>租金</label>
+                        <input class="form-control" type="text" placeholder="" name="rent" id="rent">
+                    </div>
+                    <div class="form-group">
+                        <label>类别</label>
+                        <input class="form-control" type="text" placeholder="" name="housetype" id="districtName">
+                    </div>
+                    <div class="form-group">
+                        <label>楼层</label>
+                        <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                    </div>
+                    <div class="form-group">
+                        <label>面积</label>
+                        <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                    </div>
+                    <div class="form-group">
+                        <label>额外描述</label>
+                        <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                    </div>
+                    <div class="col-sm-4 tips"></div>
+
+
+                    <div class="text-right">
+                        <button class="btn btn-primary" type="submit">提交</button>
+                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function edit(obj){
+        var id = $(obj).parent().parent().find('td')[0];
+        var houseId = $(id).text();
+        $('#houseId').val(houseId);
+        $('#houseId1').val(houseId);
+
+        var name = $(obj).parent().parent().find('td')[1];
+        var districtName = $(name).text();
+        $('#districtName').val(districtName);
+
+        var city = $(obj).parent().parent().find('td')[2];
+        var cityId = $(city).text();
+
+
+
+
+    }
+
+</script>
 </body>
 </html>
