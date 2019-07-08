@@ -15,6 +15,7 @@
           <fileset id="s2fileset" name="Default File Set" removed="false">
             <file>file://$MODULE_DIR$/src/struts.xml</file>
             <file>jar://$MODULE_DIR$/lib/struts2-core-2.5.20.jar!/struts-default.xml</file>
+            <file>jar://$MODULE_DIR$/lib/struts2-json-plugin-2.5.20.jar!/struts-plugin.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -49,8 +50,13 @@
     <orderEntry type="library" name="Hibernate5.4.3" level="project" />
     <orderEntry type="library" name="spring5.1.8" level="project" />
     <orderEntry type="library" name="struts2-2.5.20" level="project" />
-    <orderEntry type="library" name="aspectjweaver-1.6.2" level="project" />
-    <orderEntry type="library" name="junit4" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
+    <orderEntry type="library" name="javax.servlet.jsp:javax.servlet.jsp-api:2.3.3" level="project" />
+    <orderEntry type="library" name="javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="json" level="project" />
+    <orderEntry type="library" name="org.apache.struts:struts2-json-plugin:2.5.20" level="project" />
+    <orderEntry type="library" name="junit4" level="project" />
+    <orderEntry type="library" name="aspectweaver" level="project" />
+    <orderEntry type="library" name="log4j-1.2-api-2.12.0" level="project" />
   </component>
 </module>

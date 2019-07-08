@@ -17,6 +17,7 @@ public class Contract {
     private int lanlordId;
     private int houseId;
 
+
     @Id
     @Column(name = "contract_id")
     public int getContractId() {
@@ -47,8 +48,7 @@ public class Contract {
         this.etime = etime;
     }
 
-    @Basic
-    @Column(name = "agent_id")
+
     public int getAgentId() {
         return agentId;
     }
@@ -67,8 +67,7 @@ public class Contract {
         this.tenantId = tenantId;
     }
 
-    @Basic
-    @Column(name = "lanlord_id")
+
     public int getLanlordId() {
         return lanlordId;
     }

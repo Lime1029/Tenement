@@ -8,9 +8,7 @@
         <id name="contractId" column="contract_id"/>
         <property name="stime" column="stime"/>
         <property name="etime" column="etime"/>
-        <property name="agentId" column="agent_id"/>
         <property name="tenantId" column="tenant_id"/>
-        <property name="lanlordId" column="lanlord_id"/>
         <property name="houseId" column="house_id"/>
     </class>
 </hibernate-mapping>

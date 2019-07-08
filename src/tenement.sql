@@ -21,7 +21,7 @@ USE `tenement` ;
 DROP TABLE IF EXISTS `user` ;
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `user_id` INT NOT NULL AUTO_INCREMENT,
   `password` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NULL COMMENT '真实姓名',
@@ -38,7 +38,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `city` ;
 
 CREATE TABLE IF NOT EXISTS `city` (
-  `id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
@@ -52,7 +52,7 @@ COMMENT = '一级地址';
 DROP TABLE IF EXISTS `district` ;
 
 CREATE TABLE IF NOT EXISTS `district` (
-  `district_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `district_id` INT NOT NULL AUTO_INCREMENT,
   `district_name` VARCHAR(20) NOT NULL,
   `city_id` INT NOT NULL,
   PRIMARY KEY (`district_id`),
@@ -72,7 +72,7 @@ COMMENT = '二级地址';
 DROP TABLE IF EXISTS `agent` ;
 
 CREATE TABLE IF NOT EXISTS `agent` (
-  `agent_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `agent_id` INT NOT NULL AUTO_INCREMENT,
   `telephone` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `plot` ;
 
 CREATE TABLE IF NOT EXISTS `plot` (
-  `plot_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `plot_id` INT NOT NULL AUTO_INCREMENT,
   `plot_name` VARCHAR(30) NOT NULL,
   `district_id` INT NOT NULL,
   `agent_id` INT NOT NULL,
@@ -114,7 +114,7 @@ COMMENT = '小区';
 DROP TABLE IF EXISTS `house` ;
 
 CREATE TABLE IF NOT EXISTS `house` (
-  `house_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `house_id` INT NOT NULL AUTO_INCREMENT,
   `landlord_id` INT NOT NULL,
   `plot_id` INT NOT NULL,
   `address` VARCHAR(45) NOT NULL,
@@ -147,30 +147,16 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `order` ;
 
 CREATE TABLE IF NOT EXISTS `order` (
-  `order_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `order_id` INT NOT NULL AUTO_INCREMENT,
   `order_stime` DATE NOT NULL,
-  `landlord_id` INT NULL,
   `order_rent` INT UNSIGNED NOT NULL,
   `order_status` TINYINT NOT NULL DEFAULT 0 COMMENT '0表示未支付，1表示已支付',
-  `agent_id` INT NOT NULL,
   `order_etime` DATE NOT NULL,
   `applyer_id` INT NOT NULL,
   `house_id` INT NOT NULL,
   PRIMARY KEY (`order_id`),
-  INDEX `fk_order_user2_idx` (`landlord_id` ASC),
-  INDEX `fk_order_agent1_idx` (`agent_id` ASC),
   INDEX `fk_order_user1_idx` (`applyer_id` ASC),
   INDEX `fk_order_house1_idx` (`house_id` ASC),
-  CONSTRAINT `fk_order_user2`
-    FOREIGN KEY (`landlord_id`)
-    REFERENCES `user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_order_agent1`
-    FOREIGN KEY (`agent_id`)
-    REFERENCES `agent` (`agent_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_user1`
     FOREIGN KEY (`applyer_id`)
     REFERENCES `user` (`user_id`)
@@ -190,7 +176,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `administrator` ;
 
 CREATE TABLE IF NOT EXISTS `administrator` (
-  `administrator_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `administrator_id` INT NOT NULL AUTO_INCREMENT,
   `password` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(45) NOT NULL,
   `username` VARCHAR(45) NULL,
@@ -205,7 +191,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `discussion_section` ;
 
 CREATE TABLE IF NOT EXISTS `discussion_section` (
-  `message_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `message_id` INT NOT NULL AUTO_INCREMENT,
   `release_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `message` TEXT(200) NOT NULL,
   `author_id` INT NULL,
@@ -225,7 +211,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `log` ;
 
 CREATE TABLE IF NOT EXISTS `log` (
-  `log_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `log_id` INT NOT NULL AUTO_INCREMENT,
   `log` TEXT(200) NOT NULL,
   `record_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `author_id` INT NULL,
@@ -245,7 +231,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `feedback` ;
 
 CREATE TABLE IF NOT EXISTS `feedback` (
-  `feedback_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `feedback_id` INT NOT NULL AUTO_INCREMENT,
   `feedback` TEXT(200) NOT NULL,
   `feedback_iime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `author_id` INT NULL,
@@ -265,13 +251,13 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `landlord_apply_release` ;
 
 CREATE TABLE IF NOT EXISTS `landlord_apply_release` (
-  `apply_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `apply_id` INT NOT NULL AUTO_INCREMENT,
   `applyer_id` INT NOT NULL,
   `address` VARCHAR(45) NOT NULL,
   `expect_price` DOUBLE NOT NULL,
   `applyer_phone` VARCHAR(45) NOT NULL,
   `applyer_appellation` VARCHAR(15) NOT NULL COMMENT '如何称呼房源发布者',
-  `apply_time` TIMESTAMP NOT NULL,
+  `apply_time` TIMESTAMP NOT NULL default current_timestamp,
   `plot_id` INT NOT NULL,
   PRIMARY KEY (`apply_id`),
   INDEX `fk_house_releasing_user1_idx` (`applyer_id` ASC),
@@ -295,7 +281,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `house_picture` ;
 
 CREATE TABLE IF NOT EXISTS `house_picture` (
-  `picture_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `picture_id` INT NOT NULL AUTO_INCREMENT,
   `house_id` INT NOT NULL,
   `picture` BLOB NOT NULL,
   PRIMARY KEY (`picture_id`),
@@ -314,7 +300,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `facility` ;
 
 CREATE TABLE IF NOT EXISTS `facility` (
-  `facility_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `facility_id` INT NOT NULL AUTO_INCREMENT,
   `facility` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`facility_id`))
 ENGINE = InnoDB
@@ -353,7 +339,7 @@ COMMENT = '租客租房关系表';
 DROP TABLE IF EXISTS `chat` ;
 
 CREATE TABLE IF NOT EXISTS `chat` (
-  `chat_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `chat_id` INT NOT NULL AUTO_INCREMENT,
   `sender_id` INT NOT NULL,
   `chat_message` TEXT(500) NOT NULL,
   `send_time` DATETIME NOT NULL,
@@ -406,30 +392,16 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `contract` ;
 
 CREATE TABLE IF NOT EXISTS `contract` (
-  `contract_id` INT NOT NULL AUTO_INCREMENT DEFAULT 1,
+  `contract_id` INT NOT NULL AUTO_INCREMENT,
   `stime` DATE NOT NULL,
   `etime` DATE NOT NULL,
-  `agent_id` INT NOT NULL,
   `tenant_id` INT NOT NULL,
-  `lanlord_id` INT NOT NULL,
   `house_id` INT NOT NULL,
   PRIMARY KEY (`contract_id`),
-  INDEX `fk_contract_agent1_idx` (`agent_id` ASC),
   INDEX `fk_contract_user1_idx` (`tenant_id` ASC),
-  INDEX `fk_contract_user2_idx` (`lanlord_id` ASC),
   INDEX `fk_contract_house1_idx` (`house_id` ASC),
-  CONSTRAINT `fk_contract_agent1`
-    FOREIGN KEY (`agent_id`)
-    REFERENCES `agent` (`agent_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_contract_user1`
     FOREIGN KEY (`tenant_id`)
-    REFERENCES `user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_contract_user2`
-    FOREIGN KEY (`lanlord_id`)
     REFERENCES `user` (`user_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,

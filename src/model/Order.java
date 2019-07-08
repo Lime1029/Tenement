@@ -11,10 +11,10 @@ import java.util.Objects;
 public class Order {
     private int orderId;
     private Date orderStime;
-    private Integer landlordId;
+    //private Integer landlordId;
     private int orderRent;
     private byte orderStatus;
-    private int agentId;
+    //private int agentId;
     private Date orderEtime;
     private int applyerId;
     private int houseId;
@@ -39,15 +39,6 @@ public class Order {
         this.orderStime = orderStime;
     }
 
-    @Basic
-    @Column(name = "landlord_id")
-    public Integer getLandlordId() {
-        return landlordId;
-    }
-
-    public void setLandlordId(Integer landlordId) {
-        this.landlordId = landlordId;
-    }
 
     @Basic
     @Column(name = "order_rent")
@@ -69,15 +60,6 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    @Basic
-    @Column(name = "agent_id")
-    public int getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(int agentId) {
-        this.agentId = agentId;
-    }
 
     @Basic
     @Column(name = "order_etime")
@@ -117,16 +99,16 @@ public class Order {
         return orderId == order.orderId &&
                 orderRent == order.orderRent &&
                 orderStatus == order.orderStatus &&
-                agentId == order.agentId &&
+
                 applyerId == order.applyerId &&
                 houseId == order.houseId &&
                 Objects.equals(orderStime, order.orderStime) &&
-                Objects.equals(landlordId, order.landlordId) &&
+
                 Objects.equals(orderEtime, order.orderEtime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, orderStime, landlordId, orderRent, orderStatus, agentId, orderEtime, applyerId, houseId);
+        return Objects.hash(orderId, orderStime, orderRent, orderStatus, orderEtime, applyerId, houseId);
     }
 }

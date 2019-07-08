@@ -71,7 +71,10 @@
                                 <a href="">租房</a>
                             </li>
                             <li>
-                                <a href="">发布房源</a>
+                                <a href="plotGet.action">发布房源</a>
+                            </li>
+                            <li>
+                                <a href="messageShow.action">讨论版</a>
                             </li>
 
                         </ul>
@@ -80,7 +83,7 @@
                                 <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
                             </li>
                             <li>
-                                <a href="">&nbsp;&nbsp;退出</a>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
                             </li>
                         </ul>
                     </div>
@@ -91,8 +94,8 @@
 
         <div class="row clearfix">
 
-                <form role="form" id="search" action="keywordSearch.action">
-                    <input type="search" placeholder="请输入区域或小区名搜索" class="form-control" name="condition">
+                <form role="form" id="search" action="searchHouseByKeyword.action">
+                    <input type="search" maxlength="15" placeholder="请输入区域或小区名搜索" class="form-control" name="condition">
                     <span><button class="btn btn-primary" type="submit">开始找房</button></span>
                 </form>
 

@@ -1,8 +1,5 @@
-// user
-//var user_Boolean = false;
 var password_Boolean = false;
 var confirm_Boolean = false;
-//var emaile_Boolean = false;
 var mobile_Boolean = false;
 /*$('.reg_user').blur(function(){
     if ((/^[a-z0-9_-]{4,8}$/).test($(".reg_user").val())){

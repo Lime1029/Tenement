@@ -87,7 +87,7 @@
         <property name="transactionManager" ref="transactionManager">
             <!--<ref bean="transactionManger" />-->
         </property>
-        <!--   下面定义事务传播属性-->
+        <!-- 下面定义事务传播属性 -->
         <property name="transactionAttributes">
             <props>
                 <prop key="find*">PROPAGATION_REQUIRED</prop>
@@ -129,6 +129,15 @@
     <bean id="agent" class="model.Agent" />
     <bean id="admin" class="model.Administrator" />
     <bean id="house" class="model.House" />
+    <bean id="city" class="model.City" />
+    <bean id="district" class="model.District" />
+    <bean id="plot" class="model.Plot" />
+    <bean id="chat" class="model.Chat"/>
+    <bean id="order" class="model.Order"/>
+    <bean id="discussion" class="model.DiscussionSection" />
+    <bean id="landlordApplyRelease" class="model.LandlordApplyRelease"/>
+    <bean id="PageBean" class="model.PageBean"/>
+    <bean id="houseInfor" class="model.HouseInfo"/>
 
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
@@ -142,6 +151,32 @@
     <bean id="searchDao" class="dao.impl.SearchDaoImpl">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+    <bean id="chatDao" class="dao.impl.ChatDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id="orderDao" class="dao.impl.OrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id="houseDao" class="dao.impl.HouseDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id="agentDao" class="dao.impl.AgentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory">
+
+        </property>
+    </bean>
+    <bean id = "agentShowDao" class="dao.impl.AgentShowDaoImpl">
+        <property  name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id = "updateDao" class="dao.impl.UpdateDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
     <!-- ServiceImpl -->
     <bean id="userService" class="service.impl.UserServiceImpl">
@@ -152,6 +187,24 @@
     </bean>
     <bean id="searchService" class="service.impl.SearchServiceImpl">
         <property name="searchDao" ref="searchDao" />
+    </bean>
+    <bean id="chatService" class="service.impl.ChatServiceImpl">
+        <property name="chatDao" ref="chatDao" />
+    </bean>
+    <bean id="orderService" class="service.impl.OrderServiceImpl">
+        <property name="orderDao" ref="orderDao" />
+    </bean>
+    <bean id="houseService" class="service.impl.HouseServiceImpl">
+        <property name="houseDao" ref="houseDao"/>
+    </bean>
+    <bean id="agentService" class="service.impl.AgentServiceImpl">
+        <property name="agentDao" ref="agentDao"/>
+    </bean>
+    <bean id = "agentShowService" class="service.impl.AgentShowImpl">
+        <property name="agentShowDao" ref="agentShowDao"/>
+    </bean>
+    <bean id = "updateService" class="service.impl.UpdateServiceImpl">
+        <property name="updateDao" ref="updateDao"/>
     </bean>
 
     <!-- registerAction -->
@@ -173,11 +226,11 @@
         <property name="role" value="user" />
     </bean>
     <!-- userDisplayAction -->
-    <bean id="userDisplay" class="action.UserDisplay" scope="prototype">
+    <bean id="userDisplay" class="action.AdminDisplay" scope="prototype">
         <property name="adminService" ref="adminService" />
     </bean>
     <!-- 关键字搜索action -->
-    <bean id="keywordSearch" class="action.KeywordSearch" scope="prototype">
+    <bean id="searchHouseByKeyword" class="action.KeywordSearch" scope="prototype">
         <property name="searchService" ref="searchService" />
         <property name="condition" value="天通苑" />
     </bean>
@@ -185,4 +238,226 @@
         <property name="searchService" ref="searchService" />
         <property name="houseId" value="1" />
     </bean>
+    <bean id="modifyUser" class="action.UserQuery">
+        <property name="userService" ref="userService" />
+        <property name="user" ref="user" />
+    </bean>
+    <bean id="deleteUser" class="action.AdminDelete" scope="prototype">
+        <property name="adminService" ref="adminService" />
+        <property name="userId" value="1" />
+    </bean>
+    <bean id="searchUser" class="action.KeywordSearch" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="condition" value="1" />
+    </bean>
+    <bean id="agentDisplay" class="action.AdminDisplay" scope="prototype">
+        <property name="adminService" ref="adminService" />
+    </bean>
+    <bean id="deleteAgent" class="action.AdminDelete" scope="prototype">
+        <property name="adminService" ref="adminService" />
+        <property name="agentId" value="1" />
+    </bean>
+    <bean id="agentSearch" class="action.KeywordSearch" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="condition" value="1" />
+    </bean>
+    <bean id="insertAgent" class="action.AdminInsert" scope="prototype">
+        <property name="adminService" ref="adminService" />
+        <property name="agent" ref="agent" />
+        <property name="agentPassword" value="123456" />
+        <property name="agentTelephone" value="18810339310" />
+        <property name="agentName" value="Lime" />
+    </bean>
+    <bean id="searchMyHouse" class="action.UserQuery" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="userId" value="1" />
+    </bean>
+    <!--<bean id="searchMyRental" class="action.UserQuery" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="userId" value="1" />
+    </bean>-->
+    <bean id="getContract" class="action.UserQuery" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="houseId" value="1" />
+    </bean>
+    <bean id="getContractAsTenant" class="action.UserQuery" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="houseId" value="1" />
+        <property name="userId" value="1" />
+    </bean>
+    <bean id="getMyOrders" class="action.UserQuery" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="userId" value="1" />
+    </bean>
+    <bean id="modifyOderStatus" class="action.UserQuery" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="orderId" value="1" />
+    </bean>
+    <bean id="houseDisplay" class="action.AdminDisplay">
+        <property name="adminService" ref="adminService" />
+    </bean>
+    <bean id="deleteHouse" class="action.AdminDelete" scope="prototype">
+        <property name="adminService" ref="adminService" />
+        <property name="houseId" value="1" />
+    </bean>
+    <bean id="adminHouseSearch" class="action.KeywordSearch" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="condition" value="188" />
+    </bean>
+    <bean id="cityDisplay" class="action.AdminDisplay">
+        <property name="adminService" ref="adminService" />
+    </bean>
+    <bean id="searchCity" class="action.KeywordSearch">
+        <property name="searchService" ref="searchService" />
+        <property name="condition" value="1" />
+    </bean>
+    <bean id="modifyCity" class="action.AdminUpdate">
+        <property name="adminService" ref="adminService" />
+        <property name="cityId" value="1" />
+        <property name="cityName" value="北京市" />
+    </bean>
+    <bean id="addCity" class="action.AdminInsert">
+        <property name="adminService" ref="adminService" />
+        <property name="cityName" value="北京市" />
+        <property name="city" ref="city" />
+    </bean>
+    <bean id="deleteCity" class="action.AdminDelete">
+        <property name="adminService" ref="adminService" />
+        <property name="cityId" value="1" />
+    </bean>
+    <bean id="districtDisplay" class="action.AdminDisplay">
+        <property name="adminService" ref="adminService" />
+    </bean>
+    <bean id="modifyDistrict" class="action.AdminUpdate">
+        <property name="adminService" ref="adminService" />
+        <property name="cityId" value="1" />
+        <property name="districtId" value="1" />
+        <property name="districtName" value="海淀区" />
+    </bean>
+    <bean id="addDistrict" class="action.AdminInsert">
+        <property name="adminService" ref="adminService" />
+        <property name="district" ref="district" />
+        <property name="districtName" value="海淀区" />
+        <property name="cityId" value="1" />
+    </bean>
+    <bean id="deleteDistrict" class="action.AdminDelete">
+        <property name="adminService" ref="adminService" />
+        <property name="districtId" value="1" />
+    </bean>
+    <bean id="searchDistrict" class="action.KeywordSearch">
+        <property name="searchService" ref="searchService" />
+        <property name="condition" value="1" />
+    </bean>
+    <bean id="plotDisplay" class="action.AdminDisplay">
+        <property name="adminService" ref="adminService" />
+    </bean>
+    <bean id="searchPlot" class="action.KeywordSearch">
+        <property name="condition" value="1" />
+        <property name="searchService" ref="searchService" />
+    </bean>
+    <bean id="deletePlot" class="action.AdminDelete">
+        <property name="adminService" ref="adminService" />
+        <property name="plotId" value="1" />
+    </bean>
+    <bean id="addPlot" class="action.AdminInsert">
+        <property name="adminService" ref="adminService" />
+        <property name="cityId" value="1" />
+        <property name="districtId" value="1" />
+        <property name="agentId" value="1" />
+        <property name="plotName" value="宏福小区" />
+        <property name="plot" ref="plot" />
+    </bean>
+    <bean id="saveChatRecord" class="action.SaveChatRecord" scope="prototype">
+        <property name="chatService" ref="chatService" />
+    </bean>
+    <bean id="getAllOrder" class="action.GetAllOrder" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="deleteOrder" class="action.DeleteOrder" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="getOrderDetail" class="action.GetOrderDetail" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+        <property name="houseService" ref="houseService"/>
+        <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="getOrderByOrderID" class="action.GetOrderByOrderID" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="searchAgent" class="action.SearchAgent" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+        <property name="agentService" ref="agentService"/>
+    </bean>
+    <bean id="getDateByDateRange" class="action.GetOrderByDateRange" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+    <bean id="searchOrderByUserInfo" class="action.SearchOrderByUserInfo" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+        <property name="userService" ref="userService"/>
+    </bean>
+    <!--agent相关的action-->
+    <bean id="addOrder" class="action.AddOrder" scope="prototype">
+        <property name="orderService" ref="orderService" />
+        <property name="order" ref="order" />
+    </bean>
+    <bean id="getMyOrder" class="action.GetMyOrder" scope="prototype">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+
+    <bean id="messageSubmit" class="action.messageSubmit" scope="prototype">
+        <property name="discussionSection" ref="discussion" />
+        <property name="userService" ref="userService"/>
+        <property name="user" ref="user"/>
+
+    </bean>
+    <bean id="messageShow" class="action.messageShow" scope="prototype">
+        <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="houseSubmit" class="action.HouseSubmit" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="landlordApplyRelease" ref="landlordApplyRelease"/>
+    </bean>
+    <bean id="houseConfirm" class="action.HouseConfirm" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="house" ref="house"/>
+    </bean>
+    <bean id="conditionSearch" class="action.ConditionSearch" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="housing" ref="house" />
+    </bean>
+    <bean id="HouseInfo" class="action.GetHouseInfo" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="houseId" value="1" />
+    </bean>
+    <bean id ="getMyHouse" class="action.getMyHouse" scope="prototype">
+        <property name="agentShowService" ref="agentShowService"/>
+        <property name="pageBean" ref="PageBean" />
+        <property name="page" value="1" />
+    </bean>
+    <bean id = "updateHouse" class="action.UpdateHouse" scope="prototype">
+        <property name="updateService" ref="updateService"/>
+    </bean>
+
+
+
+    <bean id="logService" class="service.impl.LogServiceImpl">
+    </bean>
+
+    <aop:config>
+        <!-- 切入点 -->
+        <aop:pointcut
+                expression="execution(* service.impl.*ServiceImpl.*(..))" id="myPointcut" />
+
+        <!-- 切面： 将哪个对象中的哪个方法，织入到哪个切入点 -->
+        <aop:aspect id="dd" ref="logService">
+
+            <!-- 前置通知
+            <aop:before method="log" pointcut-ref="myPointcut" />
+            <aop:after method="logArg" pointcut-ref="myPointcut">
+            -->
+            <aop:after-returning method="logArgAndReturn" returning="returnObj" pointcut-ref="myPointcut"/>
+
+        </aop:aspect>
+
+    </aop:config>
 </beans>

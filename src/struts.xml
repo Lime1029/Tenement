@@ -23,17 +23,220 @@
             <result name="error">/registerLogin/loginFail.jsp</result>
             <!--<result name="input">/registerLogin/login.jsp</result>-->
         </action>
-        <action name="userDisplay" class="action.UserDisplay">
+        <action name="userDisplay" class="action.AdminDisplay" method="userDisplay">
             <result name="success">/admin/userDisplay.jsp</result>
-            <result name="error">/admin/userDisplayFail.jsp</result>
+            <result name="error">/admin/fail.jsp</result>
         </action>
-        <action name="keywordSearch" class="action.KeywordSearch">
+        <action name="searchHouseByKeyword" class="action.KeywordSearch" method="searchHouse">
             <result name="success">/search/searchResult.jsp</result>
             <result name="error">/search/fail.jsp</result>
         </action>
         <action name="houseInfo" class="action.GetHouseInfo">
             <result name="success">/search/houseInfo.jsp</result>
             <result name="error">/search/fail.jsp</result>
+        </action>
+        <action name="modifyUser" class="action.UserQuery" method="updateUser">
+            <result name="success" type="redirect">/myCenter/userInfo.jsp</result>
+        </action>
+        <action name="deleteUser" class="action.AdminDelete" method="deleteUser">
+            <result name="success" type="chain">userDisplay</result>
+        </action>
+        <action name="userSearch" class="action.KeywordSearch" method="searchUser">
+            <result name="success" type="redirect">/admin/userDisplay.jsp</result>
+        </action>
+        <action name="agentDisplay" class="action.AdminDisplay" method="agentDisplay">
+            <result name="success">/admin/agentDisplay.jsp</result>
+        </action>
+        <action name="deleteAgent" class="action.AdminDelete" method="deleteAgent">
+            <result name="success" type="chain">agentDisplay</result>
+        </action>
+        <action name="agentSearch" class="action.KeywordSearch" method="searchAgent">
+            <result name="success" type="redirect">/admin/agentDisplay.jsp</result>
+        </action>
+        <action name="insertAgent" class="action.AdminInsert" method="insertAgent">
+            <result name="success" type="redirect">agentDisplay.action</result>
+        </action>
+        <action name="searchMyHouse" class="action.UserQuery" method="searchHouseInMyName">
+            <result name="success" type="redirect">/myCenter/myHouse.jsp</result>
+        </action>
+        <!--<action name="searchMyRental" class="action.UserQuery" method="searchMyRentalHouse">
+            <result name="success" type="redirect">/myCenter/myHouse.jsp</result>
+        </action>-->
+        <action name="getContract" class="action.UserQuery" method="getMyContract">
+            <result name="success">/myCenter/contractInfo.jsp</result>
+        </action>
+        <action name="getContractAsTenant" class="action.UserQuery" method="getContractAsTenant">
+            <result name="success">/myCenter/contractInfo.jsp</result>
+        </action>
+        <action name="getMyOrders" class="action.UserQuery" method="getMyOrders">
+            <result name="success" type="redirect">/myCenter/myOrder.jsp</result>
+        </action>
+        <!--<action name="modifyOrderStatus" class="action.UserQuery" method="modifyOrderStatus">
+            <result name="success" type="chain">getMyOrders</result>
+        </action>-->
+        <action name="modifyOrderStatus" class="action.UserQuery" method="modifyOrderStatus">
+            <result name="success">/myCenter/paySuccess.jsp</result>
+        </action>
+        <action name="houseDisplay" class="action.AdminDisplay" method="houseDisplay">
+            <result name="success">/admin/houseDisplay.jsp</result>
+        </action>
+        <action name="deleteHouse" class="action.AdminDelete" method="deleteHouse">
+            <result name="success" type="chain">houseDisplay</result>
+        </action>
+        <action name="adminHouseSearch" class="action.KeywordSearch" method="searchAdminHouse">
+            <result name="success" type="redirect">/admin/houseDisplay.jsp</result>
+        </action>
+        <action name="cityDisplay" class="action.AdminDisplay" method="cityDisplay">
+            <result name="success">/admin/cityDisplay.jsp</result>
+        </action>
+        <action name="searchCity" class="action.KeywordSearch" method="searchCity">
+            <result name="success" type="redirect">/admin/cityDisplay.jsp</result>
+        </action>
+        <action name="modifyCity" class="action.AdminUpdate" method="modifyCity">
+            <result name="success" type="chain">cityDisplay</result>
+        </action>
+        <action name="addCity" class="action.AdminInsert" method="insertCity">
+            <result name="success" type="redirect">cityDisplay.action</result>
+        </action>
+        <action name="deleteCity" class="action.AdminDelete" method="deleteCity">
+            <result name="success" type="chain">cityDisplay</result>
+        </action>
+        <action name="districtDisplay" class="action.AdminDisplay" method="districtDisplay">
+            <result name="success">/admin/districtDisplay.jsp</result>
+        </action>
+        <action name="modifyDistrict" class="action.AdminUpdate" method="modifyDistrict">
+            <result name="success" type="chain">districtDisplay</result>
+        </action>
+        <action name="addDistrict" class="action.AdminInsert" method="insertDistrict">
+            <result name="success" type="redirect">districtDisplay.action</result>
+        </action>
+        <action name="deleteDistrict" class="action.AdminDelete" method="deleteDistrict">
+            <result name="success" type="chain">districtDisplay</result>
+        </action>
+        <action name="searchDistrict" class="action.KeywordSearch" method="searchDistrict">
+            <result name="success" type="redirect">/admin/districtDisplay.jsp</result>
+        </action>
+        <action name="plotDisplay" class="action.AdminDisplay" method="plotDisplay">
+            <result name="success">/admin/plotDisplay.jsp</result>
+        </action>
+        <action name="searchPlot" class="action.KeywordSearch" method="searchPlot">
+            <result name="success" type="redirect">/admin/plotDisplay.jsp</result>
+        </action>
+        <action name="deletePlot" class="action.AdminDelete" method="deletePlot">
+            <result name="success" type="chain">plotDisplay</result>
+        </action>
+        <action name="addPlot" class="action.AdminInsert" method="insertPlot">
+            <result name="success" type="redirect">plotDisplay.action</result>
+        </action>
+        <action name="agentChat" class="action.AgentChat">
+            <result name="success">/agent/agent_chat.jsp</result>
+        </action>
+        <action name="saveChatRecord" class="action.SaveChatRecord">
+            <result name="success" type="stream">
+                <param name="contentType">text/html; charset=utf-8</param>
+                <param name="inputName">inputStream</param>
+            </result>
+        </action>
+        <action name="loadAgentChatRecord" class="action.LoadAgentChatRecord">
+            <result name="success">/user/user_chat.jsp</result>
+        </action>
+        <action name="getAllOrder" class="action.GetAllOrder">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="deleteOrder" class="action.DeleteOrder">
+            <result name="success" type="redirect">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="getOrderDetail" class="action.GetOrderDetail">
+            <result name="success">/admin/orderDetail.jsp</result>
+            <result name="error">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="getOrderByOrderID" class="action.GetOrderByOrderID">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="searchAgent" class="action.SearchAgent">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="error">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="getOrderByDateRange" class="action.GetOrderByDateRange">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="zero">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <action name="searchOrderByUserInfo" class="action.SearchOrderByUserInfo">
+            <result name="success">/admin/orderDisplay.jsp</result>
+            <result name="error">/admin/orderDisplayFail.jsp</result>
+        </action>
+        <!--添加订单action-->
+        <action name="addOrder" class="action.AddOrder">
+            <result name="success">/agent/agent_AddOrder.jsp</result>
+            <result name="error">/agent/agent_fail.jsp</result>
+        </action>
+        <!--查看我名下的订单action-->
+        <action name="getMyOrder" class="action.GetMyOrder">
+            <result name="success">/agent/agent_ManageOrder.jsp</result>
+            <result name="error">/agent/agent_fail.jsp</result>
+        </action>
+        <action name="logout" class="action.Logout">
+            <result name="success">/registerLogin/login.jsp</result>
+        </action>
+
+        <action name="houseSubmit" class="action.HouseSubmit">
+            <result name="success">/home/user.jsp</result>
+            <result name="error">/house submit/housing submit.jsp</result>
+            <result name="none">/house submit/housing submit.jsp</result>
+        </action>
+        <action name="houseConfirm" class="action.HouseConfirm" >
+            <result name="success" type="redirect">/home/agent.jsp</result>
+            <result name="error">/house submit/agentSubmit.jsp</result>
+            <result name="none">/house submit/agentSubmit.jsp</result>
+        </action>
+        <action name="messageSubmit" class="action.messageSubmit">
+            <result name="success" type="redirect">messageShow.action</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="messageShow" class="action.messageShow">
+            <result name="success">/talk/talkAbord.jsp</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="houseShow" class="action.houseShow" method="getPlot_id">
+            <result name="success">/house submit/agentSubmit.jsp</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="plotGet" class="action.plotShow" method="getPlot">
+            <result name="success">/house submit/housing submit.jsp</result>
+            <result name="error">/home/user.jsp</result>
+            <result name="none">/home/user.jsp</result>
+        </action>
+        <action name="conditionSearch" class="action.ConditionSearch">
+            <result name="success">/search/searchResult.jsp</result>
+            <result name="error">/search/fail.jsp</result>
+        </action>
+        <action name="getMyHouse" class="action.getMyHouse">
+            <result name="success">/agent/agentinfo.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
+        <action name="contractShow" class="action.contractShow">
+            <result name="success">/agent/agentContract.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
+        <action name="Endcontract" class="action.EndContract">
+            <result name="success">/agent/agentContract.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
+        <action name="updateHouse" class="action.UpdateHouse">
+            <result name="success">/agent/agentinfo.jsp</result>
+            <result name="error">/agent/agentfail.jsp</result>
+        </action>
+    </package>
+
+    <package name="json" namespace="/" extends="json-default">
+        <action name="getDistrictByCity" class="action.GetDistrictByCity">
+            <result name="success" type="json"></result>
         </action>
     </package>
 </struts>

@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<form id="registerForm" action="register.action" method="post">
+<form id="registerForm" action="register.action" method="post" onsubmit="return check()">
     <h1>注册</h1>
     <!--autocomplete="off"当用户提交过一次表单后，再次访问,手机号不会提示曾经输入的值-->
     <label>&nbsp;手&nbsp;机&nbsp;号&nbsp;：</label>
@@ -41,13 +41,95 @@
 </form>
 
 <script src="../js/jquery-1.8.2.min.js"></script>
-<script src="../js/register.js"></script>
+<!--<script src="../js/register.js"></script>-->
+<script>
+    var password_Boolean = false;
+    var confirm_Boolean = false;
+    var mobile_Boolean = false;
+    /*$('.reg_user').blur(function(){
+        if ((/^[a-z0-9_-]{4,8}$/).test($(".reg_user").val())){
+            $('.user_hint').html("✔").css("color","green");
+            user_Boolean = true;
+        }else {
+            $('.user_hint').html("×").css("color","red");
+            user_Boolean = false;
+        }
+    });*/
+
+    // password
+    $('#password1').blur(function(){
+        if ((/^[a-z0-9_-]{6,15}$/).test($("#password1").val())){
+            $('.password_hint').html("✔").css("color","green");
+            password_Boolean = true;
+        }else {
+            $('.password_hint').html("✘").css("color","red");
+            password_Boolean = false;
+        }
+    });
+
+
+    // password_confirm
+    $('#password2').blur(function(){
+        if (($("#password1").val())==($("#password2").val())){
+            $('.confirm_hint').html("✔").css("color","green");
+            confirm_Boolean = true;
+        }
+        else {
+            $('.confirm_hint').html("✘").css("color","red");
+            confirm_Boolean = false;
+        }
+        if ((/^[a-z0-9-_]{6,15}$/).test($("#password2").val())){
+            $('.confirm_hint').html("✔").css("color", "green");
+            confirm_Boolean = true;
+        }
+        else {
+            $('.confirm_hint').html("✘").css("color","red");
+            confirm_Boolean = false;
+        }
+    });
+
+
+    // Email
+    /*$('.reg_email').blur(function(){
+        if ((/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/).test($(".reg_email").val())){
+            $('.email_hint').html("✔").css("color","green");
+            emaile_Boolean = true;
+        }else {
+            $('.email_hint').html("×").css("color","red");
+            emaile_Boolean = false;
+        }
+    });*/
+
+
+    // Mobile
+    $('#telephone').blur(function(){
+        if ((/^1[34578]\d{9}$/).test($("#telephone").val())){
+            $('.mobile_hint').html("✔").css("color","green");
+            mobile_Boolean = true;
+        }else {
+            $('.mobile_hint').html("✘").css("color","red");
+            mobile_Boolean = false;
+        }
+    });
+
+
+    function check() {
+        if((password_Boolean && confirm_Boolean && mobile_Boolean) !== true){
+            alert("请按格式要求填写信息");
+            document.getElementById('telephone').value = "";
+            document.getElementById('password1').value = "";
+            document.getElementById('password2').value = "";
+            $('.mobile_hint').html("");
+            $('.password_hint').html("");
+            $('.confirm_hint').html("");
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+</script>
 </body>
-<!--
-<s:fielderror>
-    <s:param>telephone</s:param>
-    <s:param>password1</s:param>
-    <s:param>password2</s:param>
-</s:fielderror>
--->
+
 </html>

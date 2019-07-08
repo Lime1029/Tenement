@@ -43,7 +43,7 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active">
+                            <li>
                                 <a href="#">首页</a>
                             </li>
                             <li>
@@ -70,10 +70,64 @@
 
         <div class="row clearfix">
 
+            <h1>${houseInfo.address}</h1>
+            <label style="color: #6c757d;">上架时间：${houseInfo.releaseTime}</label>
 
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                        <h3 class="panel-title" style="font-size: 25px;width: auto;display: inline;" >房屋信息</h3>
 
+                </div>
+                <div class="panel-body" style="color: #6c757d;">
+                    <h4>小区：&nbsp;&nbsp;&nbsp;&nbsp;${houseInfo.districtName}${houseInfo.plotName}</h4>
+                    <h4>租金：&nbsp;&nbsp;&nbsp;&nbsp;${houseInfo.rent}元/月</h4>
+                    <h4>户型：&nbsp;&nbsp;&nbsp;&nbsp;${houseInfo.houseType}</h4>
+                    <h4>楼层：&nbsp;&nbsp;&nbsp;&nbsp;${houseInfo.floor}</h4>
+                    <h4>面积：&nbsp;&nbsp;&nbsp;&nbsp;${houseInfo.area}平米</h4>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="font-size: 25px;width: auto;display: inline;" >房源描述</h3>
+                    <form style="float:right;" action="loadAgentChatRecord.action" method="post">
+                        <input name="agentID" value="${houseInfo.agentId}" hidden="hidden">
+                        <input name="userID" value="${user.userId}" hidden="hidden">
+                        <input name="houseId" value="${houseInfo.houseId}" hidden="hidden">
+                        <h4 style="display: inline;">经纪人：${houseInfo.agentName}&nbsp;&nbsp;</h4>
+                        <span><button class="btn btn-primary" style="" type="submit" onclick="send()">在线咨询</button></span>
+                    </form>
+                </div>
+                <div class="panel-body">
+                        
+                    <h4 style="color: darkblue;">${houseInfo.houseDescription}</h4>
+                </div>
+            </div>
         </div>
 
     </div>
+
+    <%--suppress JSUnresolvedLibraryURL --%>
+    <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
+    <script type="text/javascript">
+        var goeasy = new GoEasy({
+            appkey:'BC-a996257032c5470597d8213b461e44f3'
+        })
+        function send() {
+            goeasy.publish({
+                channel: 'agent_alert',
+                message: "用户1想看1号房",
+                onFailed: function (error) {
+                    alert(error.code+" : "+error.content);
+                },
+                onSuccess: function(){
+                    var reply = window.confirm("预约成功\n点击确认进入交流页面")
+                    if(reply){
+                        document.getElementById("form1").submit();
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

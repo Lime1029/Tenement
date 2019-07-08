@@ -22,6 +22,25 @@ public class House {
     private Timestamp releaseTime;
 
 
+    public House(){
+
+    }
+    public House(int houseId,int landlordId,int plotId,String address,double rent,int state,String houseType,String floor,Double area,String houseDescription){
+        super();
+        this.houseId = houseId;
+        this.landlordId = landlordId;
+        this.plotId = plotId;
+        this.address = address;
+        this.rent =rent;
+        this.state = state;
+        this.houseDescription = houseDescription;
+        this.houseType = houseType;
+        this.floor = floor;
+        this.area = area;
+
+    }
+
+
     @Id
     @Column(name = "house_id")
     public int getHouseId() {
