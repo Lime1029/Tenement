@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.2/dist/bootstrap-table.min.css">
+
     <!--CSS样式设置-->
     <style>
         .top{
@@ -43,11 +44,13 @@
             <nav class="navbar" style="background-color: aliceblue">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="agent_information.jsp" style="color: black">个人中心</a>
-                        <a class="nav-link" href="#" style="color: black">我的消息</a>
-                        <a class="nav-link" href="agent_upload_order.jsp" style="color: black">添加订单</a>
-                        <a class="nav-link" href="agent_manage_order.jsp" style="color: black">我管理的订单</a>
-                        <a class="nav-link" href="agent_houseinfo.jsp" style="color: black">我管理的房源</a>
+                        <a class="nav-link" href="#" style="color: black">个人中心</a>
+                        <a class="nav-link" href="agentChat.action?agentID=${agent.agentId}" style="color: black">我的消息</a>
+                        <a class="nav-link" href="../agent/agent_AddOrder.jsp" style="color: black">添加订单</a>
+                        <a class="nav-link" href="getMyOrder.action?agentId=${agent.agentId}" style="color: black">我管理的订单</a>
+                        <a class="nav-link" href="houseShow.action" style="color: black">确认房源</a>
+                        <a class="nav-link" href="getMyHouse.action" style="color: black">我管理的房源</a>
+                        <a class="nav-link" href="contractShow.action" style="color: black">我管理的合同</a>
                     </li>
                 </ul>
             </nav>
@@ -58,10 +61,10 @@
         <div class="col-md-9">
             <!--可替换部分-->
             <s:iterator value="pageBean.list">
-            <s:property value="title"/>
-          <!--  <a href="getMyHouse.action?id=<s:property value="id"/>">modify</a>
-            <a href="deleteArticle.action?id=<s:property value="id"/>" onclick="return askDel()"/>delete</a><br/>
-          !-->
+                <s:property value="title"/>
+                <!--  <a href="getMyHouse.action?id=<s:property value="id"/>">modify</a>
+                <a href="deleteArticle.action?id=<s:property value="id"/>" onclick="return askDel()"/>delete</a><br/>
+                !-->
                 待定加入
             </s:iterator>
             共<s:property value="pageBean.allRow"/> 条记录
@@ -99,18 +102,18 @@
                             </script>
                             <s:form role="form" id="updateHouseInfo" action="updateHouse">
                                 <!--
-                            <td> <div name = "plotname" value=${houses[0]}  style="width:130px;" /></td>
-                            <td><input name = "districtname" value=${houses[1]} style="width:130px;"/></td>
-                            <td><input name = "landlordName" value=${houses[2]}  style="width:130px;"/></td>
-                            <td><input name = "address" value=${houses[3]}  style="width:130px;"/></td>
-                            <td><input name = "rent" value=${houses[4]}  style="width:80px;"/></td>
-                            <td><input name = "housetype" value=${houses[5]}  style="width:80px;"/></td>
-                            <td><input name = "floor" value=${houses[6]} style="width:80px;"/></td>
-                            <td><input name = "area" value=${houses[7]}  style="width:80px;"/></td>
-                            <td><input name = "housedescription" value=${houses[8]}  style="width:130px;"/></td>
-                            <td><input name = "agentId" value=${houses[9]}  style="width:130px;"/></td>
-                            <td><input name = "houseID" value=${houses[10]}  style="width:130px;"/></td>
-                            !-->
+                                <td> <div name = "plotname" value=${houses[0]}  style="width:130px;" /></td>
+                                <td><input name = "districtname" value=${houses[1]} style="width:130px;"/></td>
+                                <td><input name = "landlordName" value=${houses[2]}  style="width:130px;"/></td>
+                                <td><input name = "address" value=${houses[3]}  style="width:130px;"/></td>
+                                <td><input name = "rent" value=${houses[4]}  style="width:80px;"/></td>
+                                <td><input name = "housetype" value=${houses[5]}  style="width:80px;"/></td>
+                                <td><input name = "floor" value=${houses[6]} style="width:80px;"/></td>
+                                <td><input name = "area" value=${houses[7]}  style="width:80px;"/></td>
+                                <td><input name = "housedescription" value=${houses[8]}  style="width:130px;"/></td>
+                                <td><input name = "agentId" value=${houses[9]}  style="width:130px;"/></td>
+                                <td><input name = "houseID" value=${houses[10]}  style="width:130px;"/></td>
+                                !-->
                                 <td  style="width:130px;" >${houses[10]}</td>
                                 <td  style="width:130px;" >${houses[0]}</td>
                                 <td style="width:130px;">${houses[1]}</td>
@@ -124,10 +127,10 @@
                                 <td style="width:130px;">${houses[9]}</td>
                                 <td>
                                     <input type="button" value="修改" data-target="#modifyHouse" onclick="edit(this)" data-toggle="modal"
-                                       style="color: #fff;width: 70px;height: 30px;
+                                           style="color: #fff;width: 70px;height: 30px;
                                        background: rgb(86,132,190);border-radius: 3px;border:none;">
 
-                            </td>
+                                </td>
                             </s:form>
                         </tr>
 
@@ -164,8 +167,8 @@
 
 
 
-<div id="modifyHouse" class="modal hide fade in" style="display: none; >
-    <div class="modal-dialog">
+<div id="modifyHouse" class="modal hide fade in" role="dialog" >
+    <div class="modal-dialog" role="document" style="width: 680px;">
         <div class="modal-content">
             <div class="modal-body">
                 <button class="close" data-dismiss="modal">
@@ -179,12 +182,12 @@
                 <form class="form-group" action="updateHouse.action" method="post">
                     <div class="form-group">
                         <label>房源ID</label>
-                        <input class="form-control" type="text" placeholder="" name="houseId" id="houseId" readonly>
-                        <input hidden name="houseId" id="houseId1">
+                        <input class="form-control" type="text" placeholder="" name="houseID" id="houseID" readonly>
+
                     </div>
                     <div class="form-group">
                         <label>小区名字</label>
-                        <input class="form-control" type="text" placeholder="" name="plotName" id="plotName">
+                        <input class="form-control" type="text" placeholder="" name="plotname" id="plotname">
                     </div>
                     <div class="form-group">
                         <label>房东姓名</label>
@@ -200,19 +203,19 @@
                     </div>
                     <div class="form-group">
                         <label>类别</label>
-                        <input class="form-control" type="text" placeholder="" name="housetype" id="districtName">
+                        <input class="form-control" type="text" placeholder="" name="housetype" id="housetype">
                     </div>
                     <div class="form-group">
                         <label>楼层</label>
-                        <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                        <input class="form-control" type="text" placeholder="" name="floor" id="floor">
                     </div>
                     <div class="form-group">
                         <label>面积</label>
-                        <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                        <input class="form-control" type="text" placeholder="" name="area" id="area">
                     </div>
                     <div class="form-group">
                         <label>额外描述</label>
-                        <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                        <input class="form-control" type="text" placeholder="" name="housedescription" id="housedescription">
                     </div>
                     <div class="col-sm-4 tips"></div>
 
@@ -226,22 +229,45 @@
         </div>
     </div>
 </div>
+
 <script>
     function edit(obj){
         var id = $(obj).parent().parent().find('td')[0];
-        var houseId = $(id).text();
-        $('#houseId').val(houseId);
-        $('#houseId1').val(houseId);
+        var houseID = $(id).text();
+        $('#houseID').val(houseID);
+        //$('#houseId1').val(houseId);
 
         var name = $(obj).parent().parent().find('td')[1];
-        var districtName = $(name).text();
-        $('#districtName').val(districtName);
+        var plotname = $(name).text();
+        $('#plotname').val(plotname);
 
-        var city = $(obj).parent().parent().find('td')[2];
-        var cityId = $(city).text();
+        var landlord = $(obj).parent().parent().find('td')[3];
+        var landlordName = $(landlord).text();
+        $('#landlordName').val(landlordName);
 
+        var addr = $(obj).parent().parent().find('td')[4];
+        var address = $(addr).text();
+        $('#address').val(address);
 
+        var renta = $(obj).parent().parent().find('td')[5];
+        var rent = $(renta).text();
+        $('#rent').val(rent);
 
+        var housetypea = $(obj).parent().parent().find('td')[6];
+        var housetype = $(housetypea).text();
+        $('#housetype').val(housetype);
+
+        var floora = $(obj).parent().parent().find('td')[7];
+        var floor = $(floora).text();
+        $('#floor').val(floor);
+
+        var areaa = $(obj).parent().parent().find('td')[8];
+        var area = $(areaa).text();
+        $('#area').val(area);
+
+        var housedescriptiona = $(obj).parent().parent().find('td')[6];
+        var housedescription = $(housedescriptiona).text();
+        $('#housedescription').val(housedescription);
 
     }
 
