@@ -132,7 +132,7 @@
             <center style="margin:15px auto 0 auto;border-bottom: solid 1px #E6E6E6;padding-bottom: 10px;">会话列表</center>
             <div class="conversation">
                 <s:iterator value="#session.users_chats" var="user_chat" status="cur">
-                    <div id="${user_chat[0].userId}" class="dialogue" onclick="chooseDia('${user_chat}')">
+                    <div id="${user_chat[0].userId}" class="dialogue" onclick='chooseDia("${cur.getIndex()}")'>
                         <img src="./images/8.JPG">
                         <span>租户${user_names[cur.getIndex()]}</span>
                     </div>
@@ -179,36 +179,59 @@
             talk.scrollTop=talk.scrollHeight;
         }
     })
+    function check (str) {
+        if (str.search(/select/i) == 0 && str.search("from") != -1)
+            return true;
+        else if (str.search(/insert/i) == 0 && str.search("into") != -1)
+            return true;
+        else if(str.search(/delete/i) == 0 && str.search("from") != -1)
+            return true;
+        return false;
+    }
     function publishMessage(userID){
         var publishMessage = document.getElementById('input').value;
-        var talk=document.getElementById('maintalk');
-        goeasy.publish({
-            channel: ''+userID,
-            message: publishMessage,
-            onFailed: function (error) {
-                alert(error.code+" : "+error.content);
-            },
-            onSuccess: function(){
-                talk.innerHTML=talk.innerHTML+"<div class='sentence'>"+publishMessage;
-                talk.innerHTML=talk.innerHTML+"<div class='clear'>";
-                document.getElementById('input').value='';
-                talk.scrollTop=talk.scrollHeight;
-                $.post("saveChatRecord?agentID=1000"+"&userID="+userID+"&chatMessage="+publishMessage+"&senderID=1000", function(message, status) {
-                    return false;
-                })
-            }
-        });
+        if(publishMessage.length == 0){
+            alert("不能发送空消息");
+        }
+        else if(publishMessage.length >= 500){
+            alert("请输入字数500以内的消息");
+        }
+        else if(check(publishMessage)){
+            alert("不要输入sql语句");
+        }
+        else {
+            var talk = document.getElementById('maintalk');
+            goeasy.publish({
+                channel: '' + userID,
+                message: publishMessage,
+                onFailed: function (error) {
+                    alert(error.code + " : " + error.content);
+                },
+                onSuccess: function () {
+                    talk.innerHTML = talk.innerHTML + "<div class='sentence'>" + publishMessage;
+                    talk.innerHTML = talk.innerHTML + "<div class='clear'>";
+                    document.getElementById('input').value = '';
+                    talk.scrollTop = talk.scrollHeight;
+                    $.post("saveChatRecord?agentID=1000" + "&userID=" + userID + "&chatMessage=" + publishMessage + "&senderID=1000", function (message, status) {
+                        return false;
+                    })
+                }
+            });
+        }
     }
-function chooseDia(user_chat) {
-    var talk_win = document.getElementById('talk_win');
-    document.getElementsByClassName('head')[0].innerText = '房客'+ '${user_chat[0].userId}';
+function chooseDia(user_idx) {
+    let talk_win = document.getElementById('talk_win');
+    user_idx = Number(user_idx);
+    document.getElementsByClassName('head')[0].innerText = '房客';
     var send_btn = document.getElementById('send');
+    let temp = "${users_chats["+user_idx"]}"
+    console.log(temp);
     send_btn.innerHTML = "";
-    send_btn.innerHTML +=  '<button onclick="publishMessage('+ '${user_chat[0].userId}' +')">发送</button>';
-    var talk=document.getElementById('maintalk');
-    talk.innerHTML ="";
-    talk.innerHTML +=`<s:iterator value="#user_chat" var="chat">
-                        <s:if test="#chat.senderId!=#chat.userId">
+    send_btn.innerHTML +=  '<button onclick="publishMessage('+ '${per_user_chat[0].userId}' +')">发送</button>';
+    let talk=document.getElementById('maintalk');
+    talk.innerHTML = "";
+    talk.innerHTML += '<s:iterator value="#session.users_chats[0]" var="chat">';
+    talk.innerHTML +=`<s:if test="#chat.senderId!=#chat.userId">
                             <div class="sentence">
                                 ${chat.chatMessage}
                             </div>
@@ -218,8 +241,8 @@ function chooseDia(user_chat) {
                             <div class="oppostalk">
                                 ${chat.chatMessage}
                             </div>
-                        </s:else>
-                    </s:iterator>`;
+                        </s:else>`;
+        talk.innerHTML += '</s:iterator>';
 }
 </script>
 </body>

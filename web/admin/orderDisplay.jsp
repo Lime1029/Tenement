@@ -101,6 +101,7 @@
     <input type="text" id="dateChoose1" value="起始日期" class="date">
     <input type="text" id="dateChoose2" value="结束日期" class="date">
     <input type="submit" value="按日期查询订单" onclick="searchByDateRange()" class="btn">
+    <input type="submit" value="查看全部订单" onclick="getAllOrder()" class="btn">
 </div>
 <div class="middle ">
     <table>
@@ -160,32 +161,53 @@
         let footer = document.getElementsByClassName("footer")[0];
         footer.innerHTML = "";
         if("${status}" == "all"){
-            footer.innerHTML += ` <form action="getAllOrder.action" method="post">
+            footer.innerHTML += ` <s:if test='#session.isLastPage=="y"'>
+        <form action="getAllOrder.action" method="post">
         <input type="hidden" value="${last}", name="start">
         <input type="hidden" value="${count}" name="count">
         <input type="submit" value="上一页">
     </form>
+    </s:if>
+    <s:if test='#session.isNextPage=="y"'>
     <form action="getAllOrder.action" method="post">
         <input type="hidden" value="${start}", name="start">
         <input type="hidden" value="${count}" name="count">
-        <input type="submit" value="下一页">`
+        <input type="submit" value="下一页">
+        </form>
+    </s:if>
+    <form action="getAllOrder.action" method="post" id="searchByPage1">
+        <input type="hidden" value="${count}" name="count">
+        <input type="text" value="可输入1-${session.page}" name="input_start" id="page1">
+        </form><button onclick="searchAllOrder()">按页数查找</button>`
         }
 
     else if("${status}" == "date"){
         footer.innerHTML +=
-        ` <form action="getOrderByDateRange.action" method="post">
+        ` <s:if test='#session.isLastPage=="y"'>
+        <form action="getOrderByDateRange.action" method="post">
          <input type="hidden" value="${stime}", name="stime">
         <input type="hidden" value="${etime}" name="etime">
         <input type="hidden" value="${last}", name="start">
         <input type="hidden" value="${count}" name="count">
         <input type="submit" value="上一页">
     </form>
+    </s:if>
+    <s:if test='#session.isNextPage=="y"'>
     <form action="getOrderByDateRange.action" method="post">
     <input type="hidden" value="${stime}", name="stime">
         <input type="hidden" value="${etime}" name="etime">
         <input type="hidden" value="${start}", name="start">
         <input type="hidden" value="${count}" name="count">
-        <input type="submit" value="下一页">`
+        <input type="submit" value="下一页">
+     </form>
+        </s:if>
+        <form action="getOrderByDateRange.action" method="post" id="searchByPage2">
+         <input type="hidden" value="${stime}", name="stime">
+        <input type="hidden" value="${etime}" name="etime">
+        <input type="hidden" value="${count}" name="count">
+        <input type="text" value="可输入1-${session.page}" name="input_start" id="page2">
+        </form>
+        <button onclick="searchOrderByDateRangeAndPage()">按页数查找</button>`
     }
 
     }
@@ -202,34 +224,51 @@
     }
     function searchByOrderID(){
         let orderID = document.getElementById("searchContent").value;
-        orderID = Number(orderID);
-        const form1 = document.createElement("form");
-        form1.action="getOrderByOrderID?orderID="+orderID;
-        form1.method = "post";
-        form1.style.display = "none";
-        document.body.appendChild(form1);
-        form1.submit();
-        return form1;
+        if(orderID.length>8){
+            alert("请输入长度不超过8的数字");
+        }
+        else if(Number(orderID)%1 !=0){
+            alert("请输入数字！");
+        }
+        else {
+            const form1 = document.createElement("form");
+            form1.action = "getOrderByOrderID?orderID=" + orderID;
+            form1.method = "post";
+            form1.style.display = "none";
+            document.body.appendChild(form1);
+            form1.submit();
+            return form1;
+        }
     }
     function searchByAgentInfo() {
         const agentInfo = document.getElementById("searchContent").value;
-        const form2 = document.createElement("form");
-        form2.action="searchAgent?agentInfo="+agentInfo;
-        form2.method = "post";
-        form2.style.display = "none";
-        document.body.appendChild(form2);
-        form2.submit();
-        return form2;
+        if(agentInfo.length>8){
+            alert("请输入长度不超过8的字符串");
+        }
+        else {
+            const form2 = document.createElement("form");
+            form2.action = "searchAgent?agentInfo=" + agentInfo;
+            form2.method = "post";
+            form2.style.display = "none";
+            document.body.appendChild(form2);
+            form2.submit();
+            return form2;
+        }
     }
     function searchByUserInfo(){
         const userInfo = document.getElementById("searchContent").value;
-        const form3 = document.createElement("form");
-        form3.action = "searchOrderByUserInfo?userInfo="+userInfo;
-        form3.method = "post";
-        form3.style.display = "none";
-        document.body.appendChild(form3);
-        form3.submit();
-        return form3;
+        if(userInfo.length>8){
+            alert("请输入长度不超过8的字符串");
+        }
+        else {
+            const form3 = document.createElement("form");
+            form3.action = "searchOrderByUserInfo?userInfo=" + userInfo;
+            form3.method = "post";
+            form3.style.display = "none";
+            document.body.appendChild(form3);
+            form3.submit();
+            return form3;
+        }
     }
     laydate.render({
         elem: '#dateChoose1'
@@ -261,6 +300,46 @@
             form4.submit();
             return form4;
         }
+    }
+    function searchAllOrder() {
+        let page = document.getElementById("page1").value;
+        if(page.length >= 6){
+            alert("请输入长度小于6的数字");
+        }
+        else{
+            page = Number(page);
+            if(page %1 !=0){
+                alert("请输入整数！");
+            }
+            else{
+                document.getElementById("searchByPage1").submit();
+            }
+        }
+    }
+    function searchOrderByDateRangeAndPage() {
+        let page = document.getElementById("page2").value;
+        console.log(page);
+        if(page.length >= 6){
+            alert("请输入长度小于6的数字");
+        }
+        else{
+            page = Number(page);
+            if(page %1 !=0){
+                alert("请输入整数！");
+            }
+            else{
+                document.getElementById("searchByPage2").submit();
+            }
+        }
+    }
+    function getAllOrder() {
+        const form5 = document.createElement("form");
+        form5.action = "getAllOrder?start=0&count=1";
+        form5.method = "post";
+        form5.style.display = "none";
+        document.body.appendChild(form5);
+        form5.submit();
+        return form5;
     }
 </script>
 </body>

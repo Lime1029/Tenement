@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fuxiaohang
-  Date: 2019-07-02
-  Time: 14:47
+  Date: 2019-07-09
+  Time: 14:57
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,7 @@
 <head>
     <%--suppress JSUnresolvedLibraryURL --%>
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <title>租户聊天主页面</title>
+    <title>中介聊天主页面</title>
     <style>
         #main{
             position: absolute;
@@ -100,23 +100,22 @@
         <div class="high">
             <div class="head">
                 <!--此处为对话者姓名-->
-                中介
+                租户
             </div>
             <div id="maintalk" class="maindia">
-                <div class="oppostalk">亲，很高兴为您服务</div>
-                    <s:iterator value="#session.chats" var="chat">
-                        <s:if test="#chat.senderId==#chat.userId">
-                            <div class="sentence">
+                <s:iterator value="#session.chats" var="chat">
+                    <s:if test="#chat.senderId!=#chat.userId">
+                        <div class="sentence">
                                 ${chat.chatMessage}
-                            </div>
-                            <div class="clear"></div>
-                        </s:if>
-                        <s:else>
-                            <div class="oppostalk">
+                        </div>
+                        <div class="clear"></div>
+                    </s:if>
+                    <s:else>
+                        <div class="oppostalk">
                                 ${chat.chatMessage}
-                            </div>
-                        </s:else>
-                    </s:iterator>
+                        </div>
+                    </s:else>
+                </s:iterator>
             </div>
         </div>
         <div class="low">
@@ -141,7 +140,7 @@
         appkey:'BC-a996257032c5470597d8213b461e44f3'
     })
     goeasy.subscribe({
-        channel:"${session.user.userId}",
+        channel:"${session.agent.agentId}",
         onMessage:function(message){
             var talk=document.getElementById('maintalk');
             talk.innerHTML=talk.innerHTML+"<div class='oppostalk'>"+message.content;
@@ -170,7 +169,7 @@
         else {
             var talk = document.getElementById('maintalk');
             goeasy.publish({
-                channel: "${session.agentID}",
+                channel: "${session.userID}",
                 message: publishMessage,
                 onFailed: function (error) {
                     alert(error.code + " : " + error.content);
@@ -180,7 +179,7 @@
                     talk.innerHTML = talk.innerHTML + "<div class='clear'>";
                     document.getElementById('input').value = '';
                     talk.scrollTop = talk.scrollHeight;
-                    $.post("saveChatRecord?userID=${session.user.userId}" + "&agentID=${session.agentID}"+ "&chatMessage=" + publishMessage + "&senderID=${session.user.userId}", function (message, status) {
+                    $.post("saveChatRecord?userID=${session.userID}" + "&agentID=${session.agent.agentId}" + "&chatMessage=" + publishMessage + "&senderID=${session.agent.agentId}", function (message, status) {
                         return false;
                     })
                 }

@@ -8,6 +8,7 @@ import model.Chat;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 @Transactional//事务注解
@@ -69,5 +70,19 @@ public class OrderDaoImpl implements OrderDao {
         query.addEntity(Order.class);
         List<Order> orders = query.list();
         return orders;
+    }
+    @Override
+    public int getCountByDateRange(String stime, String etime){
+        Session session =sessionFactory.getCurrentSession();
+        SQLQuery query= session.createSQLQuery("select count(*) from `order` where order_stime >= '"+stime+"' and order_etime <= '"+etime+"'");
+        BigInteger count = new  BigInteger(""+query.uniqueResult());
+        return count.intValue();
+    }
+    @Override
+    public  int getCount(){
+        Session session =sessionFactory.getCurrentSession();
+        SQLQuery query= session.createSQLQuery("select count(*) from `order`");
+        BigInteger count = new  BigInteger(""+query.uniqueResult());
+        return  count.intValue();
     }
 }

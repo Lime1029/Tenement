@@ -42,4 +42,12 @@ public class OrderServiceImpl implements OrderService{
         List<Order> orders = orderDao.getOrderByUserID(userID);
         return orders;
     }
+    @Override
+    public int getCountByDateRange(String stime, String etime){
+        return orderDao.getCountByDateRange(stime, etime);
+    }
+    @Override
+    public int  getCount(){
+        return orderDao.getCount();
+    }
 }

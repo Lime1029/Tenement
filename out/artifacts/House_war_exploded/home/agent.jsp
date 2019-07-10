@@ -13,10 +13,10 @@
 </head>
 <body>
 <form action="agentChat.action" id="form1" method="post">
-    <input type="hidden" value="1000" name="agentID">
+    <input type="hidden" value="${session.agent.agentId}" name="agentID">
 </form>
 <form action="agentChat.action" method="post">
-    <input type="hidden" value="1000" name="agentID">
+    <input type="hidden" value="${session.agent.agentId}" name="agentID">
     <input type="submit" value="查看消息记录">
 </form>
 <%--suppress JSUnresolvedLibraryURL --%>

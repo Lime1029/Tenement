@@ -63,6 +63,7 @@ public class SearchAgent extends ActionSupport{
             }
         }
         ActionContext.getContext().getSession().put("orders",orders);
+        ActionContext.getContext().getSession().put("status", "agent");
         return SUCCESS;
     }
 }

@@ -68,7 +68,8 @@
     </div>
     <form id="form1" action="loadAgentChatRecord.action" method="post">
         <input type="hidden" name="agentID" value="1000">
-        <input type="hidden" name="userID" value="1">
+        <input type="hidden" name="userID" value="${session.user.userId}">
+        <input type="hidden" name="type" value="user">
     </form>
     <button onclick="send()">我想订房</button>
     <%--suppress JSUnresolvedLibraryURL --%>
