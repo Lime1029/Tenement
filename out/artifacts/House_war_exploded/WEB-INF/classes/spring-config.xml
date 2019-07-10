@@ -26,7 +26,7 @@
 
     <bean id="sessionFactory"
       class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
+        <!--<property name="dataSource" ref="dataSource"/>-->
         <property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </bean>
 
@@ -367,6 +367,12 @@
         <property name="plotName" value="宏福小区" />
         <property name="plot" ref="plot" />
     </bean>
+    <bean id="modifyPlot" class="action.AdminUpdate">
+        <property name="adminService" ref="adminService" />
+        <property name="plotId" value="1" />
+        <property name="districtId" value="1" />
+        <property name="plotName" value="小区" />
+    </bean>
     <bean id="saveChatRecord" class="action.SaveChatRecord" scope="prototype">
         <property name="chatService" ref="chatService" />
     </bean>
@@ -424,10 +430,6 @@
     <bean id="conditionSearch" class="action.ConditionSearch" scope="prototype">
         <property name="searchService" ref="searchService" />
         <property name="housing" ref="house" />
-    </bean>
-    <bean id="HouseInfo" class="action.GetHouseInfo" scope="prototype">
-        <property name="searchService" ref="searchService" />
-        <property name="houseId" value="1" />
     </bean>
     <bean id ="getMyHouse" class="action.getMyHouse" scope="prototype">
         <property name="agentShowService" ref="agentShowService"/>

@@ -126,7 +126,11 @@
                             </li>
 
                         </ul>
-
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
+                            </li>
+                        </ul>
 
                     </div>
                 </nav>
@@ -192,7 +196,7 @@
                     <h1 class="text-center">修改城市信息</h1>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="modifyCity.action" method="post">
+                    <form class="form-group" action="modifyCity.action" method="post" onsubmit="return checkUpdateCity()">
 
                         <div class="form-group">
                             <label>城市ID</label>
@@ -201,7 +205,7 @@
                         </div>
                         <div class="form-group">
                             <label>城市名称</label>
-                            <input class="form-control" type="text" placeholder="" name="cityName" id="cityName">
+                            <input class="form-control" type="text" placeholder="" name="cityName" id="cityName" minlength="2" maxlength="10">
                         </div>
 
                         <div class="text-right">
@@ -226,10 +230,10 @@
                     <h1 class="text-center">新增城市</h1>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="addCity.action" method="post">
+                    <form class="form-group" action="addCity.action" method="post" id="insertCity" onsubmit="return checkAddCity()">
                         <div class="form-group">
                             <label>城市名称</label>
-                            <input class="form-control" type="text" placeholder="" name="cityName" id="cityName1">
+                            <input class="form-control" type="text" placeholder="" name="cityName" id="cityName1" minlength="2" maxlength="10">
                         </div>
                         <div class="text-right">
                             <button class="btn btn-primary" type="submit">提交</button>
@@ -254,6 +258,67 @@
             var cityName = $(name).text();
             $('#cityName').val(cityName);
         }
+
+
+        var add_city_boolean = false;
+        var hint1 = "";
+
+        $('#cityName1').blur(function () {
+            if ((/^[\u4E00-\u9FA5]{2,10}$/).test($('#cityName1').val())) {
+                $('#cityName1').parent().addClass('has-success').removeClass('has-error');
+                add_city_boolean = true;
+            }
+            else {
+                $('#cityName1').parent().addClass('has-error').removeClass('has-success');
+                add_city_boolean = false;
+                hint1 = "城市名称格式错误\n";
+            }
+        })
+
+        function checkAddCity() {
+            if (add_city_boolean !== true) {
+                if (hint1 == "") {
+                    alert("请填写完整信息");
+                }
+                else {
+                    alert(hint1);
+                }
+                return false;
+            }
+            else return true;
+        }
+
+
+        var update_city_boolean = true;
+        var hint2 = "";
+
+        $('#cityName').blur(function () {
+            if ((/^[\u4E00-\u9FA5]{2,10}$/).test($('#cityName').val())) {
+                $('#cityName').parent().addClass('has-success').removeClass('has-error');
+                update_city_boolean = true;
+            }
+            else {
+                $('#cityName').parent().addClass('has-error').removeClass('has-success');
+                update_city_boolean = false;
+                hint2 = "城市名称格式错误";
+            }
+        })
+
+        function checkUpdateCity() {
+            if (update_city_boolean !== true) {
+                if (add_city_boolean !== true) {
+                    if (hint2 == "") {
+                        alert("请填写完整信息");
+                    }
+                    else {
+                        alert(hint2);
+                    }
+                    return false;
+                }
+                else return true;
+            }
+        }
+
     </script>
 </body>
 </html>

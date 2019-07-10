@@ -9,6 +9,7 @@ import model.Chat;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 @Transactional//事务注解
@@ -74,6 +75,20 @@ public class OrderDaoImpl implements OrderDao {
         List<Order> orders = query.list();
         return orders;
     }
+    @Override
+    public int getCountByDateRange(String stime, String etime){
+        Session session =sessionFactory.getCurrentSession();
+        SQLQuery query= session.createSQLQuery("select count(*) from `order` where order_stime >= '"+stime+"' and order_etime <= '"+etime+"'");
+        BigInteger count = new  BigInteger(""+query.uniqueResult());
+        return count.intValue();
+    }
+    @Override
+    public  int getCount(){
+        Session session =sessionFactory.getCurrentSession();
+        SQLQuery query= session.createSQLQuery("select count(*) from `order`");
+        BigInteger count = new  BigInteger(""+query.uniqueResult());
+        return  count.intValue();
+    }
 
 
     @Override
@@ -82,7 +97,7 @@ public class OrderDaoImpl implements OrderDao {
         int applyerId=getApplyerIdByTel(applyerTelephone);
         //附加：把jsp中写入的applyer姓名写入对应user_id,对应的user_name中。
         String sql0 = "select * from user where user_id = '" + applyerId + "';";
-        SQLQuery<User> query0 = sessionFactory.getCurrentSession().createSQLQuery(sql0);
+        SQLQuery<User> query0 = sessionFactory.getCurrentSession().createSQLQuery(sql0).addEntity(User.class);
         User user = query0.uniqueResult();
         if (user.getName() == null) {
             insertUserName(applyerName,applyerId);

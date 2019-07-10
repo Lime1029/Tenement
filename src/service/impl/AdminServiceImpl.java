@@ -131,6 +131,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public boolean modifyPlot(int plotId, int districtId, int agentId, String plotName) {
+        return adminDao.modifyPlot(plotId, districtId, agentId, plotName);
+    }
+
+    @Override
     public List getDistrictByCity(int cityId) {
         List districts = adminDao.getDistrictByCity(cityId);
 
@@ -147,5 +152,20 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Plot getPlotByPlotID(int plotId) {
         return adminDao.getPlotByPlotID(plotId);
+    }
+
+    @Override
+    public City getCityByName(String cityName) {
+        return adminDao.getCityByName(cityName);
+    }
+
+    @Override
+    public District getDistrictByName(String districtName) {
+        return adminDao.getDistrictByName(districtName);
+    }
+
+    @Override
+    public Plot getPlotBySome(String plotName, int districtId) {
+        return adminDao.getPlotBySome(plotName, districtId);
     }
 }

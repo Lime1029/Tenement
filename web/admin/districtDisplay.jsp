@@ -127,7 +127,11 @@
                             </li>
 
                         </ul>
-
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
+                            </li>
+                        </ul>
 
                     </div>
                 </nav>
@@ -198,7 +202,7 @@
                     <h1 class="text-center">修改区域信息</h1>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="modifyDistrict.action" method="post">
+                    <form class="form-group" action="modifyDistrict.action" method="post" onsubmit="return checkUpdateDistrict()">
 
                         <div class="form-group">
                             <label>区域ID</label>
@@ -207,7 +211,7 @@
                         </div>
                         <div class="form-group">
                             <label>区域名称</label>
-                            <input class="form-control" type="text" placeholder="" name="districtName" id="districtName">
+                            <input class="form-control" type="text" placeholder="" name="districtName" id="districtName" minlength="3" maxlength="10">
                         </div>
                         <div class="form-group">
                             <label>所属城市</label>
@@ -261,11 +265,11 @@
                     <h1 class="text-center">新增区域</h1>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="addDistrict.action" method="post">
+                    <form class="form-group" action="addDistrict.action" method="post" onsubmit="return checkAddDistrict()">
 
                         <div class="form-group">
                             <label>区域名称</label>
-                            <input class="form-control" type="text" placeholder="" name="districtName" id="districtName1">
+                            <input class="form-control" type="text" placeholder="" name="districtName" id="districtName1" minlength="3" maxlength="10">
                         </div>
                         <div class="form-group">
                             <label>所属城市</label>
@@ -315,6 +319,65 @@
                 else selectItem[i].selected = false;
             }
 
+        }
+
+
+
+        var add_district_boolean = false;
+        var hint1 = "";
+
+        $('#districtName1').blur(function () {
+            if((/^[\u4E00-\u9FA5]{3,10}$/).test($('#districtName1').val())) {
+                $('#districtName1').parent().addClass('has-success').removeClass('has-error');
+                add_district_boolean = true;
+            }
+            else {
+                $('#districtName1').parent().removeClass('has-success').addClass('has-error');
+                hint1 = "区域名称格式错误";
+            }
+        })
+
+        function checkAddDistrict() {
+            if (add_district_boolean !== true) {
+                if (hint1 == ""){
+                    alert("请填写完整信息");
+                }
+                else {
+                    alert(hint1);
+                }
+                return false;
+            }
+            else return true;
+        }
+
+
+
+        var update_district_boolean = true;
+        var hint2 = "";
+
+        $('#districtName').blur(function () {
+            if((/^[\u4E00-\u9FA5]{3,10}$/).test($('#districtName').val())) {
+                $('#districtName').parent().addClass('has-success').removeClass('has-error');
+                update_district_boolean = true;
+            }
+            else {
+                $('#districtName').parent().removeClass('has-success').addClass('has-error');
+                hint2 = "区域名称格式错误";
+                update_district_boolean = false;
+            }
+        })
+
+        function checkUpdateDistrict() {
+            if (update_district_boolean !== true) {
+                if (hint2 == ""){
+                    alert("请填写完整信息");
+                }
+                else {
+                    alert(hint2);
+                }
+                return false;
+            }
+            else return true;
         }
     </script>
 </body>

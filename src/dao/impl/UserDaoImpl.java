@@ -358,7 +358,7 @@ public class UserDaoImpl implements UserDao {
     public List getNotice()
     {
         Session session =sessionFactory.getCurrentSession();
-        String sql = "select message,release_time,username from discussion_section,user where discussion_section.author_id=user.user_id order by release_time DESC limit 100 ";
+        String sql = "select message,release_time,username from discussion_section,user where discussion_section.author_id=user.user_id order by release_time ASC limit 100 ";
         SQLQuery caller  = session.createSQLQuery(sql);
         return  caller.list();
 

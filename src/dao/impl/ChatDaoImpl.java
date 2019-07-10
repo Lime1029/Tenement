@@ -6,10 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 import model.Chat;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,21 +36,22 @@ public class ChatDaoImpl implements ChatDao {
         query.addEntity(Chat.class);
         List<Chat> chats = query.list();
         List<List<Chat>> user_chats = new ArrayList<List<Chat>>();
-        Map<String,String>userID_Chats = new HashMap<String,String>();
+        Map<String,List<Chat>>userID_Chats = new HashMap<String,List<Chat>>();
         int numOfKey = 0;
         for (int i=0;i<chats.size();i++){
             String userID = String.valueOf(chats.get(i).getUserId());
             if(!userID_Chats.containsKey(userID)){
-                userID_Chats.put(userID,String.valueOf(numOfKey));
-                List<Chat> new_chats = new ArrayList<Chat>();
-                new_chats.add(chats.get(i));
-                user_chats.add(new_chats);
-                numOfKey++;
+                List<Chat> per_user_chats = new ArrayList<>();
+                per_user_chats.add(chats.get(i));
+                userID_Chats.put(userID,per_user_chats);
             }
             else{
-                user_chats.get(Integer.parseInt(userID_Chats.get(userID))).add(chats.get(i));
+                userID_Chats.get(userID).add(chats.get(i));
             }
+        }for (String key : userID_Chats.keySet()) {
+            user_chats.add(userID_Chats.get(key));
         }
+        Collections.reverse(user_chats);
         return user_chats;
     }
     @Override

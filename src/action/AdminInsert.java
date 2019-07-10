@@ -1,5 +1,6 @@
 package action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import model.Agent;
 import model.City;
@@ -9,6 +10,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.hibernate.annotations.Parent;
 import service.AdminService;
+import service.UserService;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -30,6 +32,9 @@ public class AdminInsert extends ActionSupport {
     private int districtId;
     private int agentId;
     private Plot plot;
+    private UserService userService;
+    private String adminMessage = null;
+    private String resultMess = "error";
 
     public AdminService getAdminService() {
         return adminService;
@@ -144,20 +149,51 @@ public class AdminInsert extends ActionSupport {
         this.plot = plot;
     }
 
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
     public String insertAgent() throws Exception {
         agent.setName(agentName);
         agent.setTelephone(agentTelephone);
         agent.setPassword(agentPassword);
 
-        adminService.save(agent);
-        return "success";
+        if (userService.getAgentByTel(agentTelephone) != null) {
+
+            adminMessage = "用该手机号注册的用户已存在";
+        }
+        else {
+            adminService.save(agent);
+            resultMess = "success";
+        }
+
+        if (adminMessage != null) {
+            ActionContext.getContext().getSession().put("adminMessage", adminMessage);
+        }
+        return resultMess;
+
     }
 
     public String insertCity() throws Exception {
         city.setName(cityName);
 
-        adminService.save(city);
-        return "success";
+        if (adminService.getCityByName(cityName) != null) {
+            adminMessage = "该城市名已被注册";
+        }
+        else {
+            adminService.save(city);
+            resultMess = "success";
+        }
+
+        if (adminMessage != null) {
+            ActionContext.getContext().getSession().put("adminMessage", adminMessage);
+        }
+
+        return resultMess;
     }
 
     public String insertDistrict() throws Exception {
@@ -165,17 +201,40 @@ public class AdminInsert extends ActionSupport {
 
         district.setDistrictName(districtName);
         district.setCityId(cityId);
+        if (adminService.getDistrictByName(districtName) != null) {
+            adminMessage = "该区域名已被注册";
+        }
+        else {
+            adminService.save(district);
+            resultMess = "success";
+        }
 
-        adminService.save(district);
-        return "success";
+        if (adminMessage != null) {
+            ActionContext.getContext().getSession().put("adminMessage", adminMessage);
+        }
+
+        return resultMess;
     }
 
     public String insertPlot() throws Exception {
         plot.setDistrictId(districtId);
         plot.setPlotName(plotName);
         plot.setAgentId(agentId);
-        adminService.save(plot);
-        return "success";
+
+        if (adminService.getPlotBySome(plotName, districtId) != null) {
+            adminMessage = "同一区域下该小区名已被注册";
+        }
+        else {
+            adminService.save(plot);
+            resultMess = "success";
+        }
+
+        if (adminMessage != null) {
+            ActionContext.getContext().getSession().put("adminMessage", adminMessage);
+        }
+
+        return resultMess;
 
     }
+
 }

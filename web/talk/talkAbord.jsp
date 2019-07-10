@@ -23,12 +23,12 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"></link>
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script src="jquery-1.10.2.min.js"></script>
+    <script src="jquery-1.10.2.min.js"></script>-->
     <meta name="viewport"  content="width=device-width;minimum-scale=1.0;initial-scale=1.0; maximum-scale=2.0; charset=UTF-8">
     <!--上一行是对移动端设备友好-->
     <title>讨论块</title>
@@ -108,14 +108,17 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
                 <a href="#">首页</a>
             </li>
             <li>
-                <a href="">租房</a>
+                <a href="../search/search.jsp">租房</a>
             </li>
             <li>
-                <a href="../house submit/housing submit.jsp">发布房源</a>
+                <a href="plotGet.action">发布房源</a>
+            </li>
+            <li class="active">
+                <a href="messageShow.action">讨论版</a>
             </li>
 
         </ul>
@@ -124,7 +127,7 @@
                 <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
             </li>
             <li>
-                <a href="">&nbsp;&nbsp;退出</a>
+                <a href="logout.action">&nbsp;&nbsp;退出</a>
             </li>
         </ul>
     </div>

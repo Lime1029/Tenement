@@ -43,6 +43,15 @@ public class OrderServiceImpl implements OrderService{
         List<Order> orders = orderDao.getOrderByUserID(userID);
         return orders;
     }
+    @Override
+    public int getCountByDateRange(String stime, String etime){
+        return orderDao.getCountByDateRange(stime, etime);
+    }
+    @Override
+    public int  getCount(){
+        return orderDao.getCount();
+    }
+
 
 
     @Override
@@ -56,5 +65,6 @@ public class OrderServiceImpl implements OrderService{
     public boolean saveOrder(Order order, String applyerTelephone,String applyerName){
         return  orderDao.saveOrder(order,applyerTelephone,applyerName);
     }
+
 
 }

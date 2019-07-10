@@ -44,13 +44,16 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="#">首页</a>
+                                <a href="../home/user.jsp">首页</a>
                             </li>
                             <li>
-                                <a href="">租房</a>
+                                <a href="../search/search.jsp">租房</a>
                             </li>
                             <li>
-                                <a href="">发布房源</a>
+                                <a href="plotGet.action">发布房源</a>
+                            </li>
+                            <li>
+                                <a href="messageShow.action">讨论版</a>
                             </li>
 
                         </ul>
@@ -59,7 +62,7 @@
                                 <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
                             </li>
                             <li>
-                                <a href="">&nbsp;&nbsp;退出</a>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
                             </li>
                         </ul>
                     </div>
@@ -94,6 +97,7 @@
                         <input name="agentID" value="${houseInfo.agentId}" hidden="hidden">
                         <input name="userID" value="${user.userId}" hidden="hidden">
                         <input name="houseId" value="${houseInfo.houseId}" hidden="hidden">
+                        <input type="hidden" name="type" value="user">
                         <h4 style="display: inline;">经纪人：${houseInfo.agentName}&nbsp;&nbsp;</h4>
                         <span><button class="btn btn-primary" style="" type="submit" onclick="send()">在线咨询</button></span>
                     </form>
@@ -115,8 +119,8 @@
         })
         function send() {
             goeasy.publish({
-                channel: 'agent_alert',
-                message: "用户1想看1号房",
+                channel: '${houseInfo.agentId}',
+                message: "用户${user.userId}想看${houseInfo.houseId}号房",
                 onFailed: function (error) {
                     alert(error.code+" : "+error.content);
                 },

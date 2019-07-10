@@ -9,6 +9,9 @@ public class AdminUpdate extends ActionSupport {
     private String cityName;
     private int districtId;
     private String districtName;
+    private int plotId;
+    private String plotName;
+    private int agentId;
 
     public AdminService getAdminService() {
         return adminService;
@@ -50,7 +53,29 @@ public class AdminUpdate extends ActionSupport {
         this.districtName = districtName;
     }
 
+    public int getPlotId() {
+        return plotId;
+    }
 
+    public void setPlotId(int plotId) {
+        this.plotId = plotId;
+    }
+
+    public String getPlotName() {
+        return plotName;
+    }
+
+    public void setPlotName(String plotName) {
+        this.plotName = plotName;
+    }
+
+    public int getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(int agentId) {
+        this.agentId = agentId;
+    }
 
     public String modifyCity() throws Exception {
         adminService.modifyCity(cityId, cityName);
@@ -60,6 +85,12 @@ public class AdminUpdate extends ActionSupport {
 
     public String modifyDistrict() throws Exception {
         adminService.modifyDistrict(cityId, districtId, districtName);
+
+        return "success";
+    }
+
+    public String modifyPlot() throws Exception {
+        adminService.modifyPlot(plotId, districtId, agentId, plotName);
 
         return "success";
     }

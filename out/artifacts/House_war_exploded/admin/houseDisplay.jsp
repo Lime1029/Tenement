@@ -118,7 +118,11 @@
 
                         </ul>
 
-
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
 

@@ -20,7 +20,7 @@ public class LogServiceImpl implements LogSerivce {
 
         Object[] args = point.getArgs();
 
-        System.out.println("目标参数列表：");
+        System.out.println("\n目标参数列表：");
 
         if (args != null) {
 
@@ -44,7 +44,7 @@ public class LogServiceImpl implements LogSerivce {
 
         Object[] args = point.getArgs();
 
-        System.out.println("目标参数列表：");
+        System.out.println("\n目标参数列表：");
 
         if (args != null) {
 
@@ -53,8 +53,6 @@ public class LogServiceImpl implements LogSerivce {
                 System.out.println(obj + ",");
 
             }
-
-            System.out.println();
 
             System.out.println("执行结果是：" + returnObj);
 

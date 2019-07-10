@@ -18,12 +18,28 @@ public class LoadAgentChatRecord extends ActionSupport{
     private int agentID;
     public void setAgentID(int agentID){this.agentID = agentID;}
     public int getAgentID(){return agentID;}
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String execute(){
         chats = chatService.getChatByUserIDAndAgentID(userID,agentID);
-        if(chats.size()==0)
-            return ERROR;
         ActionContext.getContext().getSession().put("chats",chats);
+        if(type.equals("agent")){
+            System.out.println(userID);
+            ActionContext.getContext().getSession().put("userID",userID);
+            type = "";
+            System.out.println("agent");
+            return "agent";
+        }
+        ActionContext.getContext().getSession().put("agentID",agentID);
         return SUCCESS;
     }
 }

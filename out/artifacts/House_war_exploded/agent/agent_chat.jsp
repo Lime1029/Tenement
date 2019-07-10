@@ -163,7 +163,7 @@
         appkey:'BC-a996257032c5470597d8213b461e44f3'
     })
     goeasy.subscribe({
-        channel:'1000',
+        channel:''+${agent.agentId},
         onMessage:function(message){
             var talk=document.getElementById('maintalk');
             talk.innerHTML=talk.innerHTML+"<div class='oppostalk'>"+message.content;
@@ -184,7 +184,7 @@
                 talk.innerHTML=talk.innerHTML+"<div class='clear'>";
                 document.getElementById('input').value='';
                 talk.scrollTop=talk.scrollHeight;
-                $.post("saveChatRecord?agentID=1000"+"&userID="+userID+"&chatMessage="+publishMessage+"&senderID=${agent.agentId}", function(message, status) {
+                $.post("saveChatRecord?agentID=${agent.agentId}"+"&userID="+userID+"&chatMessage="+publishMessage+"&senderID=${agent.agentId}", function(message, status) {
                     return false;
                 })
             }

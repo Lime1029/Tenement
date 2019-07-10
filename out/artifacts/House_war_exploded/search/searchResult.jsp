@@ -54,14 +54,17 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
+                            <li>
+                                <a href="../home/user.jsp">首页</a>
+                            </li>
                             <li class="active">
-                                <a href="#">首页</a>
+                                <a href="../search/search.jsp">租房</a>
                             </li>
                             <li>
-                                <a href="">租房</a>
+                                <a href="plotGet.action">发布房源</a>
                             </li>
                             <li>
-                                <a href="">发布房源</a>
+                                <a href="messageShow.action">讨论版</a>
                             </li>
 
                         </ul>
@@ -70,7 +73,7 @@
                                 <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
                             </li>
                             <li>
-                                <a href="">&nbsp;&nbsp;退出</a>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
                             </li>
                         </ul>
                     </div>

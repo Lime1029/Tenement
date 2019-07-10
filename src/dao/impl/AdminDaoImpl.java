@@ -212,6 +212,19 @@ public class AdminDaoImpl implements AdminDao {
     }
 
     @Override
+    public boolean modifyPlot(int plotId, int districtId, int agentId, String plotName) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "update Plot p set districtId = " + districtId + ", plotName = '" +
+                plotName + "', agentId = " + agentId + " where plotId = " + plotId;
+        Query query = session.createQuery(hql);
+
+        query.executeUpdate();
+
+        return true;
+
+    }
+
+    @Override
     public List getDistrictByCity(int cityId) {
         Session session = sessionFactory.getCurrentSession();
         String hql = "select d.districtId, d.districtName from District d, City c " +
@@ -237,6 +250,33 @@ public class AdminDaoImpl implements AdminDao {
     public Plot getPlotByPlotID(int plotId) {
         Session session = sessionFactory.getCurrentSession();
         String hql = "from Plot where plotId =" + plotId;
+        Query<Plot> query = session.createQuery(hql);
+        Plot plot = query.uniqueResult();
+        return plot;
+    }
+
+    @Override
+    public City getCityByName(String cityName) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "from City where name = '" + cityName + "'";
+        Query<City> query = session.createQuery(hql);
+        City city = query.uniqueResult();
+        return city;
+    }
+
+    @Override
+    public District getDistrictByName(String districtName) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "from District where districtName ='" + districtName + "'";
+        Query<District> query = session.createQuery(hql);
+        District district = query.uniqueResult();
+        return district;
+    }
+
+    @Override
+    public Plot getPlotBySome(String plotName, int districtId) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "from Plot where plotName='" + plotName + "' and districtId = " + districtId;
         Query<Plot> query = session.createQuery(hql);
         Plot plot = query.uniqueResult();
         return plot;

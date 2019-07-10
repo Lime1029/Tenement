@@ -27,6 +27,10 @@ public interface AdminDao {
 
     public boolean modifyCity(int cityId, String cityName);
     public boolean modifyDistrict(int cityId, int districtId, String districtName);
+    public boolean modifyPlot(int plotId, int districtId, int agentId, String plotName);
 
     public Plot getPlotByPlotID(int plotId);
+    public City getCityByName(String cityName);
+    public District getDistrictByName(String districtName);
+    public Plot getPlotBySome(String plotName, int districtId);
 }

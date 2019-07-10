@@ -52,7 +52,17 @@ public class GetOrderByDateRange extends ActionSupport{
         this.start = start;
     }
 
-    private int last = 0;
+    private int input_start;
+
+    public void setInput_start(int input_start) {
+        this.input_start = input_start;
+    }
+
+    public int getInput_start() {
+        return input_start;
+    }
+
+    private int last = 1;
     public int getLast(){return last;}
     public void setLast(int last){this.last = last;}
     private int count;
@@ -67,13 +77,31 @@ public class GetOrderByDateRange extends ActionSupport{
 
     @Override
     public String execute() throws Exception{
-        orders = orderService.getOrderByDateRange(stime, etime,start, count);
-        if(orders.size() == 0)
+        int countOfOrder = orderService.getCountByDateRange(stime, etime);
+        int countOfPage = 0;
+        if (countOfOrder%count == 0){
+            countOfPage = countOfOrder/count;
+        }
+        else{
+            countOfPage = (int)(countOfOrder/count)+1;
+        }
+        if(input_start != 0){
+            start = input_start -1;
+            input_start = 0;
+        }
+        if(countOfPage <= start){
+            ActionContext.getContext().getSession().put("isNextPage", "n");
             return "zero";
+        }
+        orders = orderService.getOrderByDateRange(stime, etime, start, count);
         start++;
         last = start - 2;
-        if(last < 0)
-            last = 0;
+        if(last < 0){
+            ActionContext.getContext().getSession().put("isLastPage", "n");
+        }
+        else{
+            ActionContext.getContext().getSession().put("isLastPage","y");
+        }
         ActionContext.getContext().getSession().put("stime", stime);
         ActionContext.getContext().getSession().put("etime", etime);
         ActionContext.getContext().getSession().put("status", "date");
@@ -81,6 +109,13 @@ public class GetOrderByDateRange extends ActionSupport{
         ActionContext.getContext().getSession().put("last", last);
         ActionContext.getContext().getSession().put("count",1);
         ActionContext.getContext().getSession().put("orders", orders);
+        if(countOfPage <= start){
+            ActionContext.getContext().getSession().put("isNextPage","n");
+        }
+        else{
+            ActionContext.getContext().getSession().put("isNextPage","y");
+        }
+        ActionContext.getContext().getSession().put("page",countOfPage);
         return SUCCESS;
     }
 }

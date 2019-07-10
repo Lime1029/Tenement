@@ -80,10 +80,25 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active">
+                            <li>
                                 <a href="../home/user.jsp">首页</a>
                             </li>
+                            <li>
+                                <a href="../search/search.jsp">租房</a>
+                            </li>
+                            <li>
+                                <a href="plotGet.action">发布房源</a>
+                            </li>
+                            <li>
+                                <a href="messageShow.action">讨论版</a>
+                            </li>
 
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

@@ -68,7 +68,7 @@
                                 <a href="#">首页</a>
                             </li>
                             <li>
-                                <a href="">租房</a>
+                                <a href="../search/search.jsp">租房</a>
                             </li>
                             <li>
                                 <a href="plotGet.action">发布房源</a>

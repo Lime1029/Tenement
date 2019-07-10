@@ -20,12 +20,7 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"></link>
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
-    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script src="jquery-1.10.2.min.js"></script>
+
     <meta name="viewport"  content="width=device-width;minimum-scale=1.0;initial-scale=1.0; maximum-scale=2.0; charset=UTF-8">
     <!--上一行是对移动端设备友好-->
     <title>房源发布</title>
@@ -93,14 +88,17 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <li>
+                    <a href="../home/user.jsp">首页</a>
+                </li>
+                <li>
+                    <a href="../search/search.jsp">租房</a>
+                </li>
                 <li class="active">
-                    <a href="#">首页</a>
+                    <a href="plotGet.action">发布房源</a>
                 </li>
                 <li>
-                    <a href="">租房</a>
-                </li>
-                <li>
-                    <a href="../house submit/housing submit.jsp">发布房源</a>
+                    <a href="messageShow.action">讨论版</a>
                 </li>
 
             </ul>
@@ -109,7 +107,7 @@
                     <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
                 </li>
                 <li>
-                    <a href="">&nbsp;&nbsp;退出</a>
+                    <a href="logout.action">&nbsp;&nbsp;退出</a>
                 </li>
             </ul>
         </div>
@@ -164,13 +162,15 @@
                 <h2 style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -20px;margin-left: 40px">北京</h2>
                 <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -6px;width: 400px;">
                 <br>
-                <form id = "houseSubmit" action="houseSubmit.action" method="post" >
+                <form id = "houseSubmit" action="houseSubmit.action" method="post" onsubmit="return check()">
 
                     <input type="text" id="address" name="address" placeholder="请输入具体地址" minlength="1" maxlength="30" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="address_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
                     <input type="text" id="money" name="price" placeholder="请输入您的期望租金" minlength="1" maxlength="10" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="price_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
@@ -179,6 +179,7 @@
                     <br>
 
                     <input type="text" id="phone" name="phone" placeholder="您的常用联系方式" minlength="10" maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="phone_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
                     <input hidden name="applyer_id" value="${user.userId}">
@@ -198,6 +199,64 @@
     </form>
 
 
+    <script>
+
+        var phone_Boolean = false;
+        var rent_Boolean = false;
+        var address_Boolean = false;
+
+        $('#price').blur(function () {
+            if((/^[0-9]{1,10}$/).test($("#price").val()))
+            {
+                $('.price_hint').html("✔").css("color","green");
+                rent_Boolean = true;
+            }else {
+                $('.price_hint').html("✘").css("color","red");
+                rent_Boolean = false;
+            }
+
+
+        });
+
+        // Mobile
+        $('#phone').blur(function(){
+            if ((/^1[34578]\d{9}$/).test($("#phone").val())){
+                $('.phone_hint').html("✔").css("color","green");
+                phone_Boolean = true;
+            }else {
+                $('.phone_hint').html("✘").css("color","red");
+                phone_Boolean = false;
+            }
+        });
+
+        $('#address').blur(function(){
+            if ((/^[\u4e00-\u9fa5]{1,20}$ /).test($("#address").val())){
+                $('.address_hint').html("✔").css("color","green");
+                address_Boolean = true;
+            }else {
+                $('.address_hint').html("✘").css("color","red");
+                address_Boolean = false;
+            }
+        });
+
+
+        function check() {
+            if((rent_Boolean && phone_Boolean && address_Boolean) !== true){
+                alert("请按格式要求填写信息");
+                document.getElementById('price').value = "";
+                document.getElementById('phone').value = "";
+                document.getElementById('address').value = "";
+                $('.phone_hint').html("");
+                $('.price_hint').html("");
+                $('.address_hint').html("");
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+    </script>
 </div>
 </body>
 </html>

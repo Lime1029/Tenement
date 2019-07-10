@@ -55,6 +55,7 @@
         </action>
         <action name="insertAgent" class="action.AdminInsert" method="insertAgent">
             <result name="success" type="redirect">agentDisplay.action</result>
+            <result name="error" type="redirect">/admin/addAgentFail.jsp</result>
         </action>
         <action name="searchMyHouse" class="action.UserQuery" method="searchHouseInMyName">
             <result name="success" type="redirect">/myCenter/myHouse.jsp</result>
@@ -97,6 +98,7 @@
         </action>
         <action name="addCity" class="action.AdminInsert" method="insertCity">
             <result name="success" type="redirect">cityDisplay.action</result>
+            <result name="error" type="redirect">/admin/addCityFail.jsp</result>
         </action>
         <action name="deleteCity" class="action.AdminDelete" method="deleteCity">
             <result name="success" type="chain">cityDisplay</result>
@@ -109,6 +111,7 @@
         </action>
         <action name="addDistrict" class="action.AdminInsert" method="insertDistrict">
             <result name="success" type="redirect">districtDisplay.action</result>
+            <result name="error" type="redirect">/admin/addDistrictFail.jsp</result>
         </action>
         <action name="deleteDistrict" class="action.AdminDelete" method="deleteDistrict">
             <result name="success" type="chain">districtDisplay</result>
@@ -127,9 +130,13 @@
         </action>
         <action name="addPlot" class="action.AdminInsert" method="insertPlot">
             <result name="success" type="redirect">plotDisplay.action</result>
+            <result name="error" type="redirect">/admin/addPlotFail.jsp</result>
+        </action>
+        <action name="modifyPlot" class="action.AdminUpdate" method="modifyPlot">
+            <result name="success" type="chain">plotDisplay</result>
         </action>
         <action name="agentChat" class="action.AgentChat">
-            <result name="success">/agent/agent_chat.jsp</result>
+            <result name="success">/agent/agent_chat_list.jsp</result>
         </action>
         <action name="saveChatRecord" class="action.SaveChatRecord">
             <result name="success" type="stream">
@@ -139,13 +146,14 @@
         </action>
         <action name="loadAgentChatRecord" class="action.LoadAgentChatRecord">
             <result name="success">/user/user_chat.jsp</result>
+            <result name="agent">/agent/per_agent_chat.jsp</result>
         </action>
         <action name="getAllOrder" class="action.GetAllOrder">
             <result name="success">/admin/orderDisplay.jsp</result>
             <result name="zero">/admin/orderDisplayFail.jsp</result>
         </action>
         <action name="deleteOrder" class="action.DeleteOrder">
-            <result name="success" type="redirect">/admin/orderDisplay.jsp</result>
+            <result name="success">/admin/orderDeleteSuccess.jsp</result>
             <result name="zero">/admin/orderDisplayFail.jsp</result>
         </action>
         <action name="getOrderDetail" class="action.GetOrderDetail">
@@ -170,7 +178,7 @@
         </action>
         <!--添加订单action-->
         <action name="addOrder" class="action.AddOrder">
-            <result name="success">/agent/agent_AddOrder.jsp</result>
+            <result name="success" type="redirect">getMyOrders.action</result>
             <result name="error">/agent/agent_fail.jsp</result>
         </action>
         <!--查看我名下的订单action-->
@@ -179,7 +187,7 @@
             <result name="error">/agent/agent_fail.jsp</result>
         </action>
         <action name="logout" class="action.Logout">
-            <result name="success">/registerLogin/login.jsp</result>
+            <result name="success" type="redirect">/registerLogin/login.jsp</result>
         </action>
 
         <action name="houseSubmit" class="action.HouseSubmit">

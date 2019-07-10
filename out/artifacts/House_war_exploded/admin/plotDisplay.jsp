@@ -126,7 +126,11 @@
                             </li>
 
                         </ul>
-
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
+                            </li>
+                        </ul>
 
                     </div>
                 </nav>
@@ -206,11 +210,11 @@
                     <h3 class="text-center">新增小区</h3>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="addPlot.action" method="post">
+                    <form class="form-group" action="addPlot.action" method="post" onsubmit="return checkAddPlot()">
 
                         <div class="form-group">
                             <label>小区名称</label>
-                            <input class="form-control" type="text" placeholder="" name="plotName" id="plotName1">
+                            <input class="form-control" type="text" placeholder="" name="plotName" id="plotName1" minlength="3" maxlength="10">
                         </div>
                         <div class="form-group">
                             <label>所属城市</label>
@@ -274,7 +278,7 @@
                     <h3 class="text-center">修改小区信息</h3>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="addPlot.action" method="post">
+                    <form class="form-group" action="modifyPlot.action" method="post" onsubmit="return checkUpdatePlot()">
 
                         <div class="form-group">
                             <label>小区ID</label>
@@ -283,7 +287,7 @@
                         </div>
                         <div class="form-group">
                             <label>小区名称</label>
-                            <input class="form-control" type="text" placeholder="" name="plotName" id="plotName">
+                            <input class="form-control" type="text" placeholder="" name="plotName" id="plotName" minlength="3" maxlength="10">
                         </div>
                         <div class="form-group">
                             <label>所属城市</label>
@@ -373,39 +377,63 @@
 
         }
 
-        $('#citySelect').onchange(function () {
-            var myselect = document.getElementById("citySelect")
-            var index = myselect.selectedIndex;
-            var cityId1 = myselect.options[index].value;
 
-            $.ajax({
-                url :"/getDistrictByCity.action",  //后台处理程序
-                type:"post",    //数据发送方式
-                async:false,
-                dataType:"json",   //接受数据格式
-                data: {
-                    cityId: cityId1
-                },
+        var add_plot_boolean = false;
+        var plot_hint1 = "";
 
-                error: function(){
-                    alert("服务器没有返回数据，可能服务器忙，请重试");
-                },
-
-
-                success: function(json){
-                    alert(json)
-                    /*var listArray = eval(json).titlelist;
-
-
-                    for(var i=0;i<listArray.length;i++)
-                    {
-                        $(".index_leftlist ul").append("<li>"+listArray[i]+"</li>");
-
-                    }*/
-
-                }
-            });
+        $('#plotName1').blur(function () {
+            if((/^[\u4E00-\u9FA5]{3,10}$/).test($('#plotName1').val())) {
+                $('#plotName1').parent().addClass('has-success').removeClass('has-error');
+                add_plot_boolean = true;
+            }
+            else {
+                $('#plotName1').parent().addClass('has-error').removeClass('has-success');
+                add_plot_boolean = false;
+                plot_hint1 = "小区名称格式错误";
+            }
         })
+
+        function checkAddPlot() {
+            if (add_plot_boolean !== true) {
+                if (plot_hint1 == "") {
+                    alert("请填写完整信息");
+                }
+                else {
+                    alert(plot_hint1);
+                }
+                return false;
+            }
+            else return true;
+        }
+
+        var update_plot_boolean = true;
+        var plot_hint2 = "";
+
+        $('#plotName').blur(function () {
+            if((/^[\u4E00-\u9FA5]{3,10}$/).test($('#plotName').val())) {
+                $('#plotName').parent().addClass('has-success').removeClass('has-error');
+                update_plot_boolean = true;
+            }
+            else {
+                $('#plotName').parent().addClass('has-error').removeClass('has-success');
+                update_plot_boolean = false;
+                plot_hint2 = "小区名称格式错误";
+            }
+        })
+
+        function checkUpdatePlot() {
+            if (update_plot_boolean !== true) {
+                if (plot_hint2 == "") {
+                    alert("请填写完整信息");
+                }
+                else {
+                    alert(plot_hint2);
+                }
+                return false;
+            }
+            else return true;
+        }
+
     </script>
 </body>
 </html>

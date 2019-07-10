@@ -35,6 +35,11 @@
             text-align: left;
             padding-left: 50px;
         }
+
+        #search input {
+            display: inline;
+            width: 900px;
+        }
     </style>
 </head>
 <body>
@@ -54,10 +59,27 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
+                        <li>
+                            <a href="../home/user.jsp">首页</a>
+                        </li>
                         <li class="active">
-                            <a href="#">首页</a>
+                            <a href="../search/search.jsp">租房</a>
+                        </li>
+                        <li>
+                            <a href="plotGet.action">发布房源</a>
+                        </li>
+                        <li>
+                            <a href="messageShow.action">讨论版</a>
                         </li>
 
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="../myCenter/userInfo.jsp"><span class="glyphicon glyphicon-user"></span>个人中心</a>
+                        </li>
+                        <li>
+                            <a href="logout.action">&nbsp;&nbsp;退出</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -66,6 +88,10 @@
     </div>
 
     <div class="filter">
+        <form role="form" id="search" action="searchHouseByKeyword.action">
+            <input type="search" maxlength="15" placeholder="请输入区域或小区名搜索" class="form-control" name="condition">
+            <span><button class="btn btn-primary" type="submit">开始找房</button></span>
+        </form>
         <script type="text/javascript">
             function choosebe(clickanswer) {
             }
@@ -74,10 +100,7 @@
         <ul class="filter__item--noaside">
             <li class="filter__item--level1 down strong" data-tab="1" data-el="area" data-antitarget="station"><a href="/zufang/" onclick="return false;">按区域</a></li>
         </ul>
-        <form role="form" id="search" action="searchHouseByKeyword.action">
-            <input type="search" placeholder="请输入区域或小区名搜索" class="form-control" name="condition">
-            <span><button class="btn btn-primary" type="submit">开始找房</button></span>
-        </form>
+
         <form role="form" id="search2" action="conditionSearch.action" >
             <ul data-target="search.housing_plot" class="">
                 <div >

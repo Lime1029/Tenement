@@ -12,7 +12,9 @@ public interface OrderDao {
     public List<Order> getOrderByAgentID(int agentID);
     public List<Order> getOrderByUserID(int userID);
     public List<Order> getOrderByDateRange(String stime, String etime, int start, int count);
-    List<Order> getMyOrder(int agentId);
+    public int getCountByDateRange(String stime, String etime);
+    public  int getCount();
 
+    List<Order> getMyOrder(int agentId);
     boolean saveOrder(Order order,String applyerTelephone,String applyerName);
 }

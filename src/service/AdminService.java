@@ -24,7 +24,11 @@ public interface AdminService {
     public void deletePlot(int plotId);
     public List getDistrictByCity(int cityId);
     public boolean save(Plot plot);
+    public boolean modifyPlot(int plotId, int districtId, int agentId, String plotName);
 
     public Plot getPlotByPlotID(int plotId);
+    public City getCityByName(String cityName);
+    public District getDistrictByName(String districtName);
+    public Plot getPlotBySome(String plotName, int districtId);
 
 }

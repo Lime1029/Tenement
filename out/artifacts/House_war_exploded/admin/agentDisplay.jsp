@@ -129,6 +129,11 @@
                             </li>
 
                         </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="logout.action">&nbsp;&nbsp;退出</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
 
@@ -196,19 +201,19 @@
                     <h1 class="text-center">新增经纪人</h1>
                 </div>
                 <div class="modal-body">
-                    <form class="form-group" action="insertAgent.action" method="post">
+                    <form class="form-group" action="insertAgent.action" method="post" id="insertAgent" onsubmit="return checkAddAgent()">
 
                         <div class="form-group">
                             <label>姓名</label>
-                            <input class="form-control" type="text" placeholder="" name="agentName">
+                            <input class="form-control" type="text" placeholder="" name="agentName" id="agentName" minlength="2" maxlength="20">
                         </div>
                         <div class="form-group">
                             <label>手机号</label>
-                            <input class="form-control" type="text" placeholder="输入正确格式" name="agentTelephone">
+                            <input class="form-control" type="text" placeholder="输入正确格式" name="agentTelephone" id="agentTel" maxlength="11">
                         </div>
                         <div class="form-group">
                             <label>初始密码</label>
-                            <input class="form-control" type="password" placeholder="6-15位字母、数字或_" name="agentPassword">
+                            <input class="form-control" type="password" placeholder="6-15位字母、数字或_" name="agentPassword" id="agentPassword" minlength="6" maxlength="15">
                         </div>
 
                         <div class="text-right">
@@ -220,6 +225,65 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var agent_name_boolean = false;
+        var agent_telephone_boolean = false;
+        var agent_password_boolean = false;
+        var hint = "", hint1="", hint2="", hint3="";
+
+        //当输入框的文本改变时调用
+        $('#agentName').blur(function () {
+            if ((/^(?:[\u4e00-\u9fa5]+)(?:●[\u4e00-\u9fa5]+)*$|^[a-zA-Z0-9]+\s?[\.·\-()a-zA-Z]*[a-zA-Z]{2,20}$/).test($('#agentName').val())) {
+                agent_name_boolean = true;
+                $('#agentName').parent().addClass('has-success').removeClass('has-error');
+            }
+            else {
+                agent_name_boolean = false;
+                $('#agentName').parent().addClass('has-error').removeClass('has-success');
+                hint1 = "姓名格式错误\n";
+            }
+        })
+
+        $('#agentTel').blur(function () {
+            if ((/^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/).test($('#agentTel').val())) {
+                agent_telephone_boolean = true;
+                $('#agentTel').parent().addClass('has-success').removeClass('has-error');
+            }
+            else {
+                agent_telephone_boolean = false;
+                $('#agentTel').parent().addClass('has-error').removeClass('has-success');
+                hint2 = "手机号格式错误\n";
+            }
+        })
+
+        $('#agentPassword').blur(function () {
+            if ((/^[a-z0-9_-]{6,15}$/).test($('#agentPassword').val())) {
+                agent_password_boolean = true;
+                $('#agentPassword').parent().addClass('has-success').removeClass('has-error');
+            }
+            else {
+                agent_password_boolean = false;
+                $('#agentPassword').parent().addClass('has-error').removeClass('has-success');
+                hint3 = "密码由6-15位数字、字母或_组成\n";
+            }
+        })
+
+        function checkAddAgent() {
+            if ((agent_password_boolean && agent_telephone_boolean && agent_name_boolean) !== true) {
+                hint = hint1 + hint2 + hint3;
+                if (hint == "") {
+                    alert("请填写完整信息");
+                }
+                else {
+                    alert(hint);
+                }
+
+                return false;
+            }
+            else return true;
+        }
+    </script>
 
 </body>
 </html>

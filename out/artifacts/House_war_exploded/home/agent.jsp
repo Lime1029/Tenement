@@ -53,7 +53,9 @@
             </nav>
         </div>
         <!--导航栏End-->
-
+        <form action="agentChat.action" id="form1" method="post">
+            <input type="hidden" value="${session.agent.agentId}" name="agentID">
+        </form>
 
         <!--页面主体：订单管理部分：添加订单并上传、显示并删除订单的表格-->
         <div class="col-md-9">
@@ -80,7 +82,7 @@
         appkey:'BC-a996257032c5470597d8213b461e44f3'
     })
     goeasy.subscribe({
-        channel:'agent_alert',
+        channel:'${agent.agentId}',
         onMessage:function(message){
             var reply = window.confirm(message.content+"\n"+"单击确认跳转到消息页面");
             if(reply){

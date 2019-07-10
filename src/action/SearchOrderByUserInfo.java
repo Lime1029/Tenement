@@ -64,6 +64,7 @@ public class SearchOrderByUserInfo extends ActionSupport{
                 }
             }
             ActionContext.getContext().getSession().put("orders",orders);
+            ActionContext.getContext().getSession().put("status", "user");
             return SUCCESS;
         }
     }

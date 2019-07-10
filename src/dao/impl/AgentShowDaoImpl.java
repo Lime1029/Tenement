@@ -98,9 +98,12 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
     @Transactional
     public int endContract(int contractID) {
         Session session = getSessionFactory().getCurrentSession();
-        String hql = "update House as h , HouseApplyer as ha , Contract as c set h.state = 0 and ha.isSellOn = 1 where c.house_id = h.house_id and c.house_id = ha.house_id and ha.isSellOn = 0 and c.contract_id = "+contractID;
+        String hql = "update House h  set h.state = 0  where h.houseId = (select houseId from Contract c where c.contractId = "+contractID+")";
+        String hql1 = "update HouseApplyer ha  set ha.isSellOn = 0  where ha.houseId = (select houseId from Contract c where c.contractId = "+contractID+")";
         Query query = session.createQuery(hql);
         query.executeUpdate();
+        Query query1 = session.createQuery(hql1);
+        query1.executeUpdate();
         return 1;
     }
 }

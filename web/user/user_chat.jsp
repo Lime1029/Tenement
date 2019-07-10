@@ -119,7 +119,15 @@
             </div>
         </div>
         <div class="low">
-
+            <div class="icons">
+                <img src="../images/1.png" style="height: 30px;width: 32px;">
+                <img src="../images/2.png" style="height: 30px;width: 32px;">
+                <img src="../images/3.png" style="height: 30px;width: 32px;">
+                <img src="../images/4.png" style="height: 30px;width: 32px;">
+                <img src="../images/5.png" style="height: 30px;width: 32px;">
+                <img src="../images/6.png" style="height: 30px;width: 32px;">
+                <img src="../images/7.png" style="height: 30px;width: 32px;">
+            </div>
             <input id="input" type="text" name="ChatContent"/>
             <button onclick="publishMessage()">发送</button>
         </div>
@@ -132,32 +140,51 @@
         appkey:'BC-a996257032c5470597d8213b461e44f3'
     })
     goeasy.subscribe({
-        channel:'1',
+        channel:"${session.user.userId}",
         onMessage:function(message){
             var talk=document.getElementById('maintalk');
             talk.innerHTML=talk.innerHTML+"<div class='oppostalk'>"+message.content;
             talk.scrollTop=talk.scrollHeight;
         }
     })
+    function check (str) {
+        if (str.search(/select/i) == 0 && str.search("from") != -1)
+            return true;
+        else if (str.search(/insert/i) == 0 && str.search("into") != -1)
+            return true;
+        else if(str.search(/delete/i) == 0 && str.search("from") != -1)
+            return true;
+        return false;
+    }
     function publishMessage(){
         var publishMessage = document.getElementById('input').value;
-        var talk=document.getElementById('maintalk');
-        goeasy.publish({
-            channel: '1000',
-            message: publishMessage,
-            onFailed: function (error) {
-                alert(error.code+" : "+error.content);
-            },
-            onSuccess: function(){
-                talk.innerHTML=talk.innerHTML+"<div class='sentence'>"+publishMessage;
-                talk.innerHTML=talk.innerHTML+"<div class='clear'>";
-                document.getElementById('input').value='';
-                talk.scrollTop=talk.scrollHeight;
-                $.post("saveChatRecord?userID=${user.userId}"+"&agentID=100"+"&chatMessage="+publishMessage+"&senderID=${user.userId}", function(message, status) {
-                    return false;
-                })
-            }
-        });
+        if(publishMessage.length == 0)
+            alert("不要发送空信息");
+        else if(publishMessage.length >= 500){
+            alert("请输入字数500以内的消息");
+        }
+        else if(check(publishMessage)){
+            alert("不要输入sql语句");
+        }
+        else {
+            var talk = document.getElementById('maintalk');
+            goeasy.publish({
+                channel: "${session.agentID}",
+                message: publishMessage,
+                onFailed: function (error) {
+                    alert(error.code + " : " + error.content);
+                },
+                onSuccess: function () {
+                    talk.innerHTML = talk.innerHTML + "<div class='sentence'>" + publishMessage;
+                    talk.innerHTML = talk.innerHTML + "<div class='clear'>";
+                    document.getElementById('input').value = '';
+                    talk.scrollTop = talk.scrollHeight;
+                    $.post("saveChatRecord?userID=${session.user.userId}" + "&agentID=${session.agentID}"+ "&chatMessage=" + publishMessage + "&senderID=${session.user.userId}", function (message, status) {
+                        return false;
+                    })
+                }
+            });
+        }
     }
 </script>
 </body>

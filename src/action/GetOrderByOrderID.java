@@ -43,6 +43,7 @@ public class GetOrderByOrderID extends ActionSupport{
             return "zero";
         }
         ActionContext.getContext().getSession().put("orders",order);
+        ActionContext.getContext().getSession().put("status", "id");
         return SUCCESS;
     }
 }
