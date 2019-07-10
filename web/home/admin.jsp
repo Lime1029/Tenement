@@ -86,6 +86,9 @@
                                     <li><a href="<s:url action="cityDisplay"/>">城市</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="getAllOrder.action?start=0&count=1">订单管理</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

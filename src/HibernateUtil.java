@@ -1,4 +1,4 @@
-package org.hibernate.entity;
+//package org.hibernate.entity;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,51 +13,51 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
-    // åˆ›å»ºçº¿ç¨‹å±€éƒ¨å˜é‡threadLocalï¼Œç”¨æ¥ä¿å­˜Hibernateçš„Session
+    // ´´½¨Ïß³Ì¾Ö²¿±äÁ¿threadLocal£¬ÓÃÀ´±£´æHibernateµÄSession
     private static final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
-    // ä½¿ç”¨é™æ€ä»£ç å—åˆå§‹åŒ–Hibernate
+    // Ê¹ÓÃ¾²Ì¬´úÂë¿é³õÊ¼»¯Hibernate
     static {
         try {
-            // è¯»å–é…ç½®æ–‡ä»¶æ–¹å¼1ï¼Œhibernate4.3ä¹‹å‰
+            // ¶ÁÈ¡ÅäÖÃÎÄ¼ş·½Ê½1£¬hibernate4.3Ö®Ç°
 //            Configuration cfg = new Configuration().configure();
-//            // åˆ›å»ºæœåŠ¡æ³¨å†Œå¯¹è±¡
+//            // ´´½¨·şÎñ×¢²á¶ÔÏó
 //            StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 //                    .applySettings(cfg.getProperties()).build();
-//            // åˆ›å»ºä¼šè¯å·¥å‚å¯¹è±¡SessionFactory
+//            // ´´½¨»á»°¹¤³§¶ÔÏóSessionFactory
 //            sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 //
-            // è¯»å–é…ç½®æ–‡ä»¶æ–¹å¼2ï¼Œhibernate4.3ä¹‹å
+            // ¶ÁÈ¡ÅäÖÃÎÄ¼ş·½Ê½2£¬hibernate4.3Ö®ºó
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure("/hibernate.cfg.xml").build();
-            //åˆ›å»ºä¼šè¯å·¥å‚å¯¹è±¡
+            //´´½¨»á»°¹¤³§¶ÔÏó
             sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
     }
 
-    // è·å¾—SessionFactoryçš„å®ä¾‹
+    // »ñµÃSessionFactoryµÄÊµÀı
     public static SessionFactory getsSessionFactory() {
         return sessionFactory;
     }
 
-    // è·å¾—ThreadLocalå¯¹è±¡ç®¡ç†çš„Session
+    // »ñµÃThreadLocal¶ÔÏó¹ÜÀíµÄSession
     public static Session getsSession() throws HibernateException {
         Session session = (Session) threadLocal.get();
         if (session == null || !session.isOpen()) {
             if (sessionFactory == null) {
                 rebuildSessionFactory();
             }
-            // é€šè¿‡SessionFactoryå¯¹è±¡åˆ›å»ºSessionå¯¹è±¡
+            // Í¨¹ıSessionFactory¶ÔÏó´´½¨Session¶ÔÏó
             session = (sessionFactory != null) ? sessionFactory.openSession() : null;
-            // å°†Sessionå¯¹è±¡ä¿å­˜åˆ°çº¿ç¨‹å±€éƒ¨å˜é‡threadLocalä¸­
+            // ½«Session¶ÔÏó±£´æµ½Ïß³Ì¾Ö²¿±äÁ¿threadLocalÖĞ
             threadLocal.set(session);
         }
         return session;
     }
 
-    // å…³é—­Sessionå®ä¾‹
+    // ¹Ø±ÕSessionÊµÀı
     public static void closeSession() {
-        // ä»çº¿ç¨‹å±€éƒ¨å˜é‡threadLocalä¸­è·å–ä¹‹å‰å­˜å…¥çš„Sessionå®ä¾‹
+        // ´ÓÏß³Ì¾Ö²¿±äÁ¿threadLocalÖĞ»ñÈ¡Ö®Ç°´æÈëµÄSessionÊµÀı
         Session session = (Session) threadLocal.get();
         threadLocal.set(null);
         if (session != null) {
@@ -65,7 +65,7 @@ public class HibernateUtil {
         }
     }
 
-    // é‡å»ºSessionFactory
+    // ÖØ½¨SessionFactory
     public static void rebuildSessionFactory() {
         Configuration configuration = new Configuration();
         configuration.configure("/hibernate.cfg.xml");
@@ -74,7 +74,7 @@ public class HibernateUtil {
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }
 
-    // å…³é—­ç¼“å­˜å’Œè¿æ¥æ± 
+    // ¹Ø±Õ»º´æºÍÁ¬½Ó³Ø
     public static void shutdown() {
         getsSessionFactory().close();
     }

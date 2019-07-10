@@ -63,7 +63,7 @@ public class ConditionSearch extends ActionSupport {
     }
 
     public House getHousing() {
-           return housing;    }
+        return housing;    }
 
     public void setHousing(House housing) {
         this.housing = housing;
@@ -81,14 +81,13 @@ public class ConditionSearch extends ActionSupport {
     public String execute() throws Exception {
         housing = new House(1111,1,housing_plot,housing_district,housing_maxrent,1,housing_type,"4",housing_leastrent,"sa");
         /**
-        this.housing.setLandlordId(1);
-        this.housing.setPlotId(this.housing_plot);
-        this.housing.setHouseType(this.housing_type);
-
-        this.housing.setRent(this.housing_maxrent);
-        this.housing.setAddress(this.housing_district);
-        this.housing.setArea(this.housing_leastrent);
-**/
+         this.housing.setLandlordId(1);
+         this.housing.setPlotId(this.housing_plot);
+         this.housing.setHouseType(this.housing_type);
+         this.housing.setRent(this.housing_maxrent);
+         this.housing.setAddress(this.housing_district);
+         this.housing.setArea(this.housing_leastrent);
+         **/
         List<House> houses = searchService.conditionSearch(this.housing);
         if(houses != null) {
             ActionContext.getContext().getSession().put("houses", houses);

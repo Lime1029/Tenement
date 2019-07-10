@@ -2,29 +2,55 @@ package action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import dao.UserDao;
 import model.PageBean;
 import service.AgentShowService;
+import service.UserService;
 
 import java.util.List;
 import java.util.Map;
 
 public class getMyHouse extends ActionSupport {
-    //é€šè¿‡applicationContext.xmlé…ç½®æ–‡ä»¶æ³¨å…¥AgentShowServiceçš„å€¼
+    //Í¨¹ıapplicationContext.xmlÅäÖÃÎÄ¼ş×¢ÈëAgentShowServiceµÄÖµ
     private AgentShowService agentShowService;
+    private UserService userService;
+    private List plot;
+
+    public AgentShowService getAgentShowService() {
+        return agentShowService;
+    }
+
+    public List getPlot() {
+        return plot;
+    }
+
+    public void setPlot(List plot) {
+        this.plot = plot;
+    }
+
     public void setAgentShowService(AgentShowService agentShowService) {
         this.agentShowService = agentShowService;
     }
 
-    private int page;    //ç¬¬å‡ é¡µ
+    private int page;    //µÚ¼¸Ò³
 
-    private PageBean pageBean;    //åŒ…å«åˆ†å¸ƒä¿¡æ¯çš„bean
+    private PageBean pageBean;    //°üº¬·Ö²¼ĞÅÏ¢µÄbean
 
     public int getPage() {
         return page;
     }
-    public void setPage(int page) {        //è‹¥URLä¸­æ— æ­¤å‚æ•°,ä¼šé»˜è®¤ä¸ºç¬¬1é¡µ
+    public void setPage(int page) {        //ÈôURLÖĞÎŞ´Ë²ÎÊı,»áÄ¬ÈÏÎªµÚ1Ò³
         this.page = page;
     }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
     public PageBean getPageBean() {
         return pageBean;
     }
@@ -33,7 +59,8 @@ public class getMyHouse extends ActionSupport {
     }
     @Override
     public String execute() throws Exception {
-        //åˆ†é¡µçš„pageBean,å‚æ•°pageSizeè¡¨ç¤ºæ¯é¡µæ˜¾ç¤ºè®°å½•æ•°,pageä¸ºå½“å‰é¡µ
+        //·ÖÒ³µÄpageBean,²ÎÊıpageSize±íÊ¾Ã¿Ò³ÏÔÊ¾¼ÇÂ¼Êı,pageÎªµ±Ç°Ò³
+        userService.plotGet();
 
         this.pageBean = agentShowService.queryForPage(2, page);
         int a = this.pageBean.getAllRow();
@@ -41,15 +68,16 @@ public class getMyHouse extends ActionSupport {
             Map session = ActionContext.getContext().getSession();
             Map request = (Map) ActionContext.getContext().get("request");
             session.put("pageBean",pageBean);
-        //    PageBean page1 = session.get(pageBean);
-        //    List aa =(List)page1.getList();
-         //   session.put("aa",aa);
+            //    PageBean page1 = session.get(pageBean);
+            //    List aa =(List)page1.getList();
+            //   session.put("aa",aa);
             List aaaa = this.pageBean.getList();
 
             List aaa = (List)session.get(pageBean.getList());
-        //    PageBean page = new PageBean(this.pageBean.getCurrentPage(), agentShowService.getAllRowCount(),5);// å®ä¾‹åŒ–åˆ†é¡µå¯¹è±¡
-          //  request.put("page", page);// ä¿å­˜åˆ°request
+            //    PageBean page = new PageBean(this.pageBean.getCurrentPage(), agentShowService.getAllRowCount(),5);// ÊµÀı»¯·ÖÒ³¶ÔÏó
+            //  request.put("page", page);// ±£´æµ½request
             session.put("aaaa",aaaa);
+
             return SUCCESS;
         }
         return ERROR;

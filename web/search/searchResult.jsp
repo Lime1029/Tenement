@@ -83,19 +83,19 @@
 
             <h2>共找到${sessionScope.houses.size()}套房</h2>
             <!-- 迭代器会将每个house里的属性以object对象赋值给house，即这时house就是一个Object对象数组 -->
-            <c:forEach items="${houses}" var="house">
+            <c:forEach items="${houses}" var="adminHouse">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <form action="houseInfo.action">
-                            <input name="houseId" hidden value="${house[3]}">
-                            <h3 class="panel-title" style="font-size: 25px;width: auto;display: inline;" >${house[0]}</h3>
+                            <input name="houseId" hidden value="${adminHouse[3]}">
+                            <h3 class="panel-title" style="font-size: 25px;width: auto;display: inline;" >${adminHouse[0]}</h3>
                             <span><button class="btn btn-primary" type="submit" style="float: right;">详情</button></span>
                         </form>
 
                     </div>
                     <div class="panel-body">
-                        <h3>${house[1]}元/月</h3>
-                        <h3>${house[2]}</h3>
+                        <h3>${adminHouse[1]}元/月</h3>
+                        <h3>${adminHouse[2]}</h3>
                     </div>
                 </div>
             </c:forEach>

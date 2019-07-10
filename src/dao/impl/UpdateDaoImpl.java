@@ -43,7 +43,7 @@ public class UpdateDaoImpl implements UpdateDao {
         String hql11 ="Update House h set h.address = '"+ address+"' where h.houseId = "+houseId;
         String hql12 = "update House h set h.rent = "+rent+" where h.houseId = "+houseId;
         String hql13 = "update House h set h.houseType = '"+houseType+"' where h.houseId = "+houseId;
-        String hql14 = "update House h set h.floor = "+floor+" where h.houseId = "+houseId;
+        String hql14 = "update House h set h.floor = '"+floor+"' where h.houseId = "+houseId;
         String hql15 = "update House h set h.area = "+area+" where h.houseId = "+houseId;
         String hql16 = "update House h set h.houseDescription = '"+houseDescription+"' where h.houseId = "+houseId;
 

@@ -7,7 +7,7 @@ import service.UpdateService;
 public class UpdateHouse extends ActionSupport {
     private String resultMess = "error";
     private String plotname;
- //   private String districtname;
+    private String districtname;
     private String landlordName;
     private String address;
     private double rent;
@@ -15,7 +15,7 @@ public class UpdateHouse extends ActionSupport {
     private String floor;
     private double area;
     private String housedescription;
-  //  private String agentname;
+    private String agentname;
     private int houseID;
     private UpdateService updateService;
     private HouseInfo houseInfor;
@@ -27,7 +27,13 @@ public class UpdateHouse extends ActionSupport {
         this.plotname = plotname;
     }
 
+    public String getDistrictname() {
+        return districtname;
+    }
 
+    public void setDistrictname(String districtname) {
+        this.districtname = districtname;
+    }
 
     public String getLandlordName() {
         return landlordName;
@@ -35,14 +41,6 @@ public class UpdateHouse extends ActionSupport {
 
     public void setLandlordName(String landlordName) {
         this.landlordName = landlordName;
-    }
-
-    public HouseInfo getHouseInfor() {
-        return houseInfor;
-    }
-
-    public void setHouseInfor(HouseInfo houseInfor) {
-        this.houseInfor = houseInfor;
     }
 
     public String getAddress() {
@@ -55,6 +53,14 @@ public class UpdateHouse extends ActionSupport {
 
     public double getRent() {
         return rent;
+    }
+
+    public HouseInfo getHouseInfor() {
+        return houseInfor;
+    }
+
+    public void setHouseInfor(HouseInfo houseInfo) {
+        this.houseInfor = houseInfo;
     }
 
     public void setRent(double rent) {
@@ -81,22 +87,6 @@ public class UpdateHouse extends ActionSupport {
         return area;
     }
 
-    public String getResultMess() {
-        return resultMess;
-    }
-
-    public void setResultMess(String resultMess) {
-        this.resultMess = resultMess;
-    }
-
-    public HouseInfo getHouseInfo() {
-        return houseInfor;
-    }
-
-    public void setHouseInfo(HouseInfo houseInfo) {
-        this.houseInfor = houseInfo;
-    }
-
     public void setArea(double area) {
         this.area = area;
     }
@@ -107,6 +97,14 @@ public class UpdateHouse extends ActionSupport {
 
     public void setHousedescription(String housedescription) {
         this.housedescription = housedescription;
+    }
+
+    public String getAgentname() {
+        return agentname;
+    }
+
+    public void setAgentname(String agentname) {
+        this.agentname = agentname;
     }
 
     public int getHouseID() {
@@ -124,14 +122,8 @@ public class UpdateHouse extends ActionSupport {
     public void setUpdateService(UpdateService updateService) {
         this.updateService = updateService;
     }
-    @Override
-    public String execute(){
-        /*
-        houseInfor.setAddress(address);
-        houseInfor.setArea(area);
-        houseInfor.setHouseId(houseID);
 
-      **/
+    public String execute(){
         houseInfor =new HouseInfo(plotname,null,null,address,rent,housetype,floor,area,housedescription,0,houseID);
         String resultMess = updateService.updateHouse(this.houseInfor);
         return  resultMess;

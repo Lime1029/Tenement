@@ -11,9 +11,9 @@ public interface AgentShowDao {
     public List queryForContract(final int offset,final int length);
 
     /** *//**
-     * æŸ¥è¯¢æ‰€æœ‰è®°å½•æ•°
-     * @param hql æŸ¥è¯¢çš„æ¡ä»¶
-     * @return æ€»è®°å½•æ•°
+     * ²éÑ¯ËùÓĞ¼ÇÂ¼Êı
+     * @param hql ²éÑ¯µÄÌõ¼ş
+     * @return ×Ü¼ÇÂ¼Êı
      */
     public int getAllRowCount();
     public int getAllContractCount();

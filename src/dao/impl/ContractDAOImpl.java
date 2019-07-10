@@ -1,110 +1,98 @@
 package dao.impl;
 /**
-package org.hibernate.dao;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.entity.HibernateUtil;
-
-/**
-
-public class ContractDAOImpl  {
-
-    // æ·»åŠ ç”¨æˆ·ï¼Œéœ€è¦äº‹åŠ¡ç®¡ç†
-    @Override
-    public void save(User user) {
-        // åˆ›å»ºSessionå®ä¾‹
-        Session session = HibernateUtil.getsSession();
-        // åˆ›å»ºTransactionå®ä¾‹
-        Transaction tx = session.beginTransaction();
-
-        try {
-            // ä½¿ç”¨Sessionçš„saveæ–¹æ³•å°†æŒä¹…åŒ–å¯¹è±¡ä¿å­˜åˆ°æ•°æ®åº“
-            session.save(user);
-            // æäº¤äº‹åŠ¡
-            tx.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            // å‡ºç°å¼‚å¸¸ï¼Œå›æ»šäº‹åŠ¡
-            tx.rollback();
-        } finally {
-            // å…³é—­Sessionè¿æ¥
-            HibernateUtil.closeSession();
-        }
-
-    }
-
-    // æ ¹æ®idæŸ¥æ‰¾ç”¨æˆ· ,å¯ä»¥ä¸éœ€è¦äº‹åŠ¡ç®¡ç† Getæ–¹å¼
-    @Override
-    public User findByIdGet(int id) {
-        User user = null;
-        Session session = HibernateUtil.getsSession();
-        // ä½¿ç”¨sessionçš„getæ–¹æ³•è·å–æŒ‡å®šidçš„ç”¨æˆ·
-        user = (User) session.get(User.class, id);
-        if (user == null || "".equals(user)) {
-            System.out.println("æŸ¥è¯¢idä¸ºï¼š" + id + "æ— ç»“æœ....");
-        }
-        session.close();
-        return user;
-    }
-
-    // æ ¹æ®idæŸ¥æ‰¾ç”¨æˆ· ,å¯ä»¥ä¸éœ€è¦äº‹åŠ¡ç®¡ç† Loadæ–¹å¼
-    @Override
-    public User findByIdLoad(int id) {
-        User user = null;
-        Session session = HibernateUtil.getsSession();
-        // ä½¿ç”¨sessionçš„æ–¹æ³•è·å–æŒ‡å®šidçš„ç”¨æˆ·
-        user = (User) session.load(User.class, id);
-        if (user == null || "".equals(user)) {
-            System.out.println("æŸ¥è¯¢idä¸ºï¼š" + id + "æ— ç»“æœ....");
-        }
-        session.close();
-        return user;
-    }
-
-    // æ ¹æ®HQlè¯­å¥æŸ¥è¯¢
-    @Override
-    public List<User> findByHQL(String hql) {
-        List<User> list = new ArrayList<>();
-        Session session = HibernateUtil.getsSession();
-        list = session.createQuery(hql).list();
-        session.close();
-        return list;
-    }
-
-    // åˆ é™¤ç”¨æˆ· ,éœ€è¦äº‹åŠ¡ç®¡ç†
-    @Override
-    public void delete(User user) {
-        Session session = HibernateUtil.getsSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            session.delete(user);
-            tx.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            tx.rollback();
-        } finally {
-            HibernateUtil.closeSession();
-        }
-    }
-
-    // ä¿®æ”¹ç”¨æˆ·
-    @Override
-    public void update(User user) {
-        Session session = HibernateUtil.getsSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            session.update(user);
-            tx.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            tx.rollback();
-        } finally {
-            HibernateUtil.closeSession();
-        }
-    }
-}
+ package org.hibernate.dao;
+ import java.util.ArrayList;
+ import java.util.List;
+ import org.hibernate.Session;
+ import org.hibernate.Transaction;
+ import org.hibernate.entity.HibernateUtil;
+ /**
+ public class ContractDAOImpl  {
+ // Ìí¼ÓÓÃ»§£¬ĞèÒªÊÂÎñ¹ÜÀí
+ @Override
+ public void save(User user) {
+ // ´´½¨SessionÊµÀı
+ Session session = HibernateUtil.getsSession();
+ // ´´½¨TransactionÊµÀı
+ Transaction tx = session.beginTransaction();
+ try {
+ // Ê¹ÓÃSessionµÄsave·½·¨½«³Ö¾Ã»¯¶ÔÏó±£´æµ½Êı¾İ¿â
+ session.save(user);
+ // Ìá½»ÊÂÎñ
+ tx.commit();
+ } catch (Exception e) {
+ e.printStackTrace();
+ // ³öÏÖÒì³££¬»Ø¹öÊÂÎñ
+ tx.rollback();
+ } finally {
+ // ¹Ø±ÕSessionÁ¬½Ó
+ HibernateUtil.closeSession();
+ }
+ }
+ // ¸ù¾İid²éÕÒÓÃ»§ ,¿ÉÒÔ²»ĞèÒªÊÂÎñ¹ÜÀí Get·½Ê½
+ @Override
+ public User findByIdGet(int id) {
+ User user = null;
+ Session session = HibernateUtil.getsSession();
+ // Ê¹ÓÃsessionµÄget·½·¨»ñÈ¡Ö¸¶¨idµÄÓÃ»§
+ user = (User) session.get(User.class, id);
+ if (user == null || "".equals(user)) {
+ System.out.println("²éÑ¯idÎª£º" + id + "ÎŞ½á¹û....");
+ }
+ session.close();
+ return user;
+ }
+ // ¸ù¾İid²éÕÒÓÃ»§ ,¿ÉÒÔ²»ĞèÒªÊÂÎñ¹ÜÀí Load·½Ê½
+ @Override
+ public User findByIdLoad(int id) {
+ User user = null;
+ Session session = HibernateUtil.getsSession();
+ // Ê¹ÓÃsessionµÄ·½·¨»ñÈ¡Ö¸¶¨idµÄÓÃ»§
+ user = (User) session.load(User.class, id);
+ if (user == null || "".equals(user)) {
+ System.out.println("²éÑ¯idÎª£º" + id + "ÎŞ½á¹û....");
+ }
+ session.close();
+ return user;
+ }
+ // ¸ù¾İHQlÓï¾ä²éÑ¯
+ @Override
+ public List<User> findByHQL(String hql) {
+ List<User> list = new ArrayList<>();
+ Session session = HibernateUtil.getsSession();
+ list = session.createQuery(hql).list();
+ session.close();
+ return list;
+ }
+ // É¾³ıÓÃ»§ ,ĞèÒªÊÂÎñ¹ÜÀí
+ @Override
+ public void delete(User user) {
+ Session session = HibernateUtil.getsSession();
+ Transaction tx = session.beginTransaction();
+ try {
+ session.delete(user);
+ tx.commit();
+ } catch (Exception e) {
+ e.printStackTrace();
+ tx.rollback();
+ } finally {
+ HibernateUtil.closeSession();
+ }
+ }
+ // ĞŞ¸ÄÓÃ»§
+ @Override
+ public void update(User user) {
+ Session session = HibernateUtil.getsSession();
+ Transaction tx = session.beginTransaction();
+ try {
+ session.update(user);
+ tx.commit();
+ } catch (Exception e) {
+ e.printStackTrace();
+ tx.rollback();
+ } finally {
+ HibernateUtil.closeSession();
+ }
+ }
+ }
  **/

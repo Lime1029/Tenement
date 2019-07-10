@@ -1,6 +1,7 @@
 package action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import model.House;
 import model.HouseInfo;
 import service.SearchService;
 
@@ -25,10 +26,11 @@ public class GetHouseInfo extends ActionSupport {
         this.houseId = houseId;
     }
 
+
     public String execute() throws Exception {
-        System.out.println(houseId);
-        HouseInfo house1 = searchService.getHouseInfo(this.getHouseId());
-        if (house1 != null) {
+        //System.out.println(this.getHouseId());
+        HouseInfo houseInfo = searchService.getHouseInfo(this.getHouseId());
+        if (houseInfo != null) {
             resultMess = "success";
         }
 

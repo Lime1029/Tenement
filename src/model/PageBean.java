@@ -2,17 +2,17 @@ package model;
 import java.util.List;
 public class PageBean {
 
-    private List list;        //è¦è¿”å›çš„æŸä¸€é¡µçš„è®°å½•åˆ—è¡¨
+    private List list;        //Òª·µ»ØµÄÄ³Ò»Ò³µÄ¼ÇÂ¼ÁĞ±í
 
-    private int allRow;         //æ€»è®°å½•æ•°
-    private int totalPage;        //æ€»é¡µæ•°
-    private int currentPage;    //å½“å‰é¡µ
-    private int pageSize;        //æ¯é¡µè®°å½•æ•°
+    private int allRow;         //×Ü¼ÇÂ¼Êı
+    private int totalPage;        //×ÜÒ³Êı
+    private int currentPage;    //µ±Ç°Ò³
+    private int pageSize;        //Ã¿Ò³¼ÇÂ¼Êı
 
-    private boolean isFirstPage;    //æ˜¯å¦ä¸ºç¬¬ä¸€é¡µ
-    private boolean isLastPage;        //æ˜¯å¦ä¸ºæœ€åä¸€é¡µ
-    private boolean hasPreviousPage;    //æ˜¯å¦æœ‰å‰ä¸€é¡µ
-    private boolean hasNextPage;        //æ˜¯å¦æœ‰ä¸‹ä¸€é¡µ
+    private boolean isFirstPage;    //ÊÇ·ñÎªµÚÒ»Ò³
+    private boolean isLastPage;        //ÊÇ·ñÎª×îºóÒ»Ò³
+    private boolean hasPreviousPage;    //ÊÇ·ñÓĞÇ°Ò»Ò³
+    private boolean hasNextPage;        //ÊÇ·ñÓĞÏÂÒ»Ò³
 
 
     public List getList() {
@@ -47,7 +47,7 @@ public class PageBean {
     }
 
     /** *//**
-     * åˆå§‹åŒ–åˆ†é¡µä¿¡æ¯
+     * ³õÊ¼»¯·ÖÒ³ĞÅÏ¢
      */
     public void init(){
         this.isFirstPage = isFirstPage();
@@ -57,29 +57,29 @@ public class PageBean {
     }
 
     /** *//**
-     * ä»¥ä¸‹åˆ¤æ–­é¡µçš„ä¿¡æ¯,åªéœ€getteræ–¹æ³•(isæ–¹æ³•)å³å¯
+     * ÒÔÏÂÅĞ¶ÏÒ³µÄĞÅÏ¢,Ö»Ğègetter·½·¨(is·½·¨)¼´¿É
      * @return
      */
 
     public boolean isFirstPage() {
-        return currentPage == 1;    // å¦‚æ˜¯å½“å‰é¡µæ˜¯ç¬¬1é¡µ
+        return currentPage == 1;    // ÈçÊÇµ±Ç°Ò³ÊÇµÚ1Ò³
     }
     public boolean isLastPage() {
-        return currentPage == totalPage;    //å¦‚æœå½“å‰é¡µæ˜¯æœ€åä¸€é¡µ
+        return currentPage == totalPage;    //Èç¹ûµ±Ç°Ò³ÊÇ×îºóÒ»Ò³
     }
     public boolean isHasPreviousPage() {
-        return currentPage != 1;        //åªè¦å½“å‰é¡µä¸æ˜¯ç¬¬1é¡µ
+        return currentPage != 1;        //Ö»Òªµ±Ç°Ò³²»ÊÇµÚ1Ò³
     }
     public boolean isHasNextPage() {
-        return currentPage != totalPage;    //åªè¦å½“å‰é¡µä¸æ˜¯æœ€å1é¡µ
+        return currentPage != totalPage;    //Ö»Òªµ±Ç°Ò³²»ÊÇ×îºó1Ò³
     }
 
 
     /** *//**
-     * è®¡ç®—æ€»é¡µæ•°,é™æ€æ–¹æ³•,ä¾›å¤–éƒ¨ç›´æ¥é€šè¿‡ç±»åè°ƒç”¨
-     * @param pageSize æ¯é¡µè®°å½•æ•°
-     * @param allRow æ€»è®°å½•æ•°
-     * @return æ€»é¡µæ•°
+     * ¼ÆËã×ÜÒ³Êı,¾²Ì¬·½·¨,¹©Íâ²¿Ö±½ÓÍ¨¹ıÀàÃûµ÷ÓÃ
+     * @param pageSize Ã¿Ò³¼ÇÂ¼Êı
+     * @param allRow ×Ü¼ÇÂ¼Êı
+     * @return ×ÜÒ³Êı
      */
     public static int countTotalPage(final int pageSize,final int allRow){
         int totalPage = allRow % pageSize == 0 ? allRow/pageSize : allRow/pageSize+1;
@@ -87,10 +87,10 @@ public class PageBean {
     }
 
     /** *//**
-     * è®¡ç®—å½“å‰é¡µå¼€å§‹è®°å½•
-     * @param pageSize æ¯é¡µè®°å½•æ•°
-     * @param currentPage å½“å‰ç¬¬å‡ é¡µ
-     * @return å½“å‰é¡µå¼€å§‹è®°å½•å·
+     * ¼ÆËãµ±Ç°Ò³¿ªÊ¼¼ÇÂ¼
+     * @param pageSize Ã¿Ò³¼ÇÂ¼Êı
+     * @param currentPage µ±Ç°µÚ¼¸Ò³
+     * @return µ±Ç°Ò³¿ªÊ¼¼ÇÂ¼ºÅ
      */
     public static int countOffset(final int pageSize,final int currentPage){
         if(currentPage!=0) {
@@ -103,14 +103,12 @@ public class PageBean {
     }
 
     /** *//**
-     * è®¡ç®—å½“å‰é¡µ,è‹¥ä¸º0æˆ–è€…è¯·æ±‚çš„URLä¸­æ²¡æœ‰"?page=",åˆ™ç”¨1ä»£æ›¿
-     * @param page ä¼ å…¥çš„å‚æ•°(å¯èƒ½ä¸ºç©º,å³0,åˆ™è¿”å›1)
-     * @return å½“å‰é¡µ
+     * ¼ÆËãµ±Ç°Ò³,ÈôÎª0»òÕßÇëÇóµÄURLÖĞÃ»ÓĞ"?page=",ÔòÓÃ1´úÌæ
+     * @param page ´«ÈëµÄ²ÎÊı(¿ÉÄÜÎª¿Õ,¼´0,Ôò·µ»Ø1)
+     * @return µ±Ç°Ò³
      */
     public static int countCurrentPage(int page){
         final int curPage = (page==0?1:page);
         return curPage;
     }
 }
-
-

@@ -100,7 +100,7 @@
                                     })
                                 });
                             </script>
-                            <s:form role="form" id="updateHouseInfo" action="updateHouse">
+                            <s:form role="form" id="updateHouseInfo" action="updateHouse" onsubmit="return check()" >
                                 <!--
                                 <td> <div name = "plotname" value=${houses[0]}  style="width:130px;" /></td>
                                 <td><input name = "districtname" value=${houses[1]} style="width:130px;"/></td>
@@ -152,8 +152,38 @@
             <s:else>
                 下一页 最后一页
             </s:else>
+            <!--
+            <tbody>
+            <th><div>搜索房源</div></th>
+            <th><input class="form-control" type="text" placeholder="请只输入数字" name="housingid" id="housingid" style="width: 130px" ></th>
+            <td>
+                <input type="button" value="搜索" onclick="save(housingid)" href="GetHouseInfo.action?houseID=${housingid}"
+                       style="color: #fff;width: 70px;height: 30px;
+                                       background: rgb(86,132,190);border-radius: 3px;border:none;">
 
+            </td>
+            <tr role="form" id="updateHouseInfo" action="updateHouse" onsubmit="return check()" >
 
+            <td  style="width:130px;" >${houseInfo[10]}</td>
+            <td  style="width:130px;" >${houseInfo[0]}</td>
+            <td style="width:130px;">${houseInfo[1]}</td>
+            <td style="width:130px;">${houseInfo[2]}</td>
+            <td style="width:130px;">${houseInfo[3]}</td>
+            <td style="width:80px;">${houseInfo[4]}</td>
+            <td style="width:80px;">${houseInfo[5]}</td>
+            <td style="width:80px;">${houseInfo[6]}</td>
+            <td style="width:130px;">${houseInfo[7]}</td>
+            <td style="width:130px;">${houseInfo[8]}</td>
+            <td style="width:130px;">${houseInfo[9]}</td>
+            <td>
+                <input type="button" value="修改" data-target="#modifyHouse" onclick="edit(this)" data-toggle="modal"
+                       style="color: #fff;width: 70px;height: 30px;
+                                       background: rgb(86,132,190);border-radius: 3px;border:none;">
+
+            </td>
+            </tr>
+            </tbody>
+            -->
         </div>
     </div>
 
@@ -187,11 +217,11 @@
                     </div>
                     <div class="form-group">
                         <label>小区名字</label>
-                        <input class="form-control" type="text" placeholder="" name="plotname" id="plotname">
-                    </div>
-                    <div class="form-group">
-                        <label>房东姓名</label>
-                        <input class="form-control" type="text" placeholder="" name="landlordName" id="landlordName">
+                        <select class="form-control" name="plotname">
+                            <s:iterator value="#session.userplot" var="plot_num">
+                                <option value="${plot_num.plotName}" id="plotname">${plot_num.plotName}</option>
+                            </s:iterator>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>详细地址</label>
@@ -199,7 +229,8 @@
                     </div>
                     <div class="form-group">
                         <label>租金</label>
-                        <input class="form-control" type="text" placeholder="" name="rent" id="rent">
+                        <input class="form-control" type="text" placeholder="" name="rent" id="rent" style="width:130px;">
+                        <span class="rent_hint"></span>
                     </div>
                     <div class="form-group">
                         <label>类别</label>
@@ -211,7 +242,10 @@
                     </div>
                     <div class="form-group">
                         <label>面积</label>
-                        <input class="form-control" type="text" placeholder="" name="area" id="area">
+
+                        <input class="form-control" type="text" placeholder="" name="area" id="area" style="width:130px;">
+                        <span class="area_hint" style="border-right: 20px;vertical-align: center"></span>
+
                     </div>
                     <div class="form-group">
                         <label>额外描述</label>
@@ -231,15 +265,15 @@
 </div>
 
 <script>
+    function save(housingid){
+        session.put("housingid",housingid);
+    }
     function edit(obj){
         var id = $(obj).parent().parent().find('td')[0];
         var houseID = $(id).text();
         $('#houseID').val(houseID);
         //$('#houseId1').val(houseId);
 
-        var name = $(obj).parent().parent().find('td')[1];
-        var plotname = $(name).text();
-        $('#plotname').val(plotname);
 
         var landlord = $(obj).parent().parent().find('td')[3];
         var landlordName = $(landlord).text();
@@ -268,6 +302,58 @@
         var housedescriptiona = $(obj).parent().parent().find('td')[6];
         var housedescription = $(housedescriptiona).text();
         $('#housedescription').val(housedescription);
+
+    }
+
+    var area_Boolean = false;
+    var rent_Boolean = false;
+
+    /*$('.reg_user').blur(function(){
+        if ((/^[a-z0-9_-]{4,8}$/).test($(".reg_user").val())){
+            $('.user_hint').html("✔").css("color","green");
+            user_Boolean = true;
+        }else {
+            $('.user_hint').html("×").css("color","red");
+            user_Boolean = false;
+        }
+    });*/
+
+    // password
+    $('#rent').blur(function(){
+        if ((/^[0-9]{0,15}$/).test($("#rent").val())){
+            $('.rent_hint').html("✔").css("color","green");
+            password_Boolean = true;
+        }else {
+            $('.rent_hint').html("✘").css("color","red");
+            password_Boolean = false;
+        }
+    });
+
+    $('#area').blur(function(){
+        if ((/^[0-9]{0,15}$/).test($("#rent").val())){
+            $('.area_hint').html("✔").css("color","green");
+            password_Boolean = true;
+        }else {
+            $('.area_hint').html("✘").css("color","red");
+            password_Boolean = false;
+        }
+    });
+
+
+    function check() {
+        if((area_Boolean && rent_Boolean) !== true){
+            alert("请按格式要求填写信息");
+
+            document.getElementById('area').value = "";
+            document.getElementById('rent').value = "";
+
+            $('.rent_hint').html("");
+            $('.area_hint').html("");
+            return false;
+        }
+        else {
+            return true;
+        }
 
     }
 

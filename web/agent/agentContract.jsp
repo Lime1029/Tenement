@@ -43,12 +43,13 @@
             <nav class="navbar" style="background-color: aliceblue">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="agent_information.jsp" style="color: black">个人中心</a>
-                        <a class="nav-link" href="#" style="color: black">我的消息</a>
-                        <a class="nav-link" href="agent_upload_order.jsp" style="color: black">添加订单</a>
-                        <a class="nav-link" href="agent_manage_order.jsp" style="color: black">我管理的订单</a>
-                        <a class="nav-link" href="agentinfo.jsp" style="color: black">我管理的房源</a>
-                        <a class="nav-link" href="agentContract.jsp" style="color: black">我管理的订单</a>
+                        <a class="nav-link" href="#" style="color: black">个人中心</a>
+                        <a class="nav-link" href="agentChat.action?agentID=${agent.agentId}" style="color: black">我的消息</a>
+                        <a class="nav-link" href="../agent/agent_AddOrder.jsp" style="color: black">添加订单</a>
+                        <a class="nav-link" href="getMyOrder.action?agentId=${agent.agentId}" style="color: black">我管理的订单</a>
+                        <a class="nav-link" href="houseShow.action" style="color: black">确认房源</a>
+                        <a class="nav-link" href="getMyHouse.action" style="color: black">我管理的房源</a>
+                        <a class="nav-link" href="contractShow.action" style="color: black">我管理的合同</a>
                     </li>
                 </ul>
             </nav>
@@ -59,10 +60,10 @@
         <div class="col-md-9">
             <!--可替换部分-->
             <s:iterator value="pageBean.list">
-            <s:property value="title"/>
-          <!--  <a href="contractShow.action?id=<s:property value="id"/>">modify</a>
-            <a href="deleteArticle.action?id=<s:property value="id"/>" onclick="return askDel()"/>delete</a><br/>
-          !-->
+                <s:property value="title"/>
+                <!--  <a href="contractShow.action?id=<s:property value="id"/>">modify</a>
+                <a href="deleteArticle.action?id=<s:property value="id"/>" onclick="return askDel()"/>delete</a><br/>
+                !-->
                 待定加入
             </s:iterator>
             共<s:property value="pageBean.allRow"/> 条记录

@@ -234,7 +234,10 @@
         <property name="searchService" ref="searchService" />
         <property name="condition" value="天通苑" />
     </bean>
-
+    <bean id="houseInfo" class="action.GetHouseInfo" scope="prototype">
+        <property name="searchService" ref="searchService" />
+        <property name="houseId" value="1" />
+    </bean>
     <bean id="modifyUser" class="action.UserQuery">
         <property name="userService" ref="userService" />
         <property name="user" ref="user" />
@@ -433,17 +436,6 @@
     </bean>
     <bean id = "updateHouse" class="action.UpdateHouse" scope="prototype">
         <property name="updateService" ref="updateService"/>
-        <property name="plotname" value="宏福"/>
-        <property name="landlordName" value="刘一憬"/>
-        <property name="address" value="北邮"/>
-        <property name="rent" value="100.0"/>
-        <property name="housetype" value="三室1厅"/>
-        <property name="floor" value="1"/>
-        <property name="area" value="100.1"/>
-        <property name="housedescription" value="没电没水没工具"/>
-        <property name="houseID" value="1"/>
-
-        <property name="houseInfor" ref="houseInfor"/>
     </bean>
 
 

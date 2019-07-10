@@ -19,15 +19,15 @@ public class AgentContractImpl implements AgentContractService {
     //query for distract
     public PageBean queryForPage(int pageSize,int page){
 
-        final String hql = "from House,Plot,district,agent where agent.agent_id = plot.agent_id and plot.distruct_id = district.district_id and house.plot_id = plot.plot_id;";        //æŸ¥è¯¢è¯­å¥
-        int allRow = agentShowDao.getAllRowCount();    //æ€»è®°å½•æ•°
-        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //æ€»é¡µæ•°
-        final int offset = PageBean.countOffset(pageSize, page);    //å½“å‰é¡µå¼€å§‹è®°å½•
-        final int length = pageSize;    //æ¯é¡µè®°å½•æ•°
+        final String hql = "from House,Plot,district,agent where agent.agent_id = plot.agent_id and plot.distruct_id = district.district_id and house.plot_id = plot.plot_id;";        //²éÑ¯Óï¾ä
+        int allRow = agentShowDao.getAllRowCount();    //×Ü¼ÇÂ¼Êı
+        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //×ÜÒ³Êı
+        final int offset = PageBean.countOffset(pageSize, page);    //µ±Ç°Ò³¿ªÊ¼¼ÇÂ¼
+        final int length = pageSize;    //Ã¿Ò³¼ÇÂ¼Êı
         final int currentPage = PageBean.countCurrentPage(page);
-        List<House> list = agentShowDao.queryForPage(offset, length);        //"ä¸€é¡µ"çš„è®°å½•
+        List<House> list = agentShowDao.queryForPage(offset, length);        //"Ò»Ò³"µÄ¼ÇÂ¼
 
-        //æŠŠåˆ†é¡µä¿¡æ¯ä¿å­˜åˆ°Beanä¸­
+        //°Ñ·ÖÒ³ĞÅÏ¢±£´æµ½BeanÖĞ
         PageBean pageBean = new PageBean();
         pageBean.setPageSize(pageSize);
         pageBean.setCurrentPage(currentPage);

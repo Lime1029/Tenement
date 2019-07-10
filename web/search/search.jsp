@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>search for </title>
@@ -30,7 +31,6 @@
             margin-top: 100px;
             font-size: 20px;
         }
-
         .panel ul li {
             text-align: left;
             padding-left: 50px;
@@ -57,28 +57,7 @@
                         <li class="active">
                             <a href="#">首页</a>
                         </li>
-                        <li >
-                            <a href="<s:url action="houseDisplay"/>房源管理</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                用户管理<b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<s:url action="userDisplay"/>">普通用户</a></li>
-                                <li><a href="<s:url action="agentDisplay"/>">经理人</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                地区管理<b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<s:url action="plotDisplay"/>">小区</a></li>
-                                <li><a href="<s:url action="districtDisplay"/>">区域</a></li>
-                                <li><a href="<s:url action="cityDisplay"/>">城市</a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -95,12 +74,12 @@
         <ul class="filter__item--noaside">
             <li class="filter__item--level1 down strong" data-tab="1" data-el="area" data-antitarget="station"><a href="/zufang/" onclick="return false;">按区域</a></li>
         </ul>
-        <form role="form" id="search" action="keywordSearch.action">
+        <form role="form" id="search" action="searchHouseByKeyword.action">
             <input type="search" placeholder="请输入区域或小区名搜索" class="form-control" name="condition">
             <span><button class="btn btn-primary" type="submit">开始找房</button></span>
         </form>
         <form role="form" id="search2" action="conditionSearch.action" >
-             <ul data-target="search.housing_plot" class="">
+            <ul data-target="search.housing_plot" class="">
                 <div >
                     <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">地区</a></li>
                     <div class="col-sm-4 radios">
@@ -118,7 +97,7 @@
                 </div>
 
             </ul>
-        <hr>
+            <hr>
             <ul class="filter__ul" data-el="rentType">
                 <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">热门小区</a></li>
                 <div class="col-sm-4 radios">
@@ -134,12 +113,12 @@
                     <input type="radio" name="housing_plot" value="3"/>北大
                 </div>
             </ul>
-        <hr/>
+            <hr/>
             <input type="search" placeholder="最高承受租金" class="form-control" name="housing_maxrent">
             <br>
             <input type="search" placeholder="最低承受租金" class="form-control" name="housing_leastrent">
             <br>
-        <hr/>
+            <hr/>
             <ul class="filter__ul" data-el="housing_type">
                 <li class="filter__item--level5 filter__item--aside"><a href="javascript:;">户型</a></li>
                 <div class="col-sm-4 radios">
@@ -154,7 +133,6 @@
             </ul>
 
 
-    </div>
     <button      class="btn btn-primary btn-lg "style="margin-left: 40%" type="submit">搜索</button>  </form>
 </div>
 

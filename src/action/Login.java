@@ -5,6 +5,8 @@ import com.opensymphony.xwork2.ActionContext;
 import model.Administrator;
 import model.Agent;
 import model.User;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.UserService;
 
 import java.util.regex.Matcher;
@@ -84,6 +86,9 @@ public class Login extends ActionSupport {
 
     public String execute() throws Exception {
 
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+        userService = (UserService)ctx.getBean("userService");
+
         String mobileExp =
                 "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(166)|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\\d{8}$";
         Pattern p1 = Pattern.compile(mobileExp);
@@ -117,6 +122,7 @@ public class Login extends ActionSupport {
             }
 
             else if (role.equals("agent")) {
+
                 agent = userService.getAgentByTel(telephone);
                 if (agent == null) {
                     loginMessage = "用户不存在";

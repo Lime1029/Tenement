@@ -149,28 +149,14 @@ DROP TABLE IF EXISTS `order` ;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` INT NOT NULL AUTO_INCREMENT,
   `order_stime` DATE NOT NULL,
-  `landlord_id` INT NULL,
   `order_rent` INT UNSIGNED NOT NULL,
   `order_status` TINYINT NOT NULL DEFAULT 0 COMMENT '0表示未支付，1表示已支付',
-  `agent_id` INT NOT NULL,
   `order_etime` DATE NOT NULL,
   `applyer_id` INT NOT NULL,
   `house_id` INT NOT NULL,
   PRIMARY KEY (`order_id`),
-  INDEX `fk_order_user2_idx` (`landlord_id` ASC),
-  INDEX `fk_order_agent1_idx` (`agent_id` ASC),
   INDEX `fk_order_user1_idx` (`applyer_id` ASC),
   INDEX `fk_order_house1_idx` (`house_id` ASC),
-  CONSTRAINT `fk_order_user2`
-    FOREIGN KEY (`landlord_id`)
-    REFERENCES `user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_order_agent1`
-    FOREIGN KEY (`agent_id`)
-    REFERENCES `agent` (`agent_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_user1`
     FOREIGN KEY (`applyer_id`)
     REFERENCES `user` (`user_id`)
@@ -271,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `landlord_apply_release` (
   `expect_price` DOUBLE NOT NULL,
   `applyer_phone` VARCHAR(45) NOT NULL,
   `applyer_appellation` VARCHAR(15) NOT NULL COMMENT '如何称呼房源发布者',
-  `apply_time` TIMESTAMP NOT NULL,
+  `apply_time` TIMESTAMP NOT NULL default current_timestamp,
   `plot_id` INT NOT NULL,
   PRIMARY KEY (`apply_id`),
   INDEX `fk_house_releasing_user1_idx` (`applyer_id` ASC),
@@ -314,7 +300,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `facility` ;
 
 CREATE TABLE IF NOT EXISTS `facility` (
-  `facility_id` INT NOT NULL AUTO_INCREMENT ,
+  `facility_id` INT NOT NULL AUTO_INCREMENT,
   `facility` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`facility_id`))
 ENGINE = InnoDB
@@ -406,30 +392,16 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `contract` ;
 
 CREATE TABLE IF NOT EXISTS `contract` (
-  `contract_id` INT NOT NULL AUTO_INCREMENT ,
+  `contract_id` INT NOT NULL AUTO_INCREMENT,
   `stime` DATE NOT NULL,
   `etime` DATE NOT NULL,
-  `agent_id` INT NOT NULL,
   `tenant_id` INT NOT NULL,
-  `lanlord_id` INT NOT NULL,
   `house_id` INT NOT NULL,
   PRIMARY KEY (`contract_id`),
-  INDEX `fk_contract_agent1_idx` (`agent_id` ASC),
   INDEX `fk_contract_user1_idx` (`tenant_id` ASC),
-  INDEX `fk_contract_user2_idx` (`lanlord_id` ASC),
   INDEX `fk_contract_house1_idx` (`house_id` ASC),
-  CONSTRAINT `fk_contract_agent1`
-    FOREIGN KEY (`agent_id`)
-    REFERENCES `agent` (`agent_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_contract_user1`
     FOREIGN KEY (`tenant_id`)
-    REFERENCES `user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_contract_user2`
-    FOREIGN KEY (`lanlord_id`)
     REFERENCES `user` (`user_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,

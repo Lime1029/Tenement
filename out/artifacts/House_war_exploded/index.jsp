@@ -35,7 +35,7 @@
             租房
           </a>
           <div class="dropdown_menu">
-            <a href="search/search.jsp">搜索</a>
+            <a href="#">Custom Menu</a>
             <a href="#">Custom Menu</a>
             <a href="#">Custom Menu</a>
           </div>

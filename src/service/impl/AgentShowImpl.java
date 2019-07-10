@@ -29,15 +29,15 @@ public class AgentShowImpl implements AgentShowService {
         HttpSession session = request.getSession();
         Agent agent = (Agent)request.getSession().getAttribute("Agent");
         //String sqq = hql + "1";
-                //(String)agent.getTelephone();
-        int allRow = agentShowDao.getAllRowCount();    //æ€»è®°å½•æ•°
-        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //æ€»é¡µæ•°
-        final int offset = PageBean.countOffset(pageSize, page);    //å½“å‰é¡µå¼€å§‹è®°å½•
-        final int length = pageSize;    //æ¯é¡µè®°å½•æ•°
+        //(String)agent.getTelephone();
+        int allRow = agentShowDao.getAllRowCount();    //×Ü¼ÇÂ¼Êı
+        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //×ÜÒ³Êı
+        final int offset = PageBean.countOffset(pageSize, page);    //µ±Ç°Ò³¿ªÊ¼¼ÇÂ¼
+        final int length = pageSize;    //Ã¿Ò³¼ÇÂ¼Êı
         final int currentPage = PageBean.countCurrentPage(page);
-        List<House> list = agentShowDao.queryForPage(offset, length);        //"ä¸€é¡µ"çš„è®°å½•
+        List<House> list = agentShowDao.queryForPage(offset, length);        //"Ò»Ò³"µÄ¼ÇÂ¼
 
-        //æŠŠåˆ†é¡µä¿¡æ¯ä¿å­˜åˆ°Beanä¸­
+        //°Ñ·ÖÒ³ĞÅÏ¢±£´æµ½BeanÖĞ
         PageBean pageBean = new PageBean();
         pageBean.setPageSize(pageSize);
         pageBean.setCurrentPage(currentPage);
@@ -50,17 +50,17 @@ public class AgentShowImpl implements AgentShowService {
     public PageBean queryForContract(int pageSize,int page){
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
-        Agent agent = (Agent)request.getSession().getAttribute("Agent");
+        Agent agent = (Agent)request.getSession().getAttribute("agent");
         //String sqq = hql + "1";
         //(String)agent.getTelephone();
-        int allRow = agentShowDao.getAllContractCount();    //æ€»è®°å½•æ•°
-        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //æ€»é¡µæ•°
-        final int offset = PageBean.countOffset(pageSize, page);    //å½“å‰é¡µå¼€å§‹è®°å½•
-        final int length = pageSize;    //æ¯é¡µè®°å½•æ•°
+        int allRow = agentShowDao.getAllContractCount();    //×Ü¼ÇÂ¼Êı
+        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //×ÜÒ³Êı
+        final int offset = PageBean.countOffset(pageSize, page);    //µ±Ç°Ò³¿ªÊ¼¼ÇÂ¼
+        final int length = pageSize;    //Ã¿Ò³¼ÇÂ¼Êı
         final int currentPage = PageBean.countCurrentPage(page);
-        List<House> list = agentShowDao.queryForContract(offset, length);        //"ä¸€é¡µ"çš„è®°å½•
+        List<House> list = agentShowDao.queryForContract(offset, length);        //"Ò»Ò³"µÄ¼ÇÂ¼
 
-        //æŠŠåˆ†é¡µä¿¡æ¯ä¿å­˜åˆ°Beanä¸­
+        //°Ñ·ÖÒ³ĞÅÏ¢±£´æµ½BeanÖĞ
         PageBean pageBean = new PageBean();
         pageBean.setPageSize(pageSize);
         pageBean.setCurrentPage(currentPage);
@@ -76,7 +76,7 @@ public class AgentShowImpl implements AgentShowService {
         HttpSession session = request.getSession();
         Agent agent = (Agent)request.getSession().getAttribute("Agent");
 
-       // String sqq = hql + (String)agent.getTelephone();
+        // String sqq = hql + (String)agent.getTelephone();
         return this.agentShowDao.getAllRowCount();
     }
     public int getAllContractCount(){

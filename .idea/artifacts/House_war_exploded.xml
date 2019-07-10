@@ -12,9 +12,12 @@
           <element id="library" level="project" name="Hibernate5.4.3" />
           <element id="library" level="project" name="spring5.1.8" />
           <element id="library" level="project" name="struts2-2.5.20" />
-          <element id="library" level="project" name="aspectjweaver-1.6.2" />
-          <element id="library" level="project" name="junit4" />
           <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="json" />
+          <element id="library" level="project" name="org.apache.struts:struts2-json-plugin:2.5.20" />
+          <element id="library" level="project" name="junit4" />
+          <element id="library" level="project" name="aspectweaver" />
+          <element id="library" level="project" name="log4j-1.2-api-2.12.0" />
         </element>
       </element>
     </root>

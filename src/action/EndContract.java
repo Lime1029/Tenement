@@ -26,11 +26,11 @@ public class EndContract  extends ActionSupport {
     }
 
     public String execute(){
-       int result =agentShowDao.endContract(contractID);
-       if(result == 1){
-           return SUCCESS;
-       }
-       return ERROR;
+        int result =agentShowDao.endContract(contractID);
+        if(result == 1){
+            return SUCCESS;
+        }
+        return ERROR;
     }
 
 }
