@@ -40,13 +40,14 @@
             <nav class="navbar" style="background-color: aliceblue">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: black">个人中心</a>
+                        <a class="nav-link" href="../agent/agent_ShowInfo.jsp" style="color: black">个人信息</a>
                         <a class="nav-link" href="agentChat.action?agentID=${agent.agentId}" style="color: black">我的消息</a>
                         <a class="nav-link" href="../agent/agent_AddOrder.jsp" style="color: black">添加订单</a>
                         <a class="nav-link" href="getMyOrder.action?agentId=${agent.agentId}" style="color: black">我管理的订单</a>
                         <a class="nav-link" href="houseShow.action" style="color: black">确认房源</a>
                         <a class="nav-link" href="getMyHouse.action" style="color: black">我管理的房源</a>
                         <a class="nav-link" href="contractShow.action" style="color: black">我管理的合同</a>
+                        <a class="nav-link" href="getLandlordApply.action" style="color: black">房东发布房源的申请</a>
                     </li>
                 </ul>
             </nav>
@@ -55,38 +56,46 @@
 
         <!--页面主体：查看当前经纪人管理的订单，并进行操作，表格部分查询及删除-->
         <div class="col-md-9">
-            <table data-toggle="table">
+            <table class="table table-condensed">
                 <thead>
                 <!--表格top栏-->
                 <tr>
-                    <th>订单id</th>
-                    <th>起始时间</th>
-                    <th>租金</th>
-                    <th>订单状态</th>
+                    <th>订单编号</th>
+                    <th>开始时间</th>
                     <th>结束时间</th>
-                    <th>租客id</th>
-                    <th>房源id</th>
+                    <th>订单状态</th>
+                    <th>租金</th>
+                    <th>租客编号</th>
+                    <th>房源编号</th>
                 </tr>
                 </thead>
                 <tbody>
                 <!--显示数据库中订单数据-->
                 <s:iterator value="#session.orders" var="order">
                     <tr>
-                        <td>${order[0]}</td>
-                        <td>${order[1]}</td>
-                        <td>${order[2]}</td>
+                        <td>${order[0]}</td><!--订单id-->
+                        <td>${order[1]}</td><!--开始时间-->
+                        <td>${order[4]}</td><!--结束时间-->
                         <td>
-                                <c:choose>
-                                    <c:when test="${order[3] == 0}">
-                                        未支付
-                                    </c:when>
-                                    <c:otherwise>
-                                        已支付
-                                    </c:otherwise>
-                                </c:choose></td>
-                        <td>${order[4]}</td>
-                        <td>${order[5]}</td>
-                        <td>${order[6]}</td>
+                            <c:choose>
+                                <c:when test="${order[3] == 0}">
+                                    未支付
+                                </c:when>
+                                <c:otherwise>
+                                    已支付
+                                </c:otherwise>
+                            </c:choose></td><!--订单状态-->
+                        <td>${order[2]}</td><!--租金-->
+                        <td>${order[5]}</td><!--租客id-->
+                        <td>${order[6]}</td><!--房源id-->
+                        <td>
+                            <!--因为action所以要用表单提交submit-->
+                            <form action="deleteAgentOrder.action" method="post">
+                                <input type="hidden" value='${order[0]}' name="orderId">
+                                <input hidden name="agentId"value="${agent.agentId}">
+                                <input type="submit" value="删除" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
+                            </form>
+                        </td>
                     </tr>
                 </s:iterator>
                 </tbody>

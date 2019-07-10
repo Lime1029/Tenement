@@ -137,7 +137,6 @@
     <bean id="discussion" class="model.DiscussionSection" />
     <bean id="landlordApplyRelease" class="model.LandlordApplyRelease"/>
     <bean id="PageBean" class="model.PageBean"/>
-    <bean id="houseInfor" class="model.HouseInfo"/>
 
     <!-- DaoImpl -->
     <bean id="userDao" class="dao.impl.UserDaoImpl">
@@ -199,6 +198,7 @@
     </bean>
     <bean id="agentService" class="service.impl.AgentServiceImpl">
         <property name="agentDao" ref="agentDao"/>
+        <property name="houseDao" ref="houseDao"/>
     </bean>
     <bean id = "agentShowService" class="service.impl.AgentShowImpl">
         <property name="agentShowDao" ref="agentShowDao"/>
@@ -288,6 +288,9 @@
     <bean id="getMyOrders" class="action.UserQuery" scope="prototype">
         <property name="userService" ref="userService" />
         <property name="userId" value="1" />
+    </bean>
+    <bean id="deleteAgentOrder" class="action.DeleteAgentOrder">
+        <property name="orderService" ref="orderService" />
     </bean>
     <bean id="modifyOderStatus" class="action.UserQuery" scope="prototype">
         <property name="userService" ref="userService" />
@@ -439,6 +442,17 @@
     <bean id = "updateHouse" class="action.UpdateHouse" scope="prototype">
         <property name="updateService" ref="updateService"/>
     </bean>
+    <bean id="getLandlordApply" class="action.ConfirmLandlordApply">
+        <property name="agentService" ref="agentService" />
+    </bean>
+    <bean id="deleteApply" class="action.ConfirmLandlordApply">
+        <property name="agentService" ref="agentService" />
+        <property name="applyId" value="1" />
+    </bean>
+    <bean id="getAgentByPlot" class="action.GetAgentByPlot">
+        <property name="userService" ref="userService" />
+    </bean>
+
 
 
 

@@ -167,4 +167,14 @@ public class OrderDaoImpl implements OrderDao {
         List<Order> orders=query.list();
         return orders;
     }
+
+    @Override
+    public void deleteOrderAgent(int orderId){
+        //根据传入的order，update数据库里的订单数据
+        System.out.println(orderId);
+        Session session=sessionFactory.getCurrentSession();
+        String sql="DELETE FROM `order` WHERE order_id="+ orderId;
+        SQLQuery query = session.createSQLQuery(sql);
+        query.executeUpdate();
+    }
 }

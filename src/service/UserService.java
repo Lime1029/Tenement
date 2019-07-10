@@ -20,6 +20,7 @@ public interface UserService {
     public boolean modifyUser(User newUser);//修改用户信息
     public boolean updatePass(Long id,String newPassword);//修改密码
     public User findUserByUserID(int userID);
+    public Agent getAgentByPlot(int plotId);
 
     public boolean savehouse(LandlordApplyRelease landlordApplyRelease);//房东提交房源
     public boolean confirmHouse(House house,String phone, String user_name);//经纪人确认房源

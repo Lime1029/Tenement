@@ -20,6 +20,7 @@ public interface UserDao {
     public boolean updateUser(User user);
     public boolean updateUser(User user,String newpassword);
     public User findUserByUserID(int userID);
+    public Agent getAgentByPlot(int plotId);
 
     public boolean savehouse(LandlordApplyRelease landlordApplyRelease);
     public boolean confirmHouse(House house,String phone, String user_name);

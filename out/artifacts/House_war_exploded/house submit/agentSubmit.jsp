@@ -86,10 +86,12 @@
                 <form action="houseConfirm.action" id="houseConfirm" method="post" >
 
                     <input class="text" id="address" name="house_address"placeholder="请输入具体地址" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -45px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="address_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -30px;margin-top: -0px;width: 400px">
 
 
                     <input class="text" id="rent" name="house_rent"placeholder="请输入实际租金" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="price_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
 
@@ -106,19 +108,25 @@
 
                     </div>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text" id="phone" name="user_phone"placeholder="请输入房东电话" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="phone" name="user_phone"placeholder="请输入房东电话" maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="phone_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <input class="text" id="name" name="user_name"placeholder="请输入房东姓名" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="name_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
                     <input class="text"id="type" name="house_type" placeholder="请输入房屋类型" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="type_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <input class="text"id="floor" name="house_floor" placeholder="请输入房屋楼层" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="floor_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <input class="text"id="area" name="house_area" placeholder="请输入房屋面积" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="area_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
                     <input class="text"id="description" name="house_description" placeholder="请输入房屋描述" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="description_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
 
@@ -143,5 +151,156 @@
 </div>
 
 
+
+<script>
+
+    var phone_Boolean = false;
+    var rent_Boolean = false;
+    var address_Boolean = false;
+    var name_Boolean = false;
+    var area_Boolean = false;
+    var floor_Boolean = false;
+    var type_Boolean = false;
+    var description_Boolean = false;
+    /*$('.reg_user').blur(function(){
+        if ((/^[a-z0-9_-]{4,8}$/).test($(".reg_user").val())){
+            $('.user_hint').html("✔").css("color","green");
+            user_Boolean = true;
+        }else {
+            $('.user_hint').html("×").css("color","red");
+            user_Boolean = false;
+        }
+    });*/
+    $('#price').blur(function () {
+        if((/^[0-9]{1,10}$/).test($("#price").val()))
+        {
+            $('.price_hint').html("✔").css("color","green");
+            rent_Boolean = true;
+        }else {
+            $('.price_hint').html("✘").css("color","red");
+            rent_Boolean = false;
+        }
+
+
+    })
+
+    $('#area').blur(function () {
+        if((/^[0-9]{1,10}$/).test($("#area").val()))
+        {
+            $('.area_hint').html("✔").css("color","green");
+            area_Boolean = true;
+        }else {
+            $('.area_hint').html("✘").css("color","red");
+            area_Boolean = false;
+        }
+
+
+    })
+
+
+
+
+    // Email
+    /*$('.reg_email').blur(function(){
+        if ((/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/).test($(".reg_email").val())){
+            $('.email_hint').html("✔").css("color","green");
+            emaile_Boolean = true;
+        }else {
+            $('.email_hint').html("×").css("color","red");
+            emaile_Boolean = false;
+        }
+    });*/
+
+
+    // Mobile
+    $('#phone').blur(function(){
+        if ((/^1[34578]\d{9}$/).test($("#phone").val())){
+            $('.phone_hint').html("✔").css("color","green");
+            phone_Boolean = true;
+        }else {
+            $('.phone_hint').html("✘").css("color","red");
+            phone_Boolean = false;
+        }
+    });
+
+    $('#address').blur(function(){
+        if ((/^[\u4e00-\u9fa5]{1,20}$ /).test($("#address").val())){
+            $('.address_hint').html("✔").css("color","green");
+            address_Boolean = true;
+        }else {
+            $('.address_hint').html("✘").css("color","red");
+            address_Boolean = false;
+        }
+    });
+
+    $('#name').blur(function(){
+        if ((/^[\u4e00-\u9fa5]{1,5}$ /).test($("#name").val())){
+            $('.name_hint').html("✔").css("color","green");
+            name_Boolean = true;
+        }else {
+            $('.name_hint').html("✘").css("color","red");
+            name_Boolean = false;
+        }
+    });
+
+    $('#floor').blur(function(){
+        if ((/^[\u4e00-\u9fa5-0-9]{1,5}$ /).test($("#floor").val())){
+            $('.floor_hint').html("✔").css("color","green");
+            floor_Boolean = true;
+        }else {
+            $('.floor_hint').html("✘").css("color","red");
+            floor_Boolean = false;
+        }
+    });
+
+    $('#type').blur(function(){
+        if ((/^[\u4e00-\u9fa5]{1,10}$ /).test($("#type").val())){
+            $('.type_hint').html("✔").css("color","green");
+            type_Boolean = true;
+        }else {
+            $('.type_hint').html("✘").css("color","red");
+            type_Boolean = false;
+        }
+    });
+
+    $('#description').blur(function(){
+        if ((/^[\u4e00-\u9fa5]{1,20}$ /).test($("#description").val())){
+            $('.description_hint').html("✔").css("color","green");
+            description_Boolean = true;
+        }else {
+            $('.description_hint').html("✘").css("color","red");
+            description_Boolean = false;
+        }
+    });
+
+
+    function check() {
+        if((rent_Boolean && phone_Boolean && address_Boolean && name_Boolean && type_Boolean && floor_Boolean && area_Boolean && description_Boolean) !== true){
+            alert("请按格式要求填写信息");
+            document.getElementById('price').value = "";
+            document.getElementById('phone').value = "";
+            document.getElementById('address').value = "";
+            document.getElementById('name').value = "";
+            document.getElementById('type').value = "";
+            document.getElementById('floor').value = "";
+            document.getElementById('area').value = "";
+            document.getElementById('description').value = "";
+            $('.phone_hint').html("");
+            $('.price_hint').html("");
+            $('.address_hint').html("");
+            $('.name_hint').html("");
+            $('.phone_hint').html("");
+            $('.type_hint').html("");
+            $('.floor_hint').html("");
+            $('.area_hint').html("");
+            $('.description_hint').html("");
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+</script>
 </body>
 </html>

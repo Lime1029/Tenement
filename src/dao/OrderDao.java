@@ -17,4 +17,5 @@ public interface OrderDao {
 
     List<Order> getMyOrder(int agentId);
     boolean saveOrder(Order order,String applyerTelephone,String applyerName);
+    void deleteOrderAgent(int orderId);
 }

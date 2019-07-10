@@ -14,18 +14,19 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.SQLException;
 import java.util.List;
 
+@Transactional
 public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDao {
-    //Ê¡ÂÔÁËÆäËûµÄ´úÂë
+    //Ê¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½
 
     /** *//**
-     * ·ÖÒ³²éÑ¯
-     * @param hql ²éÑ¯µÄÌõ¼þ
-     * @param offset ¿ªÊ¼¼ÇÂ¼
-     * @param length Ò»´Î²éÑ¯¼¸Ìõ¼ÇÂ¼
+     * ï¿½ï¿½Ò³ï¿½ï¿½Ñ¯
+     * @param hql ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * @param offset ï¿½ï¿½Ê¼ï¿½ï¿½Â¼
+     * @param length Ò»ï¿½Î²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
      * @return
      **/
 
-    @Transactional
+
     public List queryForPage(final int offset,final int length){
         Agent agent = (Agent)ActionContext.getContext().getSession().get("agent");
         final String hql = "Select p.plotName, d.districtName, a.name, h.address,h.rent, " +
@@ -46,7 +47,7 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
         return list;
     }
 
-    @Transactional
+
     public List queryForContract(final int offset,final int length){
         Agent agent = (Agent)ActionContext.getContext().getSession().get("agent");
         final String hql = "Select c.contractId,c.stime,c.etime,a.name,u2.name,u1.name,c.houseId FROM Contract as c, " +
@@ -67,10 +68,10 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
         return list;
     }
     /** *//**
-     * ²éÑ¯ËùÓÐ¼ÇÂ¼Êý
-     * @return ×Ü¼ÇÂ¼Êý
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ð¼ï¿½Â¼ï¿½ï¿½
+     * @return ï¿½Ü¼ï¿½Â¼ï¿½ï¿½
      */
-    @Transactional
+
     public int getAllRowCount(){
         Agent agent = (Agent)ActionContext.getContext().getSession().get("agent");
         final String hql = "Select new model.HouseInfo(p.plotName, d.districtName, a.name, h.address,h.rent, " +
@@ -82,7 +83,7 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
         //return getHibernateTemplate().find(hql).size();
     }
 
-    @Transactional
+
     public int getAllContractCount(){
         Agent agent = (Agent)ActionContext.getContext().getSession().get("agent");
         final String hql = "Select c.contractId,c.stime,c.etime,a.name,u2.name,u1.name,c.houseId FROM Contract as c, " +
@@ -95,7 +96,6 @@ public class AgentShowDaoImpl extends HibernateDaoSupport implements AgentShowDa
     }
 
     @Override
-    @Transactional
     public int endContract(int contractID) {
         Session session = getSessionFactory().getCurrentSession();
         String hql = "update House h  set h.state = 0  where h.houseId = (select houseId from Contract c where c.contractId = "+contractID+")";

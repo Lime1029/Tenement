@@ -66,5 +66,8 @@ public class OrderServiceImpl implements OrderService{
         return  orderDao.saveOrder(order,applyerTelephone,applyerName);
     }
 
-
+    @Override
+    public void deleteOrderAgent(int orderId){
+        orderDao.deleteOrderAgent(orderId);
+    }
 }

@@ -257,6 +257,14 @@ public class UserDaoImpl implements UserDao {
         return false;
     }
 
+    @Override
+    public Agent getAgentByPlot(int plotId) {
+        Session session = sessionFactory.getCurrentSession();
+        String sql = "select a.agent_id, a.telephone, a.name, a.password from Agent a, Plot p where p.agent_id=a.agent_id and p.plot_id = " + plotId;
+        SQLQuery<Agent> query = session.createSQLQuery(sql).addEntity(Agent.class);
+        Agent agent = query.uniqueResult();
+        return agent;
+    }
 
     @Override
     public boolean savehouse(LandlordApplyRelease landlordApplyRelease) {

@@ -183,7 +183,7 @@
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
                     <input hidden name="applyer_id" value="${user.userId}">
-                    <select class="form-control" name="plot_id">
+                    <select class="form-control" name="plot_id" id="selectPlot">
                         <s:iterator value="#session.userplot" var="plot_num">
                             <option value="${plot_num.plotId}" id="plot_id">${plot_num.plotName}</option>
                         </s:iterator>
@@ -195,10 +195,10 @@
     <br>
     <br>
 
-    <button    type="submit"  class="btn btn-primary btn-lg "style="margin-left: 40%">提交申请</button>
+    <button    type="submit"  class="btn btn-primary btn-lg "style="margin-left: 40%" onclick="submitApplication()">提交申请</button>
     </form>
 
-
+    <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
     <script>
 
         var phone_Boolean = false;
@@ -214,8 +214,6 @@
                 $('.price_hint').html("✘").css("color","red");
                 rent_Boolean = false;
             }
-
-
         });
 
         // Mobile
@@ -230,7 +228,7 @@
         });
 
         $('#address').blur(function(){
-            if ((/^[\u4e00-\u9fa5]{1,20}$ /).test($("#address").val())){
+            if ((/^[\u4e00-\u9fa5]{1,20}$/).test($("#address").val())){
                 $('.address_hint').html("✔").css("color","green");
                 address_Boolean = true;
             }else {
@@ -255,6 +253,44 @@
                 return true;
             }
 
+        }
+
+        //$('#selectPlot').change(function () {
+            var obj = document.getElementById("selectPlot"); //定位id
+
+            var index = obj.selectedIndex; // 选中索引
+
+            var plotId = obj.options[index].value; // 选中值
+            $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
+                return false;
+            });
+        //});
+
+        $('#selectPlot').change(function () {
+            var obj = document.getElementById("selectPlot"); //定位id
+
+            var index = obj.selectedIndex; // 选中索引
+
+            var plotId = obj.options[index].value; // 选中值
+            $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
+                return false;
+            });
+        });
+
+        var goeasy = new GoEasy({
+            appkey:'BC-a996257032c5470597d8213b461e44f3'
+        });
+        function submitApplication() {
+            goeasy.publish({
+                channel: '${plotAgent.agentId}',
+                message: "房东${user.userId}提交发布房源申请",
+                onFailed: function (error) {
+                    alert(error.code+" : "+error.content);
+                },
+                onSuccess: function(){
+                    alert("提交申请成功!");
+                }
+            });
         }
     </script>
 </div>

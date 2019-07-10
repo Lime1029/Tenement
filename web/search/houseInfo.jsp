@@ -93,6 +93,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title" style="font-size: 25px;width: auto;display: inline;" >房源描述</h3>
+                    <!--
                     <form style="float:right;" action="loadAgentChatRecord.action" method="post">
                         <input name="agentID" value="${houseInfo.agentId}" hidden="hidden">
                         <input name="userID" value="${user.userId}" hidden="hidden">
@@ -100,7 +101,9 @@
                         <input type="hidden" name="type" value="user">
                         <h4 style="display: inline;">经纪人：${houseInfo.agentName}&nbsp;&nbsp;</h4>
                         <span><button class="btn btn-primary" style="" type="submit" onclick="send()">在线咨询</button></span>
-                    </form>
+                    </form>-->
+                    <h4 style="display: inline;">经纪人：${houseInfo.agentName}&nbsp;&nbsp;</h4>
+                    <span><button class="btn btn-primary" style="" type="submit" onclick="send()">在线咨询</button></span>
                 </div>
                 <div class="panel-body">
                         
@@ -125,9 +128,18 @@
                     alert(error.code+" : "+error.content);
                 },
                 onSuccess: function(){
+                    $.post("saveChatRecord?userID=${session.user.userId}" + "&agentID=${houseInfo.agentId}"+ "&chatMessage=用户${user.userId}想看${houseInfo.houseId}号房"  + "&senderID=${session.user.userId}", function (message, status) {
+                        return false;
+                    });
                     var reply = window.confirm("预约成功\n点击确认进入交流页面")
                     if(reply){
-                        document.getElementById("form1").submit();
+                        const form1 = document.createElement("form");
+                        form1.action = "loadAgentChatRecord.action?agentID=${houseInfo.agentId}&userID=${user.userId}&type=user";
+                        form1.method = "post";
+                        form1.style.display = "none";
+                        document.body.appendChild(form1);
+                        form1.submit();
+                        return form1;
                     }
                 }
             });

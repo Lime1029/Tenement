@@ -41,13 +41,14 @@
             <nav class="navbar" style="background-color: aliceblue">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: black">个人中心</a>
+                        <a class="nav-link" href="../agent/agent_ShowInfo.jsp" style="color: black">个人信息</a>
                         <a class="nav-link" href="agentChat.action?agentID=${agent.agentId}" style="color: black">我的消息</a>
                         <a class="nav-link" href="../agent/agent_AddOrder.jsp" style="color: black">添加订单</a>
                         <a class="nav-link" href="getMyOrder.action?agentId=${agent.agentId}" style="color: black">我管理的订单</a>
                         <a class="nav-link" href="houseShow.action" style="color: black">确认房源</a>
                         <a class="nav-link" href="getMyHouse.action" style="color: black">我管理的房源</a>
                         <a class="nav-link" href="contractShow.action" style="color: black">我管理的合同</a>
+                        <a class="nav-link" href="getLandlordApply.action" style="color: black">房东发布房源的申请</a>
                     </li>
                 </ul>
             </nav>
@@ -84,10 +85,7 @@
     goeasy.subscribe({
         channel:'${agent.agentId}',
         onMessage:function(message){
-            var reply = window.confirm(message.content+"\n"+"单击确认跳转到消息页面");
-            if(reply){
-                document.getElementById("form1").submit();
-            }
+            alert(message.content);
         }
     })
 </script>

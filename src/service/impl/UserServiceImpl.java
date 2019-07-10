@@ -125,6 +125,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Agent getAgentByPlot(int plotId) {
+        Agent agent = userDao.getAgentByPlot(plotId);
+        ActionContext.getContext().getSession().put("plotAgent", agent);
+
+        return agent;
+    }
+
+    @Override
     public boolean savehouse(LandlordApplyRelease landlordApplyRelease){
         return  userDao.savehouse(landlordApplyRelease);
     }
