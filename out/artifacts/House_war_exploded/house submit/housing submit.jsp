@@ -169,8 +169,8 @@
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
-                    <input type="text" id="money" name="price" placeholder="请输入您的期望租金" minlength="1" maxlength="10" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
-                    <span class="price_hint"></span>
+                    <input type="text" id="price" name="price" placeholder="请输入您的期望租金" minlength="1" maxlength="10" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="rent_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
@@ -201,17 +201,17 @@
     <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
     <script>
 
-        var phone_Boolean = false;
+        var tel_Boolean = false;
         var rent_Boolean = false;
         var address_Boolean = false;
 
         $('#price').blur(function () {
-            if((/^[0-9]{1,10}$/).test($("#price").val()))
+            if((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#price").val()))
             {
-                $('.price_hint').html("✔").css("color","green");
+                $('.rent_hint').html("✔").css("color","green");
                 rent_Boolean = true;
             }else {
-                $('.price_hint').html("✘").css("color","red");
+                $('.rent_hint').html("✘").css("color","red");
                 rent_Boolean = false;
             }
         });
@@ -220,10 +220,10 @@
         $('#phone').blur(function(){
             if ((/^1[34578]\d{9}$/).test($("#phone").val())){
                 $('.phone_hint').html("✔").css("color","green");
-                phone_Boolean = true;
+                tel_Boolean = true;
             }else {
                 $('.phone_hint').html("✘").css("color","red");
-                phone_Boolean = false;
+                tel_Boolean = false;
             }
         });
 
@@ -239,13 +239,13 @@
 
 
         function check() {
-            if((rent_Boolean && phone_Boolean && address_Boolean) !== true){
+            if((rent_Boolean && tel_Boolean && address_Boolean) !== true){
                 alert("请按格式要求填写信息");
                 document.getElementById('price').value = "";
                 document.getElementById('phone').value = "";
                 document.getElementById('address').value = "";
                 $('.phone_hint').html("");
-                $('.price_hint').html("");
+                $('.rent_hint').html("");
                 $('.address_hint').html("");
                 return false;
             }
@@ -255,7 +255,7 @@
 
         }
 
-        //$('#selectPlot').change(function () {
+
             var obj = document.getElementById("selectPlot"); //定位id
 
             var index = obj.selectedIndex; // 选中索引
@@ -264,7 +264,6 @@
             $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
                 return false;
             });
-        //});
 
         $('#selectPlot').change(function () {
             var obj = document.getElementById("selectPlot"); //定位id

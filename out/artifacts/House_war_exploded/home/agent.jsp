@@ -27,9 +27,12 @@
 
 <!--假装有的装饰性TOP部分-->
 <div class="top">
-    <div class="row">
-        <div class="col-md-2"></div>
-    </div>
+
+        <ul class="nav navbar-nav navbar-right" >
+            <li>
+                <a href="logout.action" style="float: right; color:whitesmoke; margin-right: 50px;margin-top: 10px">退出</a>
+            </li>
+        </ul>
 </div>
 
 <!--Middle-->

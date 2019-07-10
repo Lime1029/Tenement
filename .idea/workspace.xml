@@ -10,79 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab2c191f-e31b-4e9b-aa49-218947924243" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/UpdateHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/UpdateHouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/getMyHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/action/getMyHouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/HouseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/HouseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/OrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/OrderDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/HouseDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/HouseDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/OrderDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/OrderDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/UpdateDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/UpdateDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/AgentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/AgentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/AgentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/AgentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/spring-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/WEB-INF/classes/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agentContract.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agentContract.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agent_AddOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agent_AddOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agent_ManageOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agent_ManageOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agent_fail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agent_fail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agentinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/agent/agentinfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/home/agent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/home/agent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/house submit/agentSubmit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/house submit/agentSubmit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/house submit/housing submit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/house submit/housing submit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/House_war_exploded/search/houseInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/House_war_exploded/search/houseInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/action/UpdateHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/action/UpdateHouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/action/getMyHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/action/getMyHouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/HouseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/HouseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/OrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/OrderDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/impl/HouseDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/impl/HouseDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/impl/OrderDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/impl/OrderDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/impl/UpdateDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/impl/UpdateDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/service/AgentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/AgentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/service/impl/AgentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/impl/AgentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/spring-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/House/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/House/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/UpdateHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/UpdateHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/getMyHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/getMyHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/HouseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/HouseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/AgentShowDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/AgentShowDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/HouseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/HouseDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/OrderDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/UpdateDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UpdateDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/HouseConfirm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/HouseConfirm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AgentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/AgentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/AgentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/agent/agentContract.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/agentContract.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/agent/agent_AddOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/agent_AddOrder.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/agent/agent_ManageOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/agent_ManageOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/agent/agent_fail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/agent_fail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/agent/agentinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/agentinfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/agent/landlord_apply_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/agent/landlord_apply_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/home/agent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home/agent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/house submit/housing submit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/house submit/housing submit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/search/houseInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/search/houseInfo.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -187,105 +125,102 @@
         <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
-              <caret line="442" column="60" selection-start-line="442" selection-start-column="60" selection-end-line="442" selection-end-column="60" />
+              <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/action/UpdateHouse.java">
+        <entry file="file://$PROJECT_DIR$/web/agent/agent_AddOrder.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="173">
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding>
-                <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-                <element signature="e#764#765#0" expanded="true" />
-                <element signature="e#805#806#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-                <element signature="e#896#897#0" expanded="true" />
-                <element signature="e#944#945#0" expanded="true" />
-                <element signature="e#984#985#0" expanded="true" />
-                <element signature="e#1017#1018#0" expanded="true" />
-                <element signature="e#1072#1073#0" expanded="true" />
-                <element signature="e#1116#1117#0" expanded="true" />
-                <element signature="e#1150#1151#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1226#1227#0" expanded="true" />
-                <element signature="e#1264#1265#0" expanded="true" />
-                <element signature="e#1295#1296#0" expanded="true" />
-                <element signature="e#1322#1323#0" expanded="true" />
-                <element signature="e#1362#1363#0" expanded="true" />
-                <element signature="e#1394#1395#0" expanded="true" />
-                <element signature="e#1430#1431#0" expanded="true" />
-                <element signature="e#1462#1463#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#1586#1587#0" expanded="true" />
-                <element signature="e#1614#1615#0" expanded="true" />
-                <element signature="e#1656#1657#0" expanded="true" />
-                <element signature="e#1690#1691#0" expanded="true" />
-                <element signature="e#1721#1722#0" expanded="true" />
-                <element signature="e#1748#1749#0" expanded="true" />
-                <element signature="e#1785#1786#0" expanded="true" />
-                <element signature="e#1818#1819#0" expanded="true" />
-                <element signature="e#1870#1871#0" expanded="true" />
-                <element signature="e#1914#1915#0" expanded="true" />
-                <element signature="e#2126#2127#0" expanded="true" />
-                <element signature="e#2158#2159#0" expanded="true" />
-                <element signature="e#2201#2202#0" expanded="true" />
-                <element signature="e#2240#2241#0" expanded="true" />
-                <element signature="e#2304#2305#0" expanded="true" />
-                <element signature="e#2360#2361#0" expanded="true" />
-                <element signature="e#2391#2392#0" expanded="true" />
-                <element signature="e#2421#2422#0" expanded="true" />
-                <element signature="e#2464#2465#0" expanded="true" />
-                <element signature="e#2502#2503#0" expanded="true" />
-                <element signature="e#2549#2550#0" expanded="true" />
-                <element signature="e#2585#2586#0" expanded="true" />
-                <element signature="e#2650#2651#0" expanded="true" />
-                <element signature="e#2700#2701#0" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/impl/UpdateServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/web/agent/agent_ManageOrder.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="263">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/impl/UpdateDaoImpl.java">
+        <entry file="file://$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="288">
+              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding>
-                <element signature="e#0#123#1" expanded="true" />
-                <element signature="e#0#76#1" expanded="true" />
-                <element signature="e#0#71#1" expanded="true" />
-                <element signature="e#0#78#1" expanded="true" />
-                <element signature="e#0#72#1" expanded="true" />
-                <element signature="e#0#71#1" expanded="true" />
-                <element signature="e#0#85#1" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/agent/agentContract.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/agent/agentinfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/struts.xml">
+        <entry file="file://$PROJECT_DIR$/web/agent/landlord_apply_list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="188" column="72" lean-forward="true" selection-start-line="188" selection-start-column="72" selection-end-line="188" selection-end-column="72" />
+            <state relative-caret-position="168">
+              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/home/agent.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="34" column="13" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="34" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/home/user.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="87" column="29" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="87" selection-end-column="29" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -317,7 +252,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/admin/plotDisplay.jsp" />
         <option value="$PROJECT_DIR$/web/myCenter/userInfo.jsp" />
         <option value="$PROJECT_DIR$/src/dao/impl/ChatDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/action/GetAllOrder.java" />
@@ -343,31 +277,32 @@
         <option value="$PROJECT_DIR$/src/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/action/GetAgentByPlot.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f18acc09-31fd-4dd5-86c4-5ba9ffd45269/console_7.sql" />
-        <option value="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/house submit/housing submit.jsp" />
         <option value="$PROJECT_DIR$/web/search/houseInfo.jsp" />
-        <option value="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" />
         <option value="$PROJECT_DIR$/src/dao/OrderDao.java" />
         <option value="$PROJECT_DIR$/src/dao/impl/OrderDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/service/OrderService.java" />
         <option value="$PROJECT_DIR$/src/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/agent/agent_fail.jsp" />
         <option value="$PROJECT_DIR$/src/action/getMyHouse.java" />
-        <option value="$PROJECT_DIR$/web/agent/landlord_apply_list.jsp" />
-        <option value="$PROJECT_DIR$/web/home/agent.jsp" />
-        <option value="$PROJECT_DIR$/web/agent/agent_AddOrder.jsp" />
-        <option value="$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp" />
-        <option value="$PROJECT_DIR$/web/agent/agentContract.jsp" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/web/agent/agentinfo.jsp" />
         <option value="$PROJECT_DIR$/src/dao/impl/AgentShowDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/spring-config.xml" />
         <option value="$PROJECT_DIR$/src/action/UpdateHouse.java" />
         <option value="$PROJECT_DIR$/src/dao/impl/UpdateDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/action/DeleteAgentOrder.java" />
+        <option value="$PROJECT_DIR$/web/house submit/housing submit.jsp" />
+        <option value="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" />
+        <option value="$PROJECT_DIR$/src/action/HouseConfirm.java" />
+        <option value="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/home/agent.jsp" />
+        <option value="$PROJECT_DIR$/web/agent/agent_AddOrder.jsp" />
         <option value="$PROJECT_DIR$/web/agent/agent_ManageOrder.jsp" />
+        <option value="$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/agent/agentContract.jsp" />
+        <option value="$PROJECT_DIR$/web/agent/agentinfo.jsp" />
+        <option value="$PROJECT_DIR$/web/agent/landlord_apply_list.jsp" />
       </list>
     </option>
   </component>
@@ -790,7 +725,7 @@
       <workItem from="1562111625723" duration="78370000" />
       <workItem from="1562296972725" duration="818000" />
       <workItem from="1562297928134" duration="80604000" />
-      <workItem from="1562469959167" duration="122950000" />
+      <workItem from="1562469959167" duration="127678000" />
     </task>
     <servers />
   </component>
@@ -827,7 +762,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453758000" />
+    <option name="totallyTimeSpent" value="458486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -856,11 +791,11 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" weight="0.56666666" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49554655" weight="0.55185187" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49554655" visible="true" weight="0.55" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32962963" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5044534" side_tool="true" weight="0.40185186" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5044534" side_tool="true" weight="0.4007421" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32962963" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32962963" />
@@ -926,6 +861,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>302</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java</url>
+          <line>322</line>
+          <properties />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -936,29 +889,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/admin/orderDisplay.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="331" column="21" lean-forward="true" selection-start-line="325" selection-start-column="7" selection-end-line="331" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/SaveChatRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/chat">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f1ec58d0-cc6a-4375-bd3b-38f5b4bc3fb4">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/action/LoadAgentChatRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -982,11 +912,6 @@
             <element signature="e#4916#4922#0#HTML" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/home/user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1542" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../agentSubmit.jsp">
@@ -1126,26 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/agent/landlord_apply_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="60" column="19" lean-forward="true" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/home/agent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="68" lean-forward="true" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/action/getMyHouse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -1184,61 +1089,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/house submit/housing submit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="230" column="26" selection-start-line="230" selection-start-column="26" selection-end-line="230" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/house submit/agentSubmit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="102" column="75" lean-forward="true" selection-start-line="102" selection-start-column="75" selection-end-line="102" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/house">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f1ec58d0-cc6a-4375-bd3b-38f5b4bc3fb4">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/agent/agent_AddOrder.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="40" column="59" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="50" column="109" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="109" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/agent/agentfail.jsp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/agent/agentContract.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/impl/AgentShowImpl.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1253,20 +1105,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1682">
-          <caret line="265" selection-start-line="265" selection-end-line="265" />
-          <folding>
-            <element signature="e#0#329#1" expanded="true" />
-            <element signature="e#0#393#1" expanded="true" />
-            <element signature="e#0#478#1" expanded="true" />
-            <element signature="e#0#505#1" expanded="true" />
-            <element signature="e#0#144#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1294,31 +1132,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="442" column="60" selection-start-line="442" selection-start-column="60" selection-end-line="442" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/ognl-3.1.21.jar!/ognl/OgnlRuntime.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="157" column="277" selection-start-line="157" selection-start-column="277" selection-end-line="157" selection-end-column="277" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/agent/agentinfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1116">
-          <caret line="46" column="59" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="40" column="212" selection-start-line="40" selection-start-column="212" selection-end-line="40" selection-end-column="212" />
         </state>
       </provider>
     </entry>
@@ -1402,13 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/agent/agent_ManageOrder.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="94" column="85" selection-start-line="94" selection-start-column="85" selection-end-line="94" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/action/DeleteAgentOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -1422,13 +1232,164 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/plotDisplay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="77" column="9" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="77" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="3384">
           <caret line="188" column="72" lean-forward="true" selection-start-line="188" selection-start-column="72" selection-end-line="188" selection-end-column="72" />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house submit/housing submit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="166" column="103" selection-start-line="166" selection-start-column="103" selection-end-line="166" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house submit/agentSubmit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="247" column="41" lean-forward="true" selection-start-line="247" selection-start-column="41" selection-end-line="247" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/HouseConfirm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="155" column="32" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="40" column="212" selection-start-line="40" selection-start-column="212" selection-end-line="40" selection-end-column="212" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/house">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="f1ec58d0-cc6a-4375-bd3b-38f5b4bc3fb4">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f18acc09-31fd-4dd5-86c4-5ba9ffd45269/schema/tenement/table/plot">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="f1ec58d0-cc6a-4375-bd3b-38f5b4bc3fb4">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="337" selection-start-line="337" selection-end-line="337" />
+          <folding>
+            <element signature="e#0#329#1" expanded="true" />
+            <element signature="e#0#393#1" expanded="true" />
+            <element signature="e#0#478#1" expanded="true" />
+            <element signature="e#0#505#1" expanded="true" />
+            <element signature="e#0#144#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="87" column="29" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="87" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home/agent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/agent/agent_AddOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/agent/agent_ManageOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/agent/agent_ShowInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/agent/agentContract.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/agent/agentinfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/agent/landlord_apply_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

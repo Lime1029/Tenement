@@ -85,18 +85,14 @@
             <div class="col-md-5 col-lg-5 col-sm-5">
                 <form action="houseConfirm.action" id="houseConfirm" method="post" >
 
-                    <input class="text" id="address" name="house_address"placeholder="请输入具体地址" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -45px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="address" name="house_address" placeholder="请输入具体地址" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -45px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="address_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -30px;margin-top: -0px;width: 400px">
 
 
-                    <input class="text" id="rent" name="house_rent"placeholder="请输入实际租金" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="rent" name="house_rent" placeholder="请输入实际租金" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="price_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-
-
-
-
 
                     <div>
                         <div class="col-sm-4 radios">
@@ -108,24 +104,24 @@
 
                     </div>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text" id="phone" name="user_phone"placeholder="请输入房东电话" maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="phone" name="user_phone" placeholder="请输入房东电话" maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" required>
                     <span class="phone_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text" id="name" name="user_name"placeholder="请输入房东姓名" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="name" name="user_name" placeholder="请输入房东姓名" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" required maxlength="10">
                     <span class="name_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
-                    <input class="text"id="type" name="house_type" placeholder="请输入房屋类型" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="type" name="house_type" placeholder="请输入户型，如三室一厅一卫" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" maxlength="15">
                     <span class="type_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text"id="floor" name="house_floor" placeholder="请输入房屋楼层" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="floor" name="house_floor" placeholder="请输入房屋楼层，如4楼/共15层" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" maxlength="15">
                     <span class="floor_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text"id="area" name="house_area" placeholder="请输入房屋面积" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="area" name="house_area" placeholder="请输入房屋面积" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" maxlength="10" required>
                     <span class="area_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
-                    <input class="text"id="description" name="house_description" placeholder="请输入房屋描述" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="description" name="house_description" placeholder="请输入房屋描述" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" maxlength="50" required>
                     <span class="description_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
@@ -171,8 +167,8 @@
             user_Boolean = false;
         }
     });*/
-    $('#price').blur(function () {
-        if((/^[0-9]{1,10}$/).test($("#price").val()))
+    $('#rent').blur(function () {
+        if((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#rent").val()))
         {
             $('.price_hint').html("✔").css("color","green");
             rent_Boolean = true;
@@ -185,7 +181,7 @@
     })
 
     $('#area').blur(function () {
-        if((/^[0-9]{1,10}$/).test($("#area").val()))
+        if((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#area").val()))
         {
             $('.area_hint').html("✔").css("color","green");
             area_Boolean = true;
@@ -196,21 +192,6 @@
 
 
     })
-
-
-
-
-    // Email
-    /*$('.reg_email').blur(function(){
-        if ((/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/).test($(".reg_email").val())){
-            $('.email_hint').html("✔").css("color","green");
-            emaile_Boolean = true;
-        }else {
-            $('.email_hint').html("×").css("color","red");
-            emaile_Boolean = false;
-        }
-    });*/
-
 
     // Mobile
     $('#phone').blur(function(){
@@ -224,7 +205,7 @@
     });
 
     $('#address').blur(function(){
-        if ((/^[\u4e00-\u9fa5]{1,20}$ /).test($("#address").val())){
+        if ((/^[\u4e00-\u9fa5]{1,20}$/).test($("#address").val())){
             $('.address_hint').html("✔").css("color","green");
             address_Boolean = true;
         }else {
@@ -234,7 +215,7 @@
     });
 
     $('#name').blur(function(){
-        if ((/^[\u4e00-\u9fa5]{1,5}$ /).test($("#name").val())){
+        if ((/^[\u4e00-\u9fa5]{1,5}$/).test($("#name").val())){
             $('.name_hint').html("✔").css("color","green");
             name_Boolean = true;
         }else {
@@ -244,7 +225,7 @@
     });
 
     $('#floor').blur(function(){
-        if ((/^[\u4e00-\u9fa5-0-9]{1,5}$ /).test($("#floor").val())){
+        if ((/^[\u4e00-\u9fa5-0-9-\/]{1,5}$/).test($("#floor").val())){
             $('.floor_hint').html("✔").css("color","green");
             floor_Boolean = true;
         }else {
@@ -254,7 +235,7 @@
     });
 
     $('#type').blur(function(){
-        if ((/^[\u4e00-\u9fa5]{1,10}$ /).test($("#type").val())){
+        if ((/^[\u4e00-\u9fa5]{1,10}$/).test($("#type").val())){
             $('.type_hint').html("✔").css("color","green");
             type_Boolean = true;
         }else {
@@ -264,7 +245,7 @@
     });
 
     $('#description').blur(function(){
-        if ((/^[\u4e00-\u9fa5]{1,20}$ /).test($("#description").val())){
+        if ((/^[\u4e00-\u9fa5-0-9-\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b]{1,50}$/).test($("#description").val())){
             $('.description_hint').html("✔").css("color","green");
             description_Boolean = true;
         }else {

@@ -320,7 +320,7 @@ public class UserDaoImpl implements UserDao {
             SQLQuery<User> query1 = session.createSQLQuery(sql1).addEntity(User.class);
             User user = query1.uniqueResult();
 
-            if (user.getName() != null) {
+            if (user.getName() == null) {
                 String sql2 = "insert into user(name) values(?) where user_id = '" + userid + "';";
                 SQLQuery query2 = session.createSQLQuery(sql2);
                 query2.setParameter(1, user_name);

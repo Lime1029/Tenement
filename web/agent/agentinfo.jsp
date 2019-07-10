@@ -23,16 +23,24 @@
             background-color: #4169E1;
             height: 50px;
         }
+        .modal-content {
+            position: relative;
+        .box-shadow(0 3px 9px rgba(0,0,0,.5));
+            background-clip: border-box;
+            outline: 0;
+
+            width: 400px;
+        }
     </style>
 </head>
 <body>
 <!--假装有的装饰性TOP部分-->
 <div class="top">
-    <div class="row">
-        <div class="col-md-2">
-            <!--h1 style="color: white">Hello,Agent!</h1-->
-        </div>
-    </div>
+    <ul class="nav navbar-nav navbar-right" >
+        <li>
+            <a href="logout.action" style="float: right; color:whitesmoke; margin-right: 50px;margin-top: 10px">退出</a>
+        </li>
+    </ul>
 </div>
 
 <!--Middle-->
@@ -306,7 +314,7 @@
     });*/
     // password
     $('#rent').blur(function(){
-        if ((/^[0-9]{0,15}$/).test($("#rent").val())){
+        if ((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#rent").val())){
             $('.rent_hint').html("✔").css("color","green");
             password_Boolean = true;
         }else {
@@ -315,7 +323,7 @@
         }
     });
     $('#area').blur(function(){
-        if ((/^[0-9]{0,15}$/).test($("#rent").val())){
+        if ((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#rent").val())){
             $('.area_hint').html("✔").css("color","green");
             password_Boolean = true;
         }else {

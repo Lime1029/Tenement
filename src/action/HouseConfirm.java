@@ -137,7 +137,7 @@ public class HouseConfirm extends ActionSupport {
     }
 
     public String execute() {
-        String forward = "error";//Êý¾Ý¿â´æÊý¾ÝÊ±³ö´í±ê¼ÇÖµ
+        String forward = "error";//ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
         boolean flag = false;
         house.setAddress(this.house_address);
         house.setArea(this.house_area);
@@ -153,7 +153,7 @@ public class HouseConfirm extends ActionSupport {
 
         flag = userService.confirmHouse(house,user_phone, user_name);
         if (flag) {
-            forward = "success";//³É¹¦×¢²á±ê¼ÇÖµ
+            forward = "success";
 
         }
         ActionContext.getContext().getSession().put("regMessage", forward);
