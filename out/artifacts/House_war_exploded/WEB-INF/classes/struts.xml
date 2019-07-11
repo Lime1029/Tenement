@@ -76,7 +76,7 @@
             <result name="success" type="chain">getMyOrders</result>
         </action>-->
         <action name="modifyOrderStatus" class="action.UserQuery" method="modifyOrderStatus">
-            <result name="success">/myCenter/paySuccess.jsp</result>
+            <result name="success" type="redirect">/myCenter/paySuccess.jsp</result>
         </action>
         <action name="houseDisplay" class="action.AdminDisplay" method="houseDisplay">
             <result name="success" type="redirect">/admin/houseDisplay.jsp</result>
@@ -178,7 +178,7 @@
         </action>
         <!--添加订单action-->
         <action name="addOrder" class="action.AddOrder">
-            <result name="success" type="redirect">getMyOrder.action</result>
+            <result name="success" type="redirectAction">getMyOrder</result>
             <result name="error">/agent/agent_fail.jsp</result>
         </action>
         <!--查看我名下的订单action-->
@@ -195,13 +195,12 @@
 
         <action name="houseSubmit" class="action.HouseSubmit">
             <result name="success">/home/user.jsp</result>
-            <result name="error">/house submit/housing submit.jsp</result>
-            <result name="none">/house submit/housing submit.jsp</result>
+            <result name="input">/house submit/housing submit.jsp</result>
         </action>
         <action name="houseConfirm" class="action.HouseConfirm" >
             <result name="success" type="redirect">/home/agent.jsp</result>
-            <result name="error">/house submit/agentSubmit.jsp</result>
-            <result name="none">/house submit/agentSubmit.jsp</result>
+            <result name="phone_error">/house submit/agentSubmitError.jsp</result>
+            <result name="input">/house submit/agentSubmit.jsp</result>
         </action>
         <action name="messageSubmit" class="action.messageSubmit">
             <result name="success" type="redirect">messageShow.action</result>
@@ -255,11 +254,13 @@
                 <param name="inputName">inputStream</param>
             </result>
         </action>
-    </package>
-
-    <package name="json" namespace="/" extends="json-default">
-        <action name="getDistrictByCity" class="action.GetDistrictByCity">
-            <result name="success" type="json"></result>
+        <action name="getDistrictByCity" class="action.GetMenu" method="getDistrictByCity">
+            <result name="success" type="stream">
+                <param name="contentType">text/html; charset=utf-8</param>
+                <param name="inputName">inputStream</param>
+            </result>
         </action>
     </package>
+
+
 </struts>

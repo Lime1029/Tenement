@@ -15,7 +15,7 @@ public interface OrderDao {
     public int getCountByDateRange(String stime, String etime);
     public  int getCount();
 
-    List<Order> getMyOrder(int agentId);
-    boolean saveOrder(Order order,String applyerTelephone,String applyerName);
-    void deleteOrderAgent(int orderId);
+    public List getMyOrder();
+    public boolean saveOrder(Order order,String applyerTel,String applyerName);
+    public void deleteOrderAgent(int orderId);
 }

@@ -84,7 +84,7 @@ public class UserQuery {
 
     public String getMyOrders() throws Exception {
         userService.getMyOutstandingOrders(userId);
-        userService.getMyPrepaidOrders(userId);
+        //userService.getMyPrepaidOrders(userId);
         return "success";
     }
 

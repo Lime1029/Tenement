@@ -83,7 +83,7 @@
             </div>
 
             <div class="col-md-5 col-lg-5 col-sm-5">
-                <form action="houseConfirm.action" id="houseConfirm" method="post" >
+                <form action="houseConfirm.action" id="houseConfirm" method="post" onsubmit="return check()">
 
                     <input class="text" id="address" name="house_address" placeholder="请输入具体地址" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -45px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="address_hint"></span>

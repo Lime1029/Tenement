@@ -48,10 +48,11 @@
     <!-- 启用事务注解扫描 开启使用注解管理aop事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!-- 配置事务通知 -->
+    <!-- 配置事务通知，通知就是切面要做的工作，就是这些方法 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <!-- 以方法为单位,指定方法应用什么事务属性 isolation:隔离级别 propagation:传播行为 read-only:对数据库是否只读 -->
+            <!--rollback-for配置事务遇到异常必须回滚，no-rollback-for配置事务遇到异常必须不能回滚-->
             <tx:method name="save*" isolation="REPEATABLE_READ"
                        propagation="REQUIRED" read-only="false" />
             <tx:method name="persist*" isolation="REPEATABLE_READ"
@@ -70,6 +71,10 @@
                        propagation="REQUIRED" read-only="true" />
             <tx:method name="transfer" isolation="REPEATABLE_READ"
                        propagation="REQUIRED" read-only="false" />
+            <tx:method name="insert*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
+            <tx:method name="add*" isolation="REPEATABLE_READ"
+                       propagation="REQUIRED" read-only="false" />
         </tx:attributes>
     </tx:advice>
 
@@ -77,7 +82,7 @@
     <aop:config>
         <!-- 配置切点表达式 -->
         <aop:pointcut id="txPc" expression="execution(* service.impl.*ServiceImpl.*(..))" />
-        <!-- 配置切面 : 通知+切点 advice-ref:通知的名称 pointcut-ref:切点的名称 -->
+        <!-- 配置切面 : 定义aop通知器 通知+切点 advice-ref:通知的名称 pointcut-ref:切点的名称 -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPc" />
     </aop:config>
 
@@ -451,6 +456,9 @@
     </bean>
     <bean id="getAgentByPlot" class="action.GetAgentByPlot">
         <property name="userService" ref="userService" />
+    </bean>
+    <bean id="getDistrictByCity" class="action.GetMenu">
+        <property name="adminService" ref="adminService" />
     </bean>
 
 

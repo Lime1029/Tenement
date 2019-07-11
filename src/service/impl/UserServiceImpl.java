@@ -178,4 +178,15 @@ public class UserServiceImpl implements UserService {
 
 
     }
+
+    @Override
+    public void saveAgent(Agent agent, int userId, String username) {
+        userDao.saveAgent(agent, userId, username);
+    }
+    @Override
+    public boolean getUserByphone(String phone)
+    {
+        return userDao.getUserBYphone(phone);
+    }
+
 }

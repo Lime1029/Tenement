@@ -15,7 +15,6 @@ public class AddOrder extends ActionSupport {
     private Date orderEtime;
     private int orderRent;
     private String applyerTel;
-    private int agentId;
     private String applyerName;
 
     private String resultMess="error";
@@ -68,14 +67,6 @@ public class AddOrder extends ActionSupport {
         this.orderRent = orderRent;
     }
 
-    public int getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(int agentId) {
-        this.agentId = agentId;
-    }
-
     //单独传值的电话号码属性+姓名属性
     public String getApplyerTel() {
         return applyerTel;
@@ -95,11 +86,13 @@ public class AddOrder extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-
-
-
-        orderService.saveOrder(order,applyerTel,applyerName);
-        resultMess="success";
-        return resultMess;
+        resultMess="error";
+        boolean flag=orderService.saveOrder(order,applyerTel,applyerName);//返回的是一个boolean值：true/false
+        if(flag==true){
+            resultMess="success";
+            return resultMess;
+        }else{
+            return resultMess;
+        }
     }
 }

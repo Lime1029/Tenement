@@ -29,5 +29,8 @@ public interface UserService {
     public void plotSave();
     public void plotGet();
     public void houseSave(String phone);
+    public boolean getUserByphone(String phone);
+
+    public void saveAgent(Agent agent, int userId, String username);
 
 }

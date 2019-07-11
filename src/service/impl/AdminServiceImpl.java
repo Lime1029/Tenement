@@ -140,7 +140,7 @@ public class AdminServiceImpl implements AdminService {
         List districts = adminDao.getDistrictByCity(cityId);
 
 
-        //ActionContext.getContext().getSession().put("plotDistricts", districts);
+        ActionContext.getContext().getSession().put("plotDistricts", districts);
 
         return districts;
     }

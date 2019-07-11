@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Lime
@@ -31,6 +30,10 @@
         .panel a {
             cursor: pointer;
 
+        }
+        #search input {
+            display: inline;
+            width: 900px;
         }
     </style>
 
@@ -83,6 +86,10 @@
         </div>
 
         <div class="row clearfix">
+            <form role="form" id="search" action="searchHouseByKeyword.action">
+                <input type="search" maxlength="15" placeholder="请输入区域或小区名搜索" class="form-control" name="condition" value="${sessionScope.keyword}">
+                <span><button class="btn btn-primary" type="submit">开始找房</button></span>
+            </form>
 
             <h2>共找到${sessionScope.houses.size()}套房</h2>
             <!-- 迭代器会将每个house里的属性以object对象赋值给house，即这时house就是一个Object对象数组 -->

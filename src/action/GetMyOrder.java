@@ -10,7 +10,7 @@ public class GetMyOrder extends ActionSupport {
 
     private String resultMess="error";
     private OrderService orderService;
-    private int agentId;
+    //private int agentId;
 
     public OrderService getOrderService() {
         return orderService;
@@ -20,18 +20,18 @@ public class GetMyOrder extends ActionSupport {
         this.orderService = orderService;
     }
 
-    public int getAgentId() {
+    /*public int getAgentId() {
         return agentId;
     }
 
     public void setAgentId(int agentId) {
         this.agentId = agentId;
-    }
+    }*/
 
     public String execute() throws Exception{
         //从session中获取当前agentId
         //现在未整合所以先写死
-        orderService.getMyOrders(agentId);
+        orderService.getMyOrder();
         resultMess="success";
         return resultMess;
     }

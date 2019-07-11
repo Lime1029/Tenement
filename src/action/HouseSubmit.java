@@ -24,7 +24,7 @@ public class HouseSubmit extends ActionSupport{
     private String phone;
     private String appellation;
     private String resultMess = "error";
-    public String submitMessage = null; //µÇÂ¼Ê§°ÜÐÅÏ¢
+    public String submitMessage = null; //ï¿½ï¿½Â¼Ê§ï¿½ï¿½ï¿½ï¿½Ï¢
     private UserService userService;
 
 
@@ -117,15 +117,8 @@ public class HouseSubmit extends ActionSupport{
     }
 
     public String execute() {
-        String mobileExp =
-                "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(166)|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\\d{8}$";
-        Pattern p1 = Pattern.compile(mobileExp);
-        Matcher m1 = p1.matcher(phone);
-        boolean isMobileMatch = m1.matches();
-        if (!(isMobileMatch )) {
-            submitMessage = "ÊÖ»úºÅ»òÃÜÂë¸ñÊ½´íÎó";
-        }
-        else {
+
+
             //System.out.println("success");
 
             landlordApplyRelease.setAddress(this.getAddress());
@@ -136,10 +129,8 @@ public class HouseSubmit extends ActionSupport{
             landlordApplyRelease.setPlotId(this.getPlot_id());
             userService.savehouse(landlordApplyRelease);
             resultMess = "success";
-        }
-        if (submitMessage != null) {
-            ActionContext.getContext().getSession().put("regMessage", submitMessage);
-        }
+
+
 
         return resultMess;
 

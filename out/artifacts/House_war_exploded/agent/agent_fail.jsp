@@ -39,11 +39,14 @@
             <nav class="navbar" style="background-color: aliceblue">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: black">个人中心</a>
+                        <a class="nav-link" href="../agent/agent_ShowInfo.jsp" style="color: black">个人信息</a>
                         <a class="nav-link" href="agentChat.action?agentID=${agent.agentId}" style="color: black">我的消息</a>
-                        <a class="nav-link" href="../agent/" style="color: black">添加订单</a>
-                        <a class="nav-link" href="../agent/" style="color: black">我管理的订单</a>
+                        <a class="nav-link" href="../agent/agent_AddOrder.jsp" style="color: black">添加订单</a>
+                        <a class="nav-link" href="getMyOrder.action?agentId=${agent.agentId}" style="color: black">我管理的订单</a>
                         <a class="nav-link" href="houseShow.action" style="color: black">确认房源</a>
+                        <a class="nav-link" href="getMyHouse.action" style="color: black">我管理的房源</a>
+                        <a class="nav-link" href="contractShow.action" style="color: black">我管理的合同</a>
+                        <a class="nav-link" href="getLandlordApply.action" style="color: black">房东发布房源的申请</a>
                     </li>
                 </ul>
             </nav>
@@ -53,10 +56,12 @@
 
         <!--页面主体：操作错误页-->
         <div class="col-md-9">
+            <br>
             <a href="#" onClick="javascript :history.back(-1);">操作错误，点此链接返回上一页面</a>
-            <h2>可能的错误原因：</h2>
-            <h3> 您填写的房源不存在，请您查看消息列表后填写有效房源编号，再重试。</h3>
-            <h3> 您填写的联系方式不存在，请您填写有效联系方式。</h3>
+            <h6><br></h6>
+            <h6>可能的错误原因：</h6>
+            <h6> 您填写的房源不存在，请您查看消息列表后填写有效房源编号，再重试。</h6>
+            <h6> 您填写的联系方式不存在，请您填写有效联系方式。</h6>
         </div>
     </div>
 

@@ -23,7 +23,7 @@
         </div>
         <div class="panel-body">
             <label style="margin-top: 40px">支付成功，</label>
-            <a href="getMyOrders.action?userId=${user.userId}">返回订单list</a>
+            <a href="getMyOrders.action?userId=${sessionScope.user.userId}">返回订单list</a>
         </div>
     </div>
 </body>

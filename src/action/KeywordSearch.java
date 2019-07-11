@@ -33,6 +33,7 @@ public class KeywordSearch extends ActionSupport {
     public String searchHouse() throws Exception {
 
         List<House> houses = searchService.keywordSearchHouse(condition);
+        ActionContext.getContext().getSession().put("keyword", condition);
         if(houses != null) {
             ActionContext.getContext().getSession().put("houses", houses);
             resultMess = "success";

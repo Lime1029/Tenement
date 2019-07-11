@@ -435,6 +435,27 @@
             else return true;
         }
 
+
+        /*var obj = document.getElementById("citySelect1"); //定位id
+
+        var index = obj.selectedIndex; // 选中索引
+
+        var cityId = obj.options[index].value; // 选中值
+        $.post("getDistrictByCity.action?cityId=" + cityId, function (message, status) {
+            return false;
+        });
+
+        $('#citySelect1').change(function () {
+            var obj = document.getElementById("citySelect1"); //定位id
+
+            var index = obj.selectedIndex; // 选中索引
+
+            var cityId = obj.options[index].value; // 选中值
+            $.post("getDistrictByCity.action?cityId=" + cityId, function (message, status) {
+                return false;
+            });
+        });*/
+
     </script>
 </body>
 </html>

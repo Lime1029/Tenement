@@ -1,11 +1,10 @@
 package dao.impl;
 
+import com.opensymphony.xwork2.ActionContext;
 import dao.OrderDao;
-import model.Order;
-import model.User;
+import model.*;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
-import model.Chat;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -92,57 +91,76 @@ public class OrderDaoImpl implements OrderDao {
 
 
     @Override
-    public boolean saveOrder(Order order,String applyerTelephone,String applyerName) {
+    public boolean saveOrder(Order order,String applyerTel,String applyerName) {
+        Agent agent = (Agent)ActionContext.getContext().getSession().get("agent");
+        int agentId = agent.getAgentId();
+        //查询houseId对应的House
+        House house=checkHouseByAgentId(order,agentId);
         //查询applyerTelephone对应的userId
-        int applyerId=getApplyerIdByTel(applyerTelephone);
-        //附加：把jsp中写入的applyer姓名写入对应user_id,对应的user_name中。
-        String sql0 = "select * from user where user_id = '" + applyerId + "';";
-        SQLQuery<User> query0 = sessionFactory.getCurrentSession().createSQLQuery(sql0).addEntity(User.class);
-        User user = query0.uniqueResult();
-        if (user.getName() == null) {
-            insertUserName(applyerName,applyerId);
-        }
+        User applyer=getApplyerIdByTel(applyerTel);
 
-        //new一个新的order对象
-        Order newOrder=new Order();
-        newOrder.setHouseId(order.getHouseId());
-        newOrder.setApplyerId(applyerId);
-        newOrder.setOrderStime(order.getOrderStime());
-        newOrder.setOrderEtime(order.getOrderEtime());
-        newOrder.setOrderRent(order.getOrderRent());
 
-        //读取order中的属性值，并重新封装到一个新的order里，
-        //保存新的order到数据库
-        Session session= sessionFactory.getCurrentSession();
-        try{
-            String sql="insert into `order`(order_stime, order_rent, order_etime, " +
-                    "applyer_id, house_id) values(?, ?, ?, ?, ?);";
-            SQLQuery query = session.createSQLQuery(sql);
-            query.setParameter(1, newOrder.getOrderStime())
-                    .setParameter(2, newOrder.getOrderRent())
-                    .setParameter(3, newOrder.getOrderEtime())
-                    .setParameter(4, newOrder.getApplyerId())
-                    .setParameter(5, newOrder.getHouseId());
-            query.executeUpdate();
-        }catch(HibernateException e){
+        if(applyer==null||house==null){
             return false;
+        }else{
+            int applyerId=applyer.getUserId();
+            //附加：把jsp中写入的applyer姓名写入对应user_id,对应的user_name中。
+            String sql0 = "select * from user where user_id = '" + applyerId + "';";
+            SQLQuery<User> query0 = sessionFactory.getCurrentSession().createSQLQuery(sql0).addEntity(User.class);
+            User user = query0.uniqueResult();
+            if (user.getName() == null) {
+                insertUserName(applyerName,applyerId);
+            }
+            //new一个新的order对象
+            Order newOrder=new Order();
+            newOrder.setHouseId(order.getHouseId());
+            newOrder.setApplyerId(applyerId);
+            newOrder.setOrderStime(order.getOrderStime());
+            newOrder.setOrderEtime(order.getOrderEtime());
+            newOrder.setOrderRent(order.getOrderRent());
+
+            //读取order中的属性值，并重新封装到一个新的order里，
+            //保存新的order到数据库
+            Session session= sessionFactory.getCurrentSession();
+            try{
+                String sql="insert into `order`(order_stime, order_rent, order_etime, " +
+                        "applyer_id, house_id) values(?, ?, ?, ?, ?);";
+                SQLQuery query = session.createSQLQuery(sql);
+                query.setParameter(1, newOrder.getOrderStime())
+                        .setParameter(2, newOrder.getOrderRent())
+                        .setParameter(3, newOrder.getOrderEtime())
+                        .setParameter(4, newOrder.getApplyerId())
+                        .setParameter(5, newOrder.getHouseId());
+                query.executeUpdate();
+            }catch(HibernateException e){
+                return false;
+            }
+            finally {
+                //session.close();
+                // session会自己关闭，所以这里不需要关闭连接
+            }
+            return true;
         }
-        finally {
-            //session.close();
-            // session会自己关闭，所以这里不需要关闭连接
-        }
-        return true;
     }
 
-    public int getApplyerIdByTel(String applyerTelephone){
-        //根据applyerTelephone参数，查询对应的user表中的user.id
+    //按照order里的houseId和agentId查找该房源是否有效
+    public House checkHouseByAgentId(Order order,int agentId){
+        //直接使用houseId和agentId连表查询，该经纪人名下是否有此houseId对应的房源。
+        String sql="select * from house h,agent a,plot p where h.plot_id=p.plot_id and p.agent_id=a.agent_id and h.house_id='"+order.getHouseId()+"'and a.agent_id='"+agentId+"';";
+        Session session=sessionFactory.getCurrentSession();
+        SQLQuery query=session.createSQLQuery(sql).addEntity(House.class);
+        House house=(House)query.uniqueResult();
+        return house;
+    }
+
+    public User getApplyerIdByTel(String applyerTel){
+        //根据applyerTel参数，查询对应的user表中的user.id
         //并返回user.id
-        String sql="select * FROM tenement.user where telephone='"+applyerTelephone+"';";
+        String sql="select * FROM tenement.user where telephone='"+applyerTel+"';";
         Session session = sessionFactory.getCurrentSession();
         SQLQuery query=session.createSQLQuery(sql).addEntity(User.class);
         User user = (User)query.uniqueResult();
-        int userId=user.getUserId();
-        return userId;
+        return user;
     }
 
     public void insertUserName(String applyerName,int userId){
@@ -154,17 +172,17 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public List<Order> getMyOrder(int agentId){
-
+    public List getMyOrder(){
+        Agent agent = (Agent)ActionContext.getContext().getSession().get("agent");
         //使用sql查询语句
         String sql="SELECT o.order_id, o.order_stime, o.order_rent, o.order_status, o.order_etime, " +
                 "o.applyer_id, o.house_id FROM `order` o, house h, plot p, agent a " +
                 "where o.house_id = h.house_id and h.plot_id = p.plot_id and p.agent_id = a.agent_id and " +
-                "a.agent_id='" + agentId +"';";
+                "a.agent_id='" + agent.getAgentId() +"';";
         Session session = sessionFactory.getCurrentSession();
         //将结果存入orders（列表）并返回orders列表
-        SQLQuery<Order> query=session.createSQLQuery(sql);
-        List<Order> orders=query.list();
+        SQLQuery query=session.createSQLQuery(sql);
+        List orders=query.list();
         return orders;
     }
 

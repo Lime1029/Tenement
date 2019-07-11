@@ -125,7 +125,7 @@
                         <li >
                             <a href="<s:url action="houseDisplay"/>">房源管理</a>
                         </li>
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 用户管理<b class="caret"></b>
                             </a>
@@ -144,7 +144,7 @@
                                 <li><a href="<s:url action="cityDisplay"/>">城市</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="getAllOrder.action?start=0&count=1">订单管理</a>
                         </li>
 

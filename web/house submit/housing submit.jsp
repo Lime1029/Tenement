@@ -201,18 +201,18 @@
     <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
     <script>
 
-        var tel_Boolean = false;
-        var rent_Boolean = false;
-        var address_Boolean = false;
+        var tel_Boolean1 = false;
+        var rent_Boolean1= false;
+        var address_Boolean1 = false;
 
         $('#price').blur(function () {
             if((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#price").val()))
             {
                 $('.rent_hint').html("✔").css("color","green");
-                rent_Boolean = true;
+                rent_Boolean1 = true;
             }else {
                 $('.rent_hint').html("✘").css("color","red");
-                rent_Boolean = false;
+                rent_Boolean1 = false;
             }
         });
 
@@ -220,26 +220,26 @@
         $('#phone').blur(function(){
             if ((/^1[34578]\d{9}$/).test($("#phone").val())){
                 $('.phone_hint').html("✔").css("color","green");
-                tel_Boolean = true;
+                tel_Boolean1 = true;
             }else {
                 $('.phone_hint').html("✘").css("color","red");
-                tel_Boolean = false;
+                tel_Boolean1 = false;
             }
         });
 
         $('#address').blur(function(){
             if ((/^[\u4e00-\u9fa5]{1,20}$/).test($("#address").val())){
                 $('.address_hint').html("✔").css("color","green");
-                address_Boolean = true;
+                address_Boolean1 = true;
             }else {
                 $('.address_hint').html("✘").css("color","red");
-                address_Boolean = false;
+                address_Boolean1 = false;
             }
         });
 
 
         function check() {
-            if((rent_Boolean && tel_Boolean && address_Boolean) !== true){
+            if((rent_Boolean1 && tel_Boolean1 && address_Boolean1) !== true){
                 alert("请按格式要求填写信息");
                 document.getElementById('price').value = "";
                 document.getElementById('phone').value = "";
@@ -256,30 +256,20 @@
         }
 
 
-            var obj = document.getElementById("selectPlot"); //定位id
-
-            var index = obj.selectedIndex; // 选中索引
-
-            var plotId = obj.options[index].value; // 选中值
-            $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
-                return false;
-            });
-
-        $('#selectPlot').change(function () {
-            var obj = document.getElementById("selectPlot"); //定位id
-
-            var index = obj.selectedIndex; // 选中索引
-
-            var plotId = obj.options[index].value; // 选中值
-            $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
-                return false;
-            });
-        });
 
         var goeasy = new GoEasy({
             appkey:'BC-a996257032c5470597d8213b461e44f3'
         });
         function submitApplication() {
+            var obj = document.getElementById("selectPlot"); //定位id
+
+            var index = obj.selectedIndex; // 选中索引
+
+            var plotId = obj.options[index].value; // 选中值
+            $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
+                return false;
+            });
+
             goeasy.publish({
                 channel: '${plotAgent.agentId}',
                 message: "房东${user.userId}提交发布房源申请",
@@ -291,6 +281,8 @@
                 }
             });
         }
+
+
     </script>
 </div>
 </body>

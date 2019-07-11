@@ -215,14 +215,14 @@
                 <h1 class="text-center">修改房源信息</h1>
             </div>
             <div class="modal-body">
-                <form class="form-group" action="updateHouse.action" method="post">
+                <form class="form-group" action="updateHouse.action" method="post" onsubmit="return check()">
                     <div class="form-group">
                         <label>房源ID</label>
                         <input class="form-control" type="text" placeholder="" name="houseID" id="houseID" readonly>
 
                     </div>
                     <div class="form-group">
-                        <label>小区名字</label>
+                        <label>小区</label>
                         <select class="form-control" name="plotname">
                             <s:iterator value="#session.userplot" var="plot_num">
                                 <option value="${plot_num.plotName}" id="plotname">${plot_num.plotName}</option>
@@ -303,15 +303,7 @@
     }
     var area_Boolean = false;
     var rent_Boolean = false;
-    /*$('.reg_user').blur(function(){
-        if ((/^[a-z0-9_-]{4,8}$/).test($(".reg_user").val())){
-            $('.user_hint').html("✔").css("color","green");
-            user_Boolean = true;
-        }else {
-            $('.user_hint').html("×").css("color","red");
-            user_Boolean = false;
-        }
-    });*/
+
     // password
     $('#rent').blur(function(){
         if ((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#rent").val())){
@@ -323,7 +315,7 @@
         }
     });
     $('#area').blur(function(){
-        if ((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#rent").val())){
+        if ((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#area").val())){
             $('.area_hint').html("✔").css("color","green");
             password_Boolean = true;
         }else {

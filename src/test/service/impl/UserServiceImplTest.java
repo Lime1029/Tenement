@@ -1,6 +1,7 @@
 package test.service.impl; 
 
 import com.opensymphony.xwork2.ActionContext;
+import model.Agent;
 import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After;
@@ -12,7 +13,7 @@ import service.UserService;
 * UserServiceImpl Tester. 
 * 
 * @author <Authors name> 
-* @since <pre>ÆßÔÂ 8, 2019</pre> 
+* @since <pre>ï¿½ï¿½ï¿½ï¿½ 11, 2019</pre> 
 * @version 1.0 
 */ 
 public class UserServiceImplTest { 
@@ -51,13 +52,8 @@ public void testSetUserDao() throws Exception {
 * 
 */ 
 @Test
-public void testGetUserByTel() throws Exception {
-//TODO: Test goes here...
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
-
-    UserService loginService = (UserService) ctx.getBean("userService");
-
-    loginService.getUserByTel("13697237196");
+public void testGetUserByTel() throws Exception { 
+//TODO: Test goes here... 
 } 
 
 /** 
@@ -67,10 +63,7 @@ public void testGetUserByTel() throws Exception {
 */ 
 @Test
 public void testGetAgentByTel() throws Exception { 
-//TODO: Test goes here...
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
-    UserService agent = (UserService)ctx.getBean("userService");
-    agent.getAgentByTel("18810339310");
+//TODO: Test goes here... 
 } 
 
 /** 
@@ -203,5 +196,105 @@ public void testUpdatePass() throws Exception {
 //TODO: Test goes here... 
 } 
 
+/** 
+* 
+* Method: getAgentByPlot(int plotId) 
+* 
+*/ 
+@Test
+public void testGetAgentByPlot() throws Exception { 
+//TODO: Test goes here...
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+    UserService agent = (UserService)ctx.getBean("userService");
+    agent.getAgentByTel("18810339310");
+} 
+
+/** 
+* 
+* Method: savehouse(LandlordApplyRelease landlordApplyRelease) 
+* 
+*/ 
+@Test
+public void testSavehouse() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: messageSubmit(DiscussionSection discussionSection) 
+* 
+*/ 
+@Test
+public void testMessageSubmit() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: messageSave() 
+* 
+*/ 
+@Test
+public void testMessageSave() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: plotSave() 
+* 
+*/ 
+@Test
+public void testPlotSave() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: plotGet() 
+* 
+*/ 
+@Test
+public void testPlotGet() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: houseSave(String phone) 
+* 
+*/ 
+@Test
+public void testHouseSave() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: confirmHouse(House house, String phone, String user_name) 
+* 
+*/ 
+@Test
+public void testConfirmHouse() throws Exception { 
+//TODO: Test goes here... 
+} 
+
+/** 
+* 
+* Method: saveAgent(Agent agent, int userId, String username) 
+* 
+*/ 
+@Test
+public void testSaveAgent() throws Exception { 
+//TODO: Test goes here...
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+    UserService service = (UserService)ctx.getBean("userService");
+    Agent agent = (Agent)ctx.getBean("agent");
+    agent.setAgentId(1000);
+    agent.setName("aloha");
+    agent.setPassword("111111");
+    agent.setTelephone("13520280972");
+    service.saveAgent(agent, 1, "Lime");
+}
 
 } 

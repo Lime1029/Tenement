@@ -144,12 +144,30 @@ public class SearchDaoImpl implements SearchDao {
         //String housing_description = housing.getHouseDescription();
         Session session = sessionFactory.getCurrentSession();
         //在这里多表查询时，记得属性要写清是哪个表的属性，否则判断不出就会出现空指针异常
-        String hql = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, "+
-                "Plot as p, District as d where h.plotId = p.plotId and p.districtId = d.districtId and "+
-                "h.plotId = "+housing_plot+" and p.districtId = ' "+housing_district+ " ' and  h.state = 1 and h.rent Between "+ housing_leastrent+"  AND "+housing_maxrent
-                +" and h.houseType  = ' "+ housing_type +" ' ";
+        boolean district = (housing_district!=null);
+        boolean plot = (housing_plot!=0);
+        boolean type = (housing_type!=null);
+
+
+        String hql1 = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, " +
+                "Plot as p,District as d where h.state = 1 and h.rent Between "+ housing_leastrent+" AND "+housing_maxrent;
+        if(plot){
+            hql1 = hql1+" and h.plotId = "+housing_plot;
+        }
+        if(district){
+            hql1 = hql1+" and h.plotId = p.plotId and p.districtId = d.districtId and d.districtName like '%" + housing_district + "%'";
+        }
+        if(type){
+            hql1 = hql1+" and h.houseType like '%" + housing_type + "%'";
+        }
+
+        //String hql = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, "+
+        //      "Plot as p, District as d where h.plotId = p.plotId and p.districtId = d.districtId and "+
+        //    "h.plotId = "+housing_plot+" and p.districtId = ' "+housing_district+ " ' and  h.state = 1 and h.rent Between "+ housing_leastrent+"  AND "+housing_maxrent
+        //  +" and h.houseType  = ' "+ housing_type +" ' ";
         //    +" and (h.address like '% "+ condition+"%' or d.districtName like '%" + condition +"%')";
-        Query<House> query = session.createQuery(hql);
+        //Query<House> query = session.createQuery(hql);
+        Query<House> query = session.createQuery(hql1);
         List<House> houses = query.list();
 
 

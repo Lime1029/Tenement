@@ -97,14 +97,14 @@
             }
         </script>
         <hr class="filter__wrapper w1150" id="filter">
-        <ul class="filter__item--noaside">
+        <!--<ul class="filter__item--noaside">
             <li class="filter__item--level1 down strong" data-tab="1" data-el="area" data-antitarget="station"><a href="/zufang/" onclick="return false;">按区域</a></li>
-        </ul>
+        </ul>-->
 
         <form role="form" id="search2" action="conditionSearch.action" >
             <ul data-target="search.housing_plot" class="">
                 <div >
-                    <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">地区</a></li>
+                    <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">按区域</a></li>
                     <div class="col-sm-4 radios">
                         <input type="radio" name="housing_district" value="东城"/>东城
                     </div>
@@ -120,9 +120,9 @@
                 </div>
 
             </ul>
-            <hr>
+            <hr/>
             <ul class="filter__ul" data-el="rentType">
-                <li class="filter__item--level4 filter__item--aside"><a href="javascript:;">热门小区</a></li>
+                <li class="filter__item--level5 filter__item--aside"><a href="javascript:;">热门小区</a></li>
                 <div class="col-sm-4 radios">
                     <input type="radio" name="housing_plot" value="0"/>天通苑
                 </div>

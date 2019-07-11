@@ -176,6 +176,7 @@ public class UserDaoImpl implements UserDao {
         String sql0 = "select * from `order` where order_id = '" + orderId + "';";
         SQLQuery query0 = session.createSQLQuery(sql0).addEntity(Order.class);
         Order order = (Order)query0.uniqueResult();
+
         String sql1 = "insert into contract(stime, etime, tenant_id, house_id) values(?, ?, ?, ?);";
         SQLQuery query1 = session.createSQLQuery(sql1);
         query1.setParameter(1, order.getOrderStime());
@@ -188,6 +189,7 @@ public class UserDaoImpl implements UserDao {
         SQLQuery query2 = session.createSQLQuery(sql2);
         query2.setParameter(1,order.getHouseId()).setParameter(2, order.getApplyerId())
                 .setParameter(3, (byte)1);
+        query2.executeUpdate();
 
         String sql = "update `order` set order_status = '1' where order_id = '" + orderId + "';";
         session.createSQLQuery(sql).executeUpdate();
@@ -316,9 +318,7 @@ public class UserDaoImpl implements UserDao {
             query.executeUpdate();
             //session.save(house);
 
-            String sql1 = "select * from user where user_id = '" + userid + "';";
-            SQLQuery<User> query1 = session.createSQLQuery(sql1).addEntity(User.class);
-            User user = query1.uniqueResult();
+            User user = findUserByUserID(userid);
 
             if (user.getName() == null) {
                 String sql2 = "insert into user(name) values(?) where user_id = '" + userid + "';";
@@ -419,5 +419,42 @@ public class UserDaoImpl implements UserDao {
 
     }
 
+    @Override
+    public void saveAgent(Agent agent, int userId, String username) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(agent);
 
+        addUserName(userId, username);
+
+    }
+
+    @Override
+    public void addUserName(int userId, String username) {
+        Session session = sessionFactory.getCurrentSession();
+        User user = findUserByUserID(userId);
+        if (user.getName() != null) {
+            String sql2 = "insert into user(name) values(?) where user_id = '" + userId + "';";
+            SQLQuery query2 = session.createSQLQuery(sql2);
+            query2.setParameter(1, username);
+            query2.executeUpdate();
+        }
+    }
+
+    public boolean getUserBYphone(String applyerTel){
+        //根据applyerTel参数，查询对应的user表中的user.id
+        //并返回user.id
+        String sql="select * FROM tenement.user where telephone='"+applyerTel+"';";
+        Session session = sessionFactory.getCurrentSession();
+        SQLQuery query=session.createSQLQuery(sql).addEntity(User.class);
+        User user = (User)query.uniqueResult();
+        if(user == null)
+        {
+            return false;
+
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

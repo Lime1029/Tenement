@@ -29,4 +29,8 @@ public interface UserDao {
     public List<Plot> getPlot();
     public List<Plot> plotGet();
     public int getHouse_userid(String phone);
+    public boolean getUserBYphone(String phone);
+
+    public void saveAgent(Agent agent, int userId, String username);
+    public void addUserName(int userId, String username);
 }

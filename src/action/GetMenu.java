@@ -9,12 +9,32 @@ import service.AdminService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class GetDistrictByCity extends ActionSupport {
+public class GetMenu extends ActionSupport {
     private AdminService adminService;
+    private InputStream inputStream;
+    private int cityId;
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
+
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
+    }
 
     public AdminService getAdminService() {
         return adminService;
@@ -26,17 +46,10 @@ public class GetDistrictByCity extends ActionSupport {
 
 
 
-    public String execute() throws Exception {
-        HttpServletRequest request = ServletActionContext.getRequest();
-        HttpServletResponse response = ServletActionContext.getResponse();
-
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
-
-        String cityId = request.getParameter("cityId");
-        System.out.println("cityId："  + cityId);
-        adminService.getDistrictByCity(Integer.parseInt(cityId));
-
+    public String getDistrictByCity() throws Exception {
+        String str = "成功发送";
+        inputStream = new ByteArrayInputStream(str.getBytes("UTF-8"));
+        adminService.getDistrictByCity(cityId);
         //将数据存储在map里，再转换成json类型数据
        /* Map<String,Object> map = new HashMap<String, Object>();
         map.put("featureGen", featureGen);

@@ -55,15 +55,15 @@ public class OrderServiceImpl implements OrderService{
 
 
     @Override
-    public List<Order> getMyOrders(int agentId){
-        List<Order> orders=orderDao.getMyOrder(agentId);
+    public List getMyOrder(){
+        List orders=orderDao.getMyOrder();
         ActionContext.getContext().getSession().put("orders", orders);
         return orders;
     }
 
     @Override
-    public boolean saveOrder(Order order, String applyerTelephone,String applyerName){
-        return  orderDao.saveOrder(order,applyerTelephone,applyerName);
+    public boolean saveOrder(Order order, String applyerTel,String applyerName){
+        return  orderDao.saveOrder(order,applyerTel,applyerName);
     }
 
     @Override
