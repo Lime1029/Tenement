@@ -139,48 +139,49 @@
                 <span><button class="btn btn-primary" type="submit" style="float: right">搜索</button></span>
             </form>
             <div class="middle ">
-                <c:choose>
-                    <c:when test="${sessionScope.users.size() == 0}">
-                        找到0条记录
-                    </c:when>
-                    <c:otherwise>
-                        <table>
-                            <tr>
-                                <th>用户ID</th>
-                                <th>姓名</th>
-                                <th>手机号</th>
-                                <th>密码</th>
-                                <th>删除</th>
-                            </tr>
-                            <s:iterator value="#session.users" var="user">
-                                <tr style="border-bottom: 1px solid rgb(224,232,242);">
-                                    <td >${user.userId}</td>
-                                    <td>
-                                        <c:choose>
-                                            <c:when test="${user.name != null}">
-                                                ${user.name}
-                                            </c:when>
-                                            <c:otherwise>
-                                                未填写
-                                            </c:otherwise>
-                                        </c:choose></td>
-                                    <td>${user.telephone}</td>
-                                    <td>${user.password}</td>
-                                    <td>
-                                        <form action="deleteUser.action" method="post">
-                                            <input type="hidden" value=${user.userId} name="userId">
-                                            <input type="submit" value="删除" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
-                                        </form>
-                                    </td>
-                                </tr>
-                            </s:iterator>
+                <table>
+                    <tr>
+                        <th>用户ID</th>
+                        <th>姓名</th>
+                        <th>手机号</th>
+                        <th>密码</th>
+                        <th>删除</th>
+                    </tr>
+                    <c:choose>
+                        <c:when test="${sessionScope.users.size() == 0}">
+                            找到0条记录
+                        </c:when>
+                        <c:otherwise>
+
+                                <s:iterator value="#session.users" var="user">
+                                    <tr style="border-bottom: 1px solid rgb(224,232,242);">
+                                        <td >${user.userId}</td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${user.name != null}">
+                                                    ${user.name}
+                                                </c:when>
+                                                <c:otherwise>
+                                                    未填写
+                                                </c:otherwise>
+                                            </c:choose></td>
+                                        <td>${user.telephone}</td>
+                                        <td>${user.password}</td>
+                                        <td>
+                                            <form action="deleteUser.action" method="post">
+                                                <input type="hidden" value=${user.userId} name="userId">
+                                                <input type="submit" value="删除" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </s:iterator>
 
 
-                        </table>
-                    </c:otherwise>
-                </c:choose>
 
+                        </c:otherwise>
+                    </c:choose>
 
+                </table>
             </div>
 
         </div>

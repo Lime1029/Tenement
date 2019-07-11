@@ -147,21 +147,20 @@
             <span><button class="btn btn-primary" data-toggle="modal" data-target="#addDistrict" href="" style="">新增区域</button></span>
 
             <div class="middle ">
-                <c:choose>
+                <table>
+                    <tr>
+                        <th>区域ID</th>
+                        <th>区域名</th>
+                        <th>所属城市ID</th>
+                        <th>所属城市名称</th>
+                        <th>修改</th>
+                        <th>删除</th>
+                    </tr>
+                    <c:choose>
                     <c:when test="${sessionScope.districts.size() == 0}">
                         共找到0条记录
                     </c:when>
                     <c:otherwise>
-                        <table>
-                            <tr>
-                                <th>区域ID</th>
-                                <th>区域名</th>
-                                <th>所属城市ID</th>
-                                <th>所属城市名称</th>
-                                <th>修改</th>
-                                <th>删除</th>
-                            </tr>
-
                             <s:iterator value="#session.districts" var="district">
                                 <tr style="border-bottom: 1px solid rgb(224,232,242);">
                                     <td>${district[0]}</td>
@@ -179,11 +178,9 @@
                                     </td>
                                 </tr>
                             </s:iterator>
-
-                        </table>
-                    </c:otherwise>
-                </c:choose>
-
+                        </c:otherwise>
+                    </c:choose>
+                </table>
             </div>
 
         </div>

@@ -146,24 +146,25 @@
             <span><button class="btn btn-primary" data-toggle="modal" data-target="#addPlot" href="" style="">新增小区</button></span>
 
             <div class="middle ">
-                <c:choose>
+                <table>
+                    <tr>
+                        <th>小区ID</th>
+                        <th>小区名</th>
+                        <th>所属城市ID</th>
+                        <th>所属城市名</th>
+                        <th>所属区域ID</th>
+                        <th>所属区域名</th>
+                        <th>经纪人ID</th>
+                        <th>经纪人</th>
+                        <th>修改</th>
+                        <th>删除</th>
+                    </tr>
+                    <c:choose>
                     <c:when test="${sessionScope.plots.size() == 0}">
                         共找到0条记录
                     </c:when>
                     <c:otherwise>
-                        <table>
-                            <tr>
-                                <th>小区ID</th>
-                                <th>小区名</th>
-                                <th>所属城市ID</th>
-                                <th>所属城市名</th>
-                                <th>所属区域ID</th>
-                                <th>所属区域名</th>
-                                <th>经纪人ID</th>
-                                <th>经纪人</th>
-                                <th>修改</th>
-                                <th>删除</th>
-                            </tr>
+
 
                             <s:iterator value="#session.plots" var="plot">
                                 <tr style="border-bottom: 1px solid rgb(224,232,242);">
@@ -187,10 +188,10 @@
                                 </tr>
                             </s:iterator>
 
-                        </table>
+
                     </c:otherwise>
                 </c:choose>
-
+                </table>
             </div>
 
         </div>

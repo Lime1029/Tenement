@@ -24,7 +24,7 @@
             <!--<result name="input">/registerLogin/login.jsp</result>-->
         </action>
         <action name="userDisplay" class="action.AdminDisplay" method="userDisplay">
-            <result name="success">/admin/userDisplay.jsp</result>
+            <result name="success" type="redirect">/admin/userDisplay.jsp</result>
             <result name="error">/admin/fail.jsp</result>
         </action>
         <action name="searchHouseByKeyword" class="action.KeywordSearch" method="searchHouse">
@@ -45,7 +45,7 @@
             <result name="success" type="redirect">/admin/userDisplay.jsp</result>
         </action>
         <action name="agentDisplay" class="action.AdminDisplay" method="agentDisplay">
-            <result name="success">/admin/agentDisplay.jsp</result>
+            <result name="success" type="redirect">/admin/agentDisplay.jsp</result>
         </action>
         <action name="deleteAgent" class="action.AdminDelete" method="deleteAgent">
             <result name="success" type="chain">agentDisplay</result>
@@ -79,7 +79,7 @@
             <result name="success">/myCenter/paySuccess.jsp</result>
         </action>
         <action name="houseDisplay" class="action.AdminDisplay" method="houseDisplay">
-            <result name="success">/admin/houseDisplay.jsp</result>
+            <result name="success" type="redirect">/admin/houseDisplay.jsp</result>
         </action>
         <action name="deleteHouse" class="action.AdminDelete" method="deleteHouse">
             <result name="success" type="chain">houseDisplay</result>
@@ -88,7 +88,7 @@
             <result name="success" type="redirect">/admin/houseDisplay.jsp</result>
         </action>
         <action name="cityDisplay" class="action.AdminDisplay" method="cityDisplay">
-            <result name="success">/admin/cityDisplay.jsp</result>
+            <result name="success" type="redirect">/admin/cityDisplay.jsp</result>
         </action>
         <action name="searchCity" class="action.KeywordSearch" method="searchCity">
             <result name="success" type="redirect">/admin/cityDisplay.jsp</result>
@@ -104,7 +104,7 @@
             <result name="success" type="chain">cityDisplay</result>
         </action>
         <action name="districtDisplay" class="action.AdminDisplay" method="districtDisplay">
-            <result name="success">/admin/districtDisplay.jsp</result>
+            <result name="success" type="redirect">/admin/districtDisplay.jsp</result>
         </action>
         <action name="modifyDistrict" class="action.AdminUpdate" method="modifyDistrict">
             <result name="success" type="chain">districtDisplay</result>
@@ -120,7 +120,7 @@
             <result name="success" type="redirect">/admin/districtDisplay.jsp</result>
         </action>
         <action name="plotDisplay" class="action.AdminDisplay" method="plotDisplay">
-            <result name="success">/admin/plotDisplay.jsp</result>
+            <result name="success" type="redirect">/admin/plotDisplay.jsp</result>
         </action>
         <action name="searchPlot" class="action.KeywordSearch" method="searchPlot">
             <result name="success" type="redirect">/admin/plotDisplay.jsp</result>

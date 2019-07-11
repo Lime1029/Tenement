@@ -136,27 +136,26 @@
             </form>
 
             <div class="middle ">
-                <c:choose>
+                <table>
+                    <tr>
+                        <th>房源ID</th>
+                        <th>房东</th>
+                        <th>小区</th>
+                        <th>经纪人</th>
+                        <th>地址</th>
+                        <th>租金</th>
+                        <th>房屋状态</th>
+                        <th>户型</th>
+                        <th>楼层</th>
+                        <th>面积</th>
+                        <th>上架时间</th>
+                        <th>删除</th>
+                    </tr>
+                    <c:choose>
                     <c:when test="${sessionScope.adminHouses.size() == 0}">
                         共找到0条记录
                     </c:when>
                     <c:otherwise>
-                        <table>
-                            <tr>
-                                <th>房源ID</th>
-                                <th>房东</th>
-                                <th>小区</th>
-                                <th>经纪人</th>
-                                <th>地址</th>
-                                <th>租金</th>
-                                <th>房屋状态</th>
-                                <th>户型</th>
-                                <th>楼层</th>
-                                <th>面积</th>
-                                <th>上架时间</th>
-                                <th>删除</th>
-                            </tr>
-
                             <s:iterator value="#session.adminHouses" var="adminHouse">
                                 <tr style="border-bottom: 1px solid rgb(224,232,242);">
                                     <td>${adminHouse.houseId}</td>
@@ -198,11 +197,9 @@
                                 </tr>
                             </s:iterator>
 
-
-                        </table>
-                    </c:otherwise>
-                </c:choose>
-
+                        </c:otherwise>
+                    </c:choose>
+                </table>
             </div>
 
 

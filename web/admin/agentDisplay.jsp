@@ -147,20 +147,19 @@
             </form>
             <span><button class="btn btn-primary" data-toggle="modal" data-target="#addAgent" href="" style="">新增经纪人</button></span>
             <div class="middle ">
-                <c:choose>
+                <table>
+                    <tr>
+                        <th>用户ID</th>
+                        <th>姓名</th>
+                        <th>手机号</th>
+                        <th>密码</th>
+                        <th>删除</th>
+                    </tr>
+                    <c:choose>
                     <c:when test="${sessionScope.agents.size() == 0}">
                         共找到0条记录
                     </c:when>
                     <c:otherwise>
-                        <table>
-                            <tr>
-                                <th>用户ID</th>
-                                <th>姓名</th>
-                                <th>手机号</th>
-                                <th>密码</th>
-                                <th>删除</th>
-                            </tr>
-                            <!--略醉，我发现查询所有数据就可以这样访问-->
                             <s:iterator value="#session.agents" var="agent">
                                 <tr style="border-bottom: 1px solid rgb(224,232,242);">
                                     <td>${agent.agentId}</td>
@@ -175,12 +174,9 @@
                                     </td>
                                 </tr>
                             </s:iterator>
-
-
-                        </table>
-                    </c:otherwise>
-                </c:choose>
-
+                        </c:otherwise>
+                    </c:choose>
+                </table>
             </div>
 
 

@@ -11,6 +11,23 @@
 <head>
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>订单展示</title>
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询(media queries)功能 -->
+    <!-- 警告：通过 file:// 协议(就是直接将 html 页面拖拽到浏览器中)访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <meta charset="UTF-8">
     <style>
         table {
@@ -84,56 +101,122 @@
     </style>
 </head>
 <body>
-<div class="seek">
-    <select>
-        <option value="" selected="true" class="item">订单ID</option>
-        <option value="" class="item">中介ID或用户名</option>
-        <option value="" class="item">租户ID和用户名</option>
-    </select>
-    <input type="text" placeholder="订单搜索" id="searchContent">
-    <img src="../images/seek.png" onclick="search()">
-    <input type="text" id="dateChoose1" value="起始日期" class="date">
-    <input type="text" id="dateChoose2" value="结束日期" class="date">
-    <input type="submit" value="按日期查询订单" onclick="searchByDateRange()" class="btn">
-    <input type="submit" value="查看全部订单" onclick="getAllOrder()" class="btn">
+
+<div class="container">
+
+    <div class="row clearfix">
+        <div class="col-md-16 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">爱家</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="../home/admin.jsp">首页</a>
+                        </li>
+                        <li >
+                            <a href="<s:url action="houseDisplay"/>">房源管理</a>
+                        </li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                用户管理<b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="userDisplay"/>">普通用户</a></li>
+                                <li><a href="<s:url action="agentDisplay"/>">经理人</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                地区管理<b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="plotDisplay"/>">小区</a></li>
+                                <li><a href="<s:url action="districtDisplay"/>">区域</a></li>
+                                <li><a href="<s:url action="cityDisplay"/>">城市</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="getAllOrder.action?start=0&count=1">订单管理</a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="logout.action">&nbsp;&nbsp;退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="row clearfix">
+
+
+        <div class="seek">
+            <select>
+                <option value="" selected="true" class="item">订单ID</option>
+                <option value="" class="item">中介ID或用户名</option>
+                <option value="" class="item">租户ID和用户名</option>
+            </select>
+            <input type="text" placeholder="订单搜索" id="searchContent">
+            <img src="../images/seek.png" onclick="search()">
+            <input type="text" id="dateChoose1" value="起始日期" class="date">
+            <input type="text" id="dateChoose2" value="结束日期" class="date">
+            <input type="submit" value="按日期查询订单" onclick="searchByDateRange()" class="btn">
+            <input type="submit" value="查看全部订单" onclick="getAllOrder()" class="btn">
+        </div>
+        <div class="middle ">
+            <table>
+                <tr>
+                    <th>订单号</th>
+                    <th>起始时间</th>
+                    <th>结束时间</th>
+                    <th>订单状态</th>
+                    <th>房源号</th>
+                    <th>租户</th>
+                    <th>删除</th>
+                    <th>查看详细信息</th>
+                </tr>
+                <s:iterator value="#session.orders" var="order">
+                    <tr style="border-bottom: 1px solid rgb(224,232,242);">
+                        <td>${order.orderId }</td>
+                        <td>${order.orderStime }</td>
+                        <td>${order.orderEtime }</td>
+                        <td>${order.orderStatus}</td>
+                        <td>${order.houseId}</td>
+                        <td>${order.applyerId}</td>
+                        <td>
+                            <form action="deleteOrder.action" method="post">
+                                <input type="hidden" value='${order.orderId}' name="orderID">
+                                <input type="submit" value="删除" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="getOrderDetail.action" method="post">
+                                <input type="hidden" value="${order.orderId}" name="orderID">
+                                <input type="submit" value="详细信息" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
+                            </form>
+                        </td>
+                    </tr>
+                </s:iterator>
+            </table>
+        </div>
+        <div class="footer">
+
+    </div>
+
 </div>
-<div class="middle ">
-    <table>
-        <tr>
-            <th>订单号</th>
-            <th>起始时间</th>
-            <th>结束时间</th>
-            <th>订单状态</th>
-            <th>房源号</th>
-            <th>租户</th>
-            <th>删除</th>
-            <th>查看详细信息</th>
-        </tr>
-        <s:iterator value="#session.orders" var="order">
-            <tr style="border-bottom: 1px solid rgb(224,232,242);">
-                <td>${order.orderId }</td>
-                <td>${order.orderStime }</td>
-                <td>${order.orderEtime }</td>
-                <td>${order.orderStatus}</td>
-                <td>${order.houseId}</td>
-                <td>${order.applyerId}</td>
-                <td>
-                    <form action="deleteOrder.action" method="post">
-                        <input type="hidden" value='${order.orderId}' name="orderID">
-                        <input type="submit" value="删除" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
-                    </form>
-                </td>
-                <td>
-                    <form action="getOrderDetail.action" method="post">
-                        <input type="hidden" value="${order.orderId}" name="orderID">
-                        <input type="submit" value="详细信息" style="color: #fff;width: 70px;height: 30px;background: rgb(86,132,190);border-radius: 3px;border:none;">
-                    </form>
-                </td>
-            </tr>
-        </s:iterator>
-    </table>
-</div>
-<div class="footer">
     <!--
     <form action="getAllOrder.action" method="post">
         <input type="hidden" value="${last}", name="start">

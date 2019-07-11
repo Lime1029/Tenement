@@ -145,18 +145,18 @@
             </form>
             <span><button class="btn btn-primary" data-toggle="modal" data-target="#addCity" href="" style="">新增城市</button></span>
             <div class="middle ">
-                <c:choose>
+                <table>
+                    <tr>
+                        <th>城市ID</th>
+                        <th>城市名</th>
+                        <th>修改</th>
+                        <th>删除</th>
+                    </tr>
+                    <c:choose>
                     <c:when test="${sessionScope.cities.size() == 0}">
                         共找到0条记录
                     </c:when>
                     <c:otherwise>
-                        <table>
-                            <tr>
-                                <th>城市ID</th>
-                                <th>城市名</th>
-                                <th>修改</th>
-                                <th>删除</th>
-                            </tr>
 
                             <s:iterator value="#session.cities" var="city">
                                 <tr style="border-bottom: 1px solid rgb(224,232,242);">
@@ -174,10 +174,9 @@
                                 </tr>
                             </s:iterator>
 
-                        </table>
-                    </c:otherwise>
-                </c:choose>
-
+                        </c:otherwise>
+                    </c:choose>
+                </table>
             </div>
 
         </div>
