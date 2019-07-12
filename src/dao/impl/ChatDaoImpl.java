@@ -32,7 +32,7 @@ public class ChatDaoImpl implements ChatDao {
     @Override
     public List<List<Chat>> getChatByAgentID(int agentID){
         Session session =sessionFactory.getCurrentSession();
-        SQLQuery query= session.createSQLQuery("select * from chat where agent_id= "+agentID+" order by send_time");
+        SQLQuery query= session.createSQLQuery("select * from chat where agent_id= "+agentID+" order by send_time DESC");
         query.addEntity(Chat.class);
         List<Chat> chats = query.list();
         List<List<Chat>> user_chats = new ArrayList<List<Chat>>();
@@ -53,7 +53,6 @@ public class ChatDaoImpl implements ChatDao {
             Collections.reverse(reverseChat);
             user_chats.add(reverseChat);
         }
-        Collections.reverse(user_chats);
         return user_chats;
     }
     @Override

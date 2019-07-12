@@ -189,6 +189,7 @@
                             <option value="${plot_num.plotId}" id="plot_id">${plot_num.plotName}</option>
                         </s:iterator>
                     </select>
+                    <button    type="submit"  class="btn btn-primary btn-lg "style="margin-left: 40%" onclick="submitApplication()">提交申请</button>
                 </form>
             </div>
         </div>
@@ -196,8 +197,8 @@
     <br>
     <br>
 
-    <button    type="submit"  class="btn btn-primary btn-lg "style="margin-left: 40%" onclick="submitApplication()">提交申请</button>
-    </form>
+
+
 
     <script type="text/javascript" src="https://cdn-hangzhou.goeasy.io/goeasy.js"></script>
     <script>

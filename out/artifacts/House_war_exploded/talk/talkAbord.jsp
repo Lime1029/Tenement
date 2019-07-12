@@ -109,7 +109,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#">首页</a>
+                <a href="../home/user.jsp">首页</a>
             </li>
             <li>
                 <a href="../search/search.jsp">租房</a>

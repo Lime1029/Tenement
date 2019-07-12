@@ -119,15 +119,6 @@
             </div>
         </div>
         <div class="low">
-            <div class="icons">
-                <img src="../images/1.png" style="height: 30px;width: 32px;">
-                <img src="../images/2.png" style="height: 30px;width: 32px;">
-                <img src="../images/3.png" style="height: 30px;width: 32px;">
-                <img src="../images/4.png" style="height: 30px;width: 32px;">
-                <img src="../images/5.png" style="height: 30px;width: 32px;">
-                <img src="../images/6.png" style="height: 30px;width: 32px;">
-                <img src="../images/7.png" style="height: 30px;width: 32px;">
-            </div>
             <input id="input" type="text" name="ChatContent"/>
             <button onclick="publishMessage()">发送</button>
         </div>

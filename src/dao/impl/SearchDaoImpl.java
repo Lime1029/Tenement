@@ -146,11 +146,11 @@ public class SearchDaoImpl implements SearchDao {
         //在这里多表查询时，记得属性要写清是哪个表的属性，否则判断不出就会出现空指针异常
         boolean district = (housing_district!=null);
         boolean plot = (housing_plot!=0);
-        boolean type = (housing_type!=null);
+        boolean type = !(housing_type.equals("0"));
 
 
         String hql1 = "select h.address, h.rent, h.houseDescription, h.houseId  from House as h, " +
-                "Plot as p,District as d where h.state = 1 and h.rent Between "+ housing_leastrent+" AND "+housing_maxrent;
+                "Plot as p,District as d where h.plotId = p.plotId and p.districtId = d.districtId and h.state = 1 and h.rent Between "+ housing_leastrent+" AND "+housing_maxrent;
         if(plot){
             hql1 = hql1+" and h.plotId = "+housing_plot;
         }
