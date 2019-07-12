@@ -85,18 +85,18 @@
             <div class="col-md-5 col-lg-5 col-sm-5">
                 <form action="houseConfirm.action" id="houseConfirm" method="post" onsubmit="return check()">
 
-                    <input class="text" id="address" name="house_address" placeholder="请输入具体地址" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -45px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="address" name="house_address" required placeholder="请输入具体地址" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -45px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="address_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -30px;margin-top: -0px;width: 400px">
 
 
-                    <input class="text" id="rent" name="house_rent" placeholder="请输入实际租金" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input class="text" id="rent" name="house_rent" required placeholder="请输入实际租金" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="price_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
                     <div>
                         <div class="col-sm-4 radios">
-                            <input type="radio" name="house_state" value="1"/>未出租
+                            <input type="radio" name="house_state" value="1" checked="checked"/>未出租
                         </div>
                         <div class="col-sm-4 radios">
                             <input type="radio" name="house_state" value="0"/>已出租
@@ -104,14 +104,14 @@
 
                     </div>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text" id="phone" name="user_phone" placeholder="请输入房东电话" maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" required>
+                    <input class="text" id="phone" name="user_phone" placeholder="请输入房东电话"  maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" required>
                     <span class="phone_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
-                    <input class="text" id="name" name="user_name" placeholder="请输入房东姓名" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" required maxlength="10">
+                    <input class="text" id="name" name="user_name" placeholder="请输入房东姓名" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" required maxlength="10">
                     <span class="name_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
 
-                    <input class="text" id="type" name="house_type" placeholder="请输入户型，如三室一厅一卫" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" maxlength="15">
+                    <input class="text" id="type" name="house_type" placeholder="请输入户型，如三室一厅一卫" required style="color:#66CDAA;font
                     <span class="type_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <input class="text" id="floor" name="house_floor" placeholder="请输入房屋楼层，如4楼/共15层" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px" maxlength="15">

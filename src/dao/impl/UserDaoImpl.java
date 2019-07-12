@@ -16,7 +16,6 @@ import org.hibernate.SQLQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.jws.soap.SOAPBinding;
 
 @Transactional//事务注解
 @Repository

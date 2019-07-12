@@ -164,21 +164,22 @@
                 <br>
                 <form id = "houseSubmit" action="houseSubmit.action" method="post" onsubmit="return check()">
 
-                    <input type="text" id="address" name="address" placeholder="请输入具体地址" minlength="1" maxlength="30" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input type="text" id="address" name="address" placeholder="请输入具体地址" minlength="1" maxlength="30" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="address_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
-                    <input type="text" id="price" name="price" placeholder="请输入您的期望租金" minlength="1" maxlength="10" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input type="text" id="price" name="price" placeholder="请输入您的期望租金" minlength="1" maxlength="10" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="rent_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
-                    <input type="text" id="name" name="appellation" placeholder="我们该如何称呼您" minlength="1" maxlength="10" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input type="text" id="name" name="appellation" placeholder="我们该如何称呼您" minlength="1" maxlength="10" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <span class="name_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
 
-                    <input type="text" id="phone" name="phone" placeholder="您的常用联系方式" minlength="10" maxlength="11" style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
+                    <input type="text" id="phone" name="phone" placeholder="您的常用联系方式" minlength="10" maxlength="11" required style="color:#66CDAA;font-weight:bold;margin-left: 0%;font-size:1.5rem;margin-top: -30px;border-bottom: black 0px solid;    border-top-style: none;    border-right-style: none;    border-left-style: none;    background-color: transparent;width: 300px;margin-left: 40px">
                     <span class="phone_hint"></span>
                     <hr style="margin-right: 50%;font-weight: bold;padding-top: -20px;margin-top: -0px;width: 400px">
                     <br>
@@ -188,7 +189,7 @@
                             <option value="${plot_num.plotId}" id="plot_id">${plot_num.plotName}</option>
                         </s:iterator>
                     </select>
-
+                </form>
             </div>
         </div>
     </div>
@@ -204,6 +205,7 @@
         var tel_Boolean1 = false;
         var rent_Boolean1= false;
         var address_Boolean1 = false;
+        var call_Boolean1 = false;
 
         $('#price').blur(function () {
             if((/^(?!(0[0-9]{0,}$))[0-9]{1,}[.]{0,}[0-9]{0,}$/).test($("#price").val()))
@@ -236,26 +238,38 @@
                 address_Boolean1 = false;
             }
         });
+        $('#name').blur(function(){
+            if ((/^[\u4e00-\u9fa5]{1,20}$/).test($("#name").val())){
+                $('.name_hint').html("✔").css("color","green");
+                call_Boolean1 = true;
+            }else {
+                $('.name_hint').html("✘").css("color","red");
+                call_Boolean1 = false;
+            }
+        });
 
 
+        var isOk = true;
         function check() {
-            if((rent_Boolean1 && tel_Boolean1 && address_Boolean1) !== true){
+            if((rent_Boolean1 && tel_Boolean1 && address_Boolean1&& call_Boolean1) !== true){
+                isOk = false;
                 alert("请按格式要求填写信息");
                 document.getElementById('price').value = "";
                 document.getElementById('phone').value = "";
                 document.getElementById('address').value = "";
+                document.getElementById('name').value = "";
                 $('.phone_hint').html("");
                 $('.rent_hint').html("");
                 $('.address_hint').html("");
+                $('.name_hint').html("");
                 return false;
             }
             else {
+                isOk  = true;
                 return true;
             }
 
         }
-
-
 
         var goeasy = new GoEasy({
             appkey:'BC-a996257032c5470597d8213b461e44f3'
@@ -269,7 +283,7 @@
             $.post("getAgentByPlot.action?plotId=" + plotId, function (message, status) {
                 return false;
             });
-
+            if((rent_Boolean1 && tel_Boolean1 && address_Boolean1&& call_Boolean1)=== true){
             goeasy.publish({
                 channel: '${plotAgent.agentId}',
                 message: "房东${user.userId}提交发布房源申请",
@@ -280,6 +294,7 @@
                     alert("提交申请成功!");
                 }
             });
+        }
         }
 
 

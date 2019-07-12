@@ -49,7 +49,9 @@ public class ChatDaoImpl implements ChatDao {
                 userID_Chats.get(userID).add(chats.get(i));
             }
         }for (String key : userID_Chats.keySet()) {
-            user_chats.add(userID_Chats.get(key));
+            List<Chat> reverseChat = userID_Chats.get(key);
+            Collections.reverse(reverseChat);
+            user_chats.add(reverseChat);
         }
         Collections.reverse(user_chats);
         return user_chats;

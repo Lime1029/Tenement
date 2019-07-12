@@ -46,6 +46,7 @@
             font-size: 18px;
             background: rgb(86, 132, 190);
             color: #fff;
+            text-align: center;
         }
         table td {
             height: 56px;
@@ -160,9 +161,6 @@
         </div>
     </div>
 
-    <div class="row clearfix">
-
-
         <div class="seek">
             <select>
                 <option value="" selected="true" class="item">订单ID</option>
@@ -213,10 +211,9 @@
             </table>
         </div>
         <div class="footer">
-
     </div>
 
-</div>
+
     <!--
     <form action="getAllOrder.action" method="post">
         <input type="hidden" value="${last}", name="start">
