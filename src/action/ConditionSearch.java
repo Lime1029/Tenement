@@ -35,15 +35,26 @@ public class ConditionSearch extends ActionSupport {
     }
 
     public void setHousing_district(String housing_district) {
+
         this.housing_district = housing_district;
     }
 
     public void setHousing_maxrent(Double housing_maxrent) {
-        this.housing_maxrent = housing_maxrent;
+        if(housing_maxrent != null) {
+            this.housing_maxrent = housing_maxrent;
+        }
+        else {
+            this.housing_maxrent = 10000000000.0;
+        }
     }
 
     public void setHousing_leastrent(Double housing_leastrent) {
-        this.housing_leastrent = housing_leastrent;
+        if(housing_maxrent != null) {
+            this.housing_leastrent = housing_leastrent;
+        }
+        else {
+            this.housing_leastrent = 0.0;
+        }
     }
 
     public void setHousing_type(String housing_type) {

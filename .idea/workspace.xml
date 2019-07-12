@@ -9,17 +9,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab2c191f-e31b-4e9b-aa49-218947924243" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/ChatDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ChatDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/orderDisplay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/orderDisplay.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/house submit/agentSubmit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/house submit/housing submit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/house submit/housing submit.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="ab2c191f-e31b-4e9b-aa49-218947924243" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/house submit/housing submit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-733">
-              <caret line="178" column="117" lean-forward="true" selection-start-line="178" selection-start-column="117" selection-end-line="178" selection-end-column="117" />
+            <state relative-caret-position="323">
+              <caret line="285" column="81" selection-start-line="285" selection-start-column="81" selection-end-line="285" selection-end-column="81" />
               <folding>
                 <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#2;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -669,7 +659,7 @@
       <workItem from="1562804721992" duration="3157000" />
       <workItem from="1562810898519" duration="23342000" />
       <workItem from="1562852886400" duration="8285000" />
-      <workItem from="1562891413009" duration="4312000" />
+      <workItem from="1562891413009" duration="4491000" />
     </task>
     <servers />
   </component>
@@ -706,7 +696,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="500932000" />
+    <option name="totallyTimeSpent" value="501111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1220,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/house submit/housing submit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-733">
-          <caret line="178" column="117" lean-forward="true" selection-start-line="178" selection-start-column="117" selection-end-line="178" selection-end-column="117" />
+        <state relative-caret-position="323">
+          <caret line="285" column="81" selection-start-line="285" selection-start-column="81" selection-end-line="285" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#2;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
